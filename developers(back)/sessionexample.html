@@ -1,0 +1,411 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Example: User Session &mdash; Cymphony Documentation 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../static/jquery.js"></script>
+        <script type="text/javascript" src="../static/underscore.js"></script>
+        <script type="text/javascript" src="../static/doctools.js"></script>
+        <script type="text/javascript" src="../static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example: Work/Data Flow (TOADD)" href="dataflowexample.html" />
+    <link rel="prev" title="Example: Querying Databases" href="dbexample.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cymphony Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Cymphony at a Glance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#basic-terminologies">Basic Terminologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-job">A Cymphony Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-workflow">A Cymphony Workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using Cymphony</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../users/install_back.html">User Installation Guide (Back-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/install_front.html">User Installation Guide (Front-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/runcommand.html">Run from Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/tutorial.html">Tutorial: Creating a Cymphony Project</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Front-end)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#registration">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#login">Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#list">List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#create">Create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#monitor">Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#show">Show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#annotation">Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#used-services">Used Services</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Back-end)</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Event-driven Microservice Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="executionplan.html">Execution Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backinstall.html">Developer Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runide.html">Run from IDE (IntelliJ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codestructure.html">Cymphony Coding Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkservices.html">Checking Service End Points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serviceexample.html">Example: Creating a Lagom Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dbexample.html">Example: Querying Databases</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Example: User Session</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#shared-apis-among-non-session-services">Shared APIs among Non-Session Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#abstract-apis-for-undersession">Abstract APIs for UnderSession</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#implementation-of-undersession-apis-in-validator">Implementation of UnderSession APIs in Validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#udf-with-lambda-function-for-service-communication">UDF with lambda function for Service Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#authentication-on-the-back-end">Authentication on the Back-End</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dataflowexample.html">Example: Work/Data Flow (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optexample.html">Example: Customization (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="toolstack.html">Tool Stack</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cymphony Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Example: User Session</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/developers(back)/sessionexample.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="example-user-session">
+<span id="developers-back-sessionexample"></span><h1>Example: User Session<a class="headerlink" href="#example-user-session" title="Permalink to this headline">¶</a></h1>
+<p>When a user logs in the system, it will create a session for this user and this login. The session will be different next time the user is logged in. That is, for each login, it wil create a unique token. All other services need to validate this token so this worker can work.
+A user token may expire either after a user is logged out, or the user is idle for a certain time.</p>
+<p>Hence, the two services, <code class="docutils literal notranslate"><span class="pre">session</span></code> and <code class="docutils literal notranslate"><span class="pre">user</span></code>, will always work together. More concretely, each time when a user is logged in, the user information will be managed by the <code class="docutils literal notranslate"><span class="pre">user</span></code> service, but the user token will be managed by the <code class="docutils literal notranslate"><span class="pre">session</span></code> service.</p>
+<p>Next, we will explain how other services work, when a user (either a requester or a worker) interacts with other services.</p>
+<p>As shown in the figure below:
+(1) a requester wants to create a project;
+(2) the <code class="docutils literal notranslate"><span class="pre">project</span></code> service will then interact with the <code class="docutils literal notranslate"><span class="pre">session</span></code> service to validate whether the requester’s token is valid; if not, it will returns some exceptions;
+(3) if validated to be yes, the <code class="docutils literal notranslate"><span class="pre">project</span></code> service will then interact with <code class="docutils literal notranslate"><span class="pre">user</span></code> service to get more information about this requester, such as email, name, and so on;
+(4) afterwards, the <code class="docutils literal notranslate"><span class="pre">project</span></code> service will interact with other services to create the project, e.g, the <code class="docutils literal notranslate"><span class="pre">job</span></code> service.</p>
+<p>The rectangle part that includes (2) and (3) is called <code class="docutils literal notranslate"><span class="pre">UnderSession</span></code>.</p>
+<img alt="Collections tab" src="../images/usersession.png" />
+<p>Please refer to <a class="reference internal" href="#authentication-on-the-back-end"><span class="std std-ref">Authentication on the Back-End</span></a> about how the authentication using tokens work in the back-end.
+Next, we will explain the APIs related to the above process.</p>
+<div class="section" id="shared-apis-among-non-session-services">
+<h2>Shared APIs among Non-Session Services<a class="headerlink" href="#shared-apis-among-non-session-services" title="Permalink to this headline">¶</a></h2>
+<p>Because other services need to talk to <code class="docutils literal notranslate"><span class="pre">session</span></code> service, the common APIs are defined in <code class="docutils literal notranslate"><span class="pre">ServiceBasicGroup.java</span></code> under <code class="docutils literal notranslate"><span class="pre">cymphony-bundle-shared-implementation-service</span></code>, as shown below.</p>
+<img alt="Collections tab" src="../images/session1.png" />
+</div>
+<div class="section" id="abstract-apis-for-undersession">
+<h2>Abstract APIs for UnderSession<a class="headerlink" href="#abstract-apis-for-undersession" title="Permalink to this headline">¶</a></h2>
+<p>The abstract implementations of the APIs are in <code class="docutils literal notranslate"><span class="pre">UnderSessionController.java</span></code>, under  <code class="docutils literal notranslate"><span class="pre">cymphony-bundle-shared-implementation-controller</span></code>. These APIs define the operations inside <code class="docutils literal notranslate"><span class="pre">UnderSession</span></code>.</p>
+<img alt="Collections tab" src="../images/session2.png" />
+</div>
+<div class="section" id="implementation-of-undersession-apis-in-validator">
+<h2>Implementation of UnderSession APIs in Validator<a class="headerlink" href="#implementation-of-undersession-apis-in-validator" title="Permalink to this headline">¶</a></h2>
+<p>The real implementation of the APIs for UnderSession part, is in <code class="docutils literal notranslate"><span class="pre">SessionValidator.java</span></code>.</p>
+<img alt="Collections tab" src="../images/session4.png" />
+</div>
+<div class="section" id="udf-with-lambda-function-for-service-communication">
+<h2>UDF with lambda function for Service Communication<a class="headerlink" href="#udf-with-lambda-function-for-service-communication" title="Permalink to this headline">¶</a></h2>
+<p>Last, we give some examples for the interactions between other services (such as the step 4 above).</p>
+<img alt="Collections tab" src="../images/session3.png" />
+<p>We can either use lambda functions or normal functions. But lambda functions are more concise and convenient.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="cm">/* a normal function */</span>
+ <span class="nd">@Override</span>
+ <span class="kd">public</span> <span class="n">ServiceCall</span><span class="o">&lt;</span><span class="n">NotUsed</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">projectEmpty</span><span class="o">()</span> <span class="o">{</span>
+     <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">isLogged</span><span class="o">(</span>
+         <span class="k">new</span> <span class="n">ServerServiceCall</span><span class="o">&lt;</span><span class="n">NotUsed</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;()</span> <span class="o">{</span>
+             <span class="nd">@Override</span>
+                 <span class="kd">public</span> <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">invoke</span><span class="o">(</span><span class="n">NotUsed</span> <span class="n">notUsed</span><span class="o">)</span> <span class="o">{</span>
+                 <span class="k">return</span> <span class="n">completedFuture</span><span class="o">(</span><span class="s">&quot;Project Repository Service&quot;</span><span class="o">);</span>
+             <span class="o">}</span>
+         <span class="o">}</span>
+     <span class="o">);</span>
+ <span class="o">}</span>
+
+ <span class="cm">/* a lambda function */</span>
+ <span class="n">request</span> <span class="o">-&gt;</span> <span class="o">{</span>
+     <span class="k">return</span> <span class="n">completedFuture</span><span class="o">(</span><span class="s">&quot;Project Repository Service&quot;</span><span class="o">);</span>
+ <span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="authentication-on-the-back-end">
+<h2>Authentication on the Back-End<a class="headerlink" href="#authentication-on-the-back-end" title="Permalink to this headline">¶</a></h2>
+<p>Note that Cymphony is a system that follows a microservice architecture. Hence, we need to use some protocol that uses a token as part of the authentication under the system, but also have the characteristic that allows the single login.</p>
+<p>To this end, Cymphony uses a modification of <a class="reference external" href="https://tools.ietf.org/html/rfc7517">JSON Web Signature</a>, the adjustment is based on how it initially treats the token.
+It works as follow:</p>
+<ul class="simple">
+<li><p>First, you need to request the token, which tells how to encrypt the password of the user that will be logged in the system.</p></li>
+<li><p>Then, you need to send the request to log in to the system, where the password is encrypted as the algorithm required after everything is correct on the server-side.</p></li>
+<li><p>The response will have 2 tokens, one token identifies the user and the other token is for the session.</p></li>
+</ul>
+<p>After that process, the session has a duration of <strong>15</strong> minutes after the last request. Each request updates the end time of the session. That is, if a user is idle for more than 15 minuates, the user will be automatically logged out.</p>
+<p>The HTTP requests under a session need to add to their headers the two token <code class="docutils literal notranslate"><span class="pre">token-session</span></code> and <code class="docutils literal notranslate"><span class="pre">token-user</span></code> obtained during the login process, to enable access to the system.</p>
+<p><strong>Authentication Guide (How to log).</strong></p>
+<p>For being under session, you need to get the tokens(token-session, token-user), you need to execute the entries bellow point in that order</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://documenter.getpostman.com/view/9933263/SWLcco7P?version=latest#085cd756-5847-436c-9a98-fc895b18e685">Get Algorithm</a></p></li>
+</ol>
+<p>The request <cite>Get Algorithm</cite> will have two attributes “seed (line 3)” and “token (line 4)”. The seed is a part of the encryption. The token is the identifier of the algorithm that needs to be returned on the login step, because the seed is different every time.</p>
+<div class="highlight-JSON notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="p">{</span>
+     <span class="nt">&quot;algorithm&quot;</span><span class="p">:</span> <span class="s2">&quot;blowfish&quot;</span><span class="p">,</span>
+<span class="hll">     <span class="nt">&quot;seed&quot;</span><span class="p">:</span> <span class="s2">&quot;CjmBmm4P4sHDxZsPjpcD8cmYYGZ4qlxwRibDxXkVBek=&quot;</span><span class="p">,</span>
+</span><span class="hll">     <span class="nt">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;656758a6-02e1-4edd-9286-e31ba33bf6f9&quot;</span><span class="p">,</span>
+</span>     <span class="nt">&quot;time_out&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;time_server&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-02-05T12:56:23.136&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;time_expiration_on_server&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-02-05T13:06:23.136&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;expiration_on_seg&quot;</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span>
+         <span class="nt">&quot;valid&quot;</span><span class="p">:</span> <span class="kc">true</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="arabic simple" start="2">
+<li><p><a class="reference external" href="https://documenter.getpostman.com/view/9933263/SWLcco7P?version=latest#6aef9201-7c7d-40a2-8507-723b6f9aa366">Login</a></p></li>
+</ol>
+<p>The request “Log in” is  at “user.user_uuid(line 6)” which is the token of the user.
+The “token_session (line 2)” is the identifier of the session.
+Both values are the component that needs to be added on the header as <code class="docutils literal notranslate"><span class="pre">token-user</span></code> and <code class="docutils literal notranslate"><span class="pre">token-session</span></code>.</p>
+<div class="highlight-JSON notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="p">{</span>
+<span class="hll">     <span class="nt">&quot;token_session&quot;</span><span class="p">:</span> <span class="s2">&quot;bb41e57d-1198-4d72-8f8b-15699aa77e7c&quot;</span><span class="p">,</span>
+</span>     <span class="nt">&quot;valid&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="hll">     <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span>         <span class="nt">&quot;user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;example user&quot;</span><span class="p">,</span>
+<span class="hll">         <span class="nt">&quot;user_uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;34cdee3d-07de-4853-a0f7-34e6ed36d84c&quot;</span>
+</span>     <span class="p">},</span>
+     <span class="nt">&quot;time_out&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;time_server&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-02-05T12:56:26.764&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;time_expiration_on_server&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-02-05T13:56:26.764&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;expiration_on_seg&quot;</span><span class="p">:</span> <span class="mi">3600</span><span class="p">,</span>
+         <span class="nt">&quot;valid&quot;</span><span class="p">:</span> <span class="kc">true</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="arabic simple" start="3">
+<li><p>Other Request under a session</p></li>
+</ol>
+<p>An example of the a request that needs to be under session is:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>curl --location --request <span class="o">{{</span>request_type<span class="o">}}</span> <span class="s1">&#39;{{request_path}}&#39;</span> <span class="se">\</span>
+<span class="hll">     --header <span class="s1">&#39;token-session: bb41e57d-1198-4d72-8f8b-15699aa77e7c&#39;</span> <span class="se">\</span>
+</span><span class="hll">     --header <span class="s1">&#39;token-user: 34cdee3d-07de-4853-a0f7-34e6ed36d84c&#39;</span> <span class="se">\</span>
+</span>     --data-row <span class="s1">&#39;{{the data here if is need}}&#39;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dataflowexample.html" class="btn btn-neutral float-right" title="Example: Work/Data Flow (TOADD)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dbexample.html" class="btn btn-neutral float-left" title="Example: Querying Databases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Qatar Computing Research Institute
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+.. _developers(back)-checkservices:
+
+
+==========================================
+Checking Service End Points
+==========================================
+
+
+When the Cymphony server is running (see :ref:`developers(back)-runcommand` or :ref:`developers(back)-runide`), you can test services by sending them http calls using Postman.
+
+* Download and install `Postman <https://www.postman.com/>`_.
+* Download these project configuration files intended for postman. 
+
+:download:`environment file <_files/cymphony.postman_environment.json>` 
+:download:`collection file <_files/cymphony.postman_collection.json>`
+
+
+* Open **Postman** on your computer, and click **Import**:
+        
+.. image:: ./images/postman_import.jpg
+    :alt: Import button
+    
+
+
+* Import both configuration files.
+* Chooose the cymphony environment, as shown in the figure below.
+
+.. image:: ./images/cymphony_env.jpg
+    :alt: Environment option
+    
+
+Cymphony Services
+===================================
+
+Cymphony has 11 services: ``cymphony-bundle-job-constraints``, ``cymphony-bundle-job-monitor``, ``cymphony-bundle-job-project``, ``cymphony-bundle-job-resources``, ``cymphony-bundle-session``, ``cymphony-bundle-user``, ``cymphony-bundle-util-email``, ``cymphony-bundle-util-file``, ``cymphony-bundle-util-invitation``, and ``cymphony-bundle-util-log``.
+
+
+Below we show that how most services can be tested.
+
+
+Service: Create User
+===================================
+
+Under :code:`cymphony/Service/User/Create User`, click **Send** button:
+
+.. image:: ./images/post1.png
+    :alt: Collections tab
+
+Now, you can see the info in the :code:`user` table, under mysql :code:`test` database
+
+.. image:: ./images/post1db.png
+    :alt: Collections tab
+
+
+Service: Algorithm Get
+===================================
+
+
+This is to get the seed for the encrypted password.
+
+Under :code:`cymphony/Service/Session/Algortim Get`, click **Send** button; while, there is no database operation for this.
+
+.. image:: ./images/post2.png
+    :alt: Collections tab
+
+
+Service: login
+===================================
+
+
+This is for a requester to sign in.
+
+Under :code:`cymphony/Service/Session/login`, click **Send** button:
+
+.. image:: ./images/post3.png
+    :alt: Collections tab
+
+
+Service: create project
+===================================
+
+
+This is for a requester to create a project. The two files, :code:`JobExtractInput.csv` and :code:`Workers.csv`, are in folder :code:`cymphony/back-end/resources`.
+
+Under :code:`cymphony/Service/Util/File/upload file`, click **Send** button:
+
+.. image:: ./images/post5.png
+    :alt: Collections tab
+
+Now, you can see the info in the :code:`file_uploaded` and :code:`file_uploaded_data` tables.
+
+.. image:: ./images/post5db.png
+    :alt: Collections tab
+
+
+Service: Update workflow
+===================================
+
+
+This is for a requester to upload a cymphony workflow. 
+
+Under :code:`cymphony/Service/Project/Upload workflow`, click **Send** button:
+
+.. image:: ./images/post6.png
+    :alt: Collections tab
+
+This workflow is now in the :code:`project` table, the :code:`workflow` column
+
+.. image:: ./images/post6db.png
+    :alt: Collections tab
+
+
+Service: Project Execute
+===================================
+
+
+Under :code:`cymphony/Service/Project/Project Execute`, click **Send** button:
+
+
+.. image:: ./images/post7.png
+    :alt: Collections tab
+
+For each job node in the workflow, Cymphony will create a database with many tables, such as the :code:`job_cfxxkgs` on the left top of the figure below.
+The schema of these tables in this database are copied from the :code:`public` database; that is, :code:`public` is a template of table schemas and all job databases will copy from.
+
+
+.. image:: ./images/post7db.png
+    :alt: Collections tab
+
+
+Service: Register Worker
+===================================
+
+
+Under :code:`cymphony/Service/Job/Project/ProfileWorker/Register Worker`, click **Send** button:
+
+.. image:: ./images/post8.png
+    :alt: Collections tab
+
+It will insert data into the :code:`profile_worker` table.
+
+.. image:: ./images/post8db.png
+    :alt: Collections tab
+
+
+
+.. _Postman: http://lxml.de/
+
+
+
+
+.. Entries test
+
+  * Create a project
+
+    * Requirements be under a session, please take a look on the authentication Guide `TODO ADD LINK <Http://www.google.com>`_
+    * `Create a Project <https://documenter.getpostman.com/view/9933263/SWLcco7P?version=latest#f521f10a-1635-438f-ac70-cc986aa09ff7>`_
+
+
+  * Get a Project
+
+    * Requirements be under a session, please take a look on the authentication Guide `TODO ADD LINK <Http://www.google.com>`_
+    * `Get a Project <https://documenter.getpostman.com/view/9933263/SWLcco7P?version=latest#8b1dc64a-ad3d-474e-b7c7-0c4db8399c59>`_
+

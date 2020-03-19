@@ -1,0 +1,36 @@
+.. _developers(back)-backinstall:
+
+===================================
+Developer Installation Guide
+===================================
+
+.. To start developing on Cymphony, you will need to understand the concepts in the section :ref:`developers(back)-codestructure`, after reading the concepts, this will be easier.
+
+
+
+Download Cymphony Code 
+------------------------
+
+First, clone the repository using the command below:
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+    $ git clone https://github.com/qcri/cymphony
+    $ cd cymphony
+    $ export CYMPHONY_HOME=$(pwd)
+ 
+
+Alternatively, you can import your code in your IDE, for which `IntelliJ IDEA <https://www.jetbrains.com/idea/>`_ is recommended.
+
+
+Install Auxialiary Tools
+-----------------------------
+
+Then, you need to download the following tools:
+
+* Install  `Apache Maven <http://maven.apache.org/install.html>`_ 
+* Install `Redis 3 <https://redis.io/download>`_ or more
+* Install `MySQL 8 <https://dev.mysql.com/downloads/>`_ or more
+

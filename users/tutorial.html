@@ -1,0 +1,354 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorial: Creating a Cymphony Project &mdash; Cymphony Documentation 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../static/jquery.js"></script>
+        <script type="text/javascript" src="../static/underscore.js"></script>
+        <script type="text/javascript" src="../static/doctools.js"></script>
+        <script type="text/javascript" src="../static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Overview" href="../developers(front)/front.html" />
+    <link rel="prev" title="Run from Command Line" href="runcommand.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cymphony Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Cymphony at a Glance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#basic-terminologies">Basic Terminologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-job">A Cymphony Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-workflow">A Cymphony Workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using Cymphony</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install_back.html">User Installation Guide (Back-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_front.html">User Installation Guide (Front-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runcommand.html">Run from Command Line</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial: Creating a Cymphony Project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requester-a-project-manager">Requester: a Project Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requester-create-a-project">Requester: Create a Project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#workflow-drawer">Workflow Drawer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#form-labels">Form Labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#form-space">Form Space</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#creating-the-first-node">Creating the First Node</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#worker-manual-annotation">Worker: Manual Annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requester-monitor-via-a-dashboard">Requester: Monitor via a Dashboard</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Front-end)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#registration">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#login">Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#list">List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#create">Create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#monitor">Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#show">Show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#annotation">Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#used-services">Used Services</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Back-end)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/architecture.html">Event-driven Microservice Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/executionplan.html">Execution Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/backinstall.html">Developer Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/runide.html">Run from IDE (IntelliJ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/codestructure.html">Cymphony Coding Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/checkservices.html">Checking Service End Points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/serviceexample.html">Example: Creating a Lagom Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/dbexample.html">Example: Querying Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/sessionexample.html">Example: User Session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/dataflowexample.html">Example: Work/Data Flow (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/optexample.html">Example: Customization (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/toolstack.html">Tool Stack</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cymphony Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Tutorial: Creating a Cymphony Project</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/users/tutorial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tutorial-creating-a-system-project">
+<span id="users-tutorial"></span><h1>Tutorial: Creating a Cymphony Project<a class="headerlink" href="#tutorial-creating-a-system-project" title="Permalink to this headline">¶</a></h1>
+<p>Assume that Cymphony is already running by following <a class="reference internal" href="runcommand.html#users-runcommand"><span class="std std-ref">Run from Command Line</span></a>.</p>
+<p>This section will describe each functionality Cymphony Framework provides to manage collaborative tasks. Here you can find a step-by-step guide to create a Cymphony project.
+Generally speaking, creating a Cymphony project requires thw following steps:</p>
+<ul class="simple">
+<li><p>Create a Cymphony Project, which may contain a set of jobs, as a Requester</p></li>
+<li><p>For each Cymphony Job, invite a set of workers</p></li>
+<li><p>The worker will annotate tasks assigned to them</p></li>
+</ul>
+<p>Also, we provide a <strong>monitor</strong> tool for the requester to check the progress of the project.</p>
+<div class="section" id="requester-a-project-manager">
+<h2>Requester: a Project Manager<a class="headerlink" href="#requester-a-project-manager" title="Permalink to this headline">¶</a></h2>
+<p>As you Login in the system as a Requester, it will display the List of Projects, as shown below. In this example, this requester has already created two projects.</p>
+<img alt="Project Manager" src="../images/ProjectManagerSections.png" />
+<p>The table marked in blue lists the associated Projects for this User. Each line shows the name, current status, date of creation and the creator of each project.
+At the end of each row, there are Actions applicable to each specific project.</p>
+<ul class="simple">
+<li><p><strong>The green button with a pen</strong> allows to Edit the selected project Workflow. Inside of this module the Requester can change the definition of every Job, SQL or Sample operations defined on it. This option will be available only in case the Project is not in Execution.</p></li>
+<li><p><strong>The yellow button with a thunder</strong> starts the execution of the project. This means invited workers will be able to Annotate the tuples to complete the workload.</p></li>
+<li><p><strong>The purple button with a chart</strong> displays general information of every operation in the Workflow. If the user selects a particular operation on the graph, it will display charts with major details about that part of the process. This option will be available only in case the Project is in Execution.</p></li>
+<li><p><strong>The red button with a trash can</strong> deletes the selected project and cancels every pending work.</p></li>
+</ul>
+<p>Next, we will describe how to create a new project, by clicking <cite>Create Project</cite> within the red rectangle.</p>
+</div>
+<div class="section" id="requester-create-a-project">
+<h2>Requester: Create a Project<a class="headerlink" href="#requester-create-a-project" title="Permalink to this headline">¶</a></h2>
+<p>In order to start the creation of a Workflow, the user needs a basic understanding of the Project Creation interface. As the figure below shows the screen is divided into three different Components:</p>
+<img alt="Creation Interface" src="../images/ProjectCreatorFilledSections.png" />
+<div class="section" id="workflow-drawer">
+<h3>Workflow Drawer<a class="headerlink" href="#workflow-drawer" title="Permalink to this headline">¶</a></h3>
+<p>The component marked in Red is used to start drawing your workflow. By dragging the 3 circular buttons from the upper left border, you can add new Operators to your workflow, either a Job, a SQL, or a Sample operation. As soon as you Drop the desired Operation, a new Entry with the name of the Operation you just created will appear in the blue marked section.</p>
+</div>
+<div class="section" id="form-labels">
+<h3>Form Labels<a class="headerlink" href="#form-labels" title="Permalink to this headline">¶</a></h3>
+<p>The component marked in blue shows for each Operation that is being created, all the forms the Requester needs to fill in order to make the workflow executable.
+We will show how to fill the parameters for each operation.</p>
+<p>As soon as an operation is added to the Workflow, one entry will appear in this Section. The structure of this entry is described below:</p>
+<a class="reference internal image-reference" href="../images/FormLabels1.PNG"><img alt="Form Labels Structure" src="../images/FormLabels1.PNG" style="width: 200px;" /></a>
+<p>The Purple header indicates the Name of the Operation. The following white labels marked in red indicate the forms that need to be filled by the User. To start filling these forms, the user needs to click on one of them and the Yellow Marked Section will be updated showing the related form.</p>
+</div>
+<div class="section" id="form-space">
+<h3>Form Space<a class="headerlink" href="#form-space" title="Permalink to this headline">¶</a></h3>
+<p>The component marked in yellow is initially empty. When one of the labels below an  Operation is clicked, this component will display the related form. Such a form contain every input the user needs to provide for one concrete aspect of the Operation.</p>
+<p>The forms to fill depends on the type of Operation (Job, SQL or Sample), more specifically:</p>
+<ul class="simple">
+<li><p>Job: Job Definition, Input Data, Invite Workers, Annotation and Aggregation.</p></li>
+<li><p>SQL: SQL Definition and Input Data.</p></li>
+<li><p>Sample: Sample Definition and Input Data.</p></li>
+</ul>
+<p>After completing the form you must save the changes, this action will change the color of the Form Label in the blue Section. If every form has been already provided to the Operation, the color of the header will turn Green.</p>
+<div class="section" id="creating-the-first-node">
+<h4>Creating the First Node<a class="headerlink" href="#creating-the-first-node" title="Permalink to this headline">¶</a></h4>
+<p>At the beginning, the Red-marked component will be empty. At this point, we will drag and drop the first node into the “Workflow Drawer”, let’s start with a <strong>Job</strong> node.</p>
+<a class="reference internal image-reference" href="../images/sel1.png"><img alt="Drag Job Option" src="../images/sel1.png" style="width: 250px;" /></a>
+<a class="reference internal image-reference" href="../images/sel2.PNG"><img alt="Drop Job Option" src="../images/sel2.PNG" style="width: 450px;" /></a>
+<p>Two events happen on the screen:</p>
+<ul class="simple">
+<li><p>The Operation “Node” appears and is asssigned the name “job 1: Untitled”.</p></li>
+<li><p>In the Form Labels panel, on the sidebar, a new Form Label with header “job 1: Untitled” appears. This means that every item listed below refers to a form to be filled for the Operator Node “job 1: Untitled”.</p></li>
+</ul>
+<p>To start defining this new Job Operator, the User click on the first form on the panel.</p>
+<img alt="Form Selection" src="../images/clickFormLabel.png" />
+<p>At the bottom of the screen you will see the “Job Definition” Form. After filling the required entries, just <strong>Save</strong> the template pressing the orange button. For tutorial purposes the “Name” has been filled as “Info Extraction”.</p>
+<a class="reference internal image-reference" href="../images/FillJobDefinition.PNG"><img alt="Defining Job" src="../images/FillJobDefinition.PNG" style="width: 550px;" /></a>
+<p>At this point the User needs to specify the Input Data for the tuples to be annotated by clicking over “Input Data” Form and selecting a File as a Data Source. The uploaded file must in a CSV format with a header specifying the name of each columns.</p>
+<a class="reference internal image-reference" href="../images/SourceCSV.png"><img alt="Source of tasks" src="../images/SourceCSV.png" style="width: 550px;" /></a>
+<p>The next Form to fill will be “Invite Workers”. The User will upload another file where each line contains an email address of a user invited to participate in this Job. The Form allows us to add users directly using “Invite Workers by Email” section.</p>
+<a class="reference internal image-reference" href="../images/WorkersEmails.png"><img alt="Source of workers" src="../images/WorkersEmails.png" style="width: 450px;" /></a>
+<p>In the “Annotation” Form, the Requester needs to provide more information about the Worker requirements. The “Annotation Data Type” specifies the type of data the System will assign as Output of this Job, either Text, Number or Boolean.</p>
+<a class="reference internal image-reference" href="../images/Annotation.PNG"><img alt="Annotation" src="../images/Annotation.PNG" style="width: 450px;" /></a>
+<p>In the “Aggregation” Form, the requester needs to specify how to aggregate the annotations from workers.</p>
+<a class="reference internal image-reference" href="../images/Aggregation.PNG"><img alt="Aggregation" src="../images/Aggregation.PNG" style="width: 450px;" /></a>
+<p>At the end of this process, if the User submit all the listed forms in the Label “Info Extraction” Operation, the header will turn green. This means the Operation is now Executable.</p>
+<p>Assuming the user wants to count the number of appearances of each extracted bran (obtained from the aggegrated annotations), a SQL operation needs to be added to the workflow.</p>
+<p>After dragging the Yellow SQL button into the Workflow Drawer and defining the Operation relevant to the job. The User needs to link the previous generated Job with this SQL.
+To do this, the User simply usw the “Input Data” Form of the new SQL Operation; instead of upload a file the User defines a Predecessor Operation using the Section “Predecessors” of the Form.</p>
+<a class="reference internal image-reference" href="../images/PredecessorSelection.png"><img alt="Predecessor Selection" src="../images/PredecessorSelection.png" style="width: 450px;" /></a>
+<p>Finally, the User just needs to Save the changes. The User has now the complete Structure of the Workflow
+If the Project does not exist, the System will ask for a Project name.</p>
+<a class="reference internal image-reference" href="../images/Save1.PNG"><img alt="Drag Job Option" src="../images/Save1.PNG" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="../images/Save2.PNG"><img alt="Drop Job Option" src="../images/Save2.PNG" style="width: 450px;" /></a>
+<p>At this point, you have defined Executable Cymphony workflow.</p>
+</div>
+</div>
+</div>
+<div class="section" id="worker-manual-annotation">
+<h2>Worker: Manual Annotation<a class="headerlink" href="#worker-manual-annotation" title="Permalink to this headline">¶</a></h2>
+<p>To start working on a Job, a User needs to login as a Worker.
+The user is presented with a list of Projects, each project listing pending annotation jobs.</p>
+<p>Using the green Button with a pen, the User will receive HITs of tasks, to start annotating.
+The table that has been displayed shows the Row data provided by the Requester. The column Annotation is the one the User will use to fill the Answer.
+While it is not necessary to fill every entry, this could affect the Worker’s  quality.</p>
+</div>
+<div class="section" id="requester-monitor-via-a-dashboard">
+<h2>Requester: Monitor via a Dashboard<a class="headerlink" href="#requester-monitor-via-a-dashboard" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../developers(front)/front.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="runcommand.html" class="btn btn-neutral float-left" title="Run from Command Line" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Qatar Computing Research Institute
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Execution Plan &mdash; Cymphony Documentation 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../static/jquery.js"></script>
+        <script type="text/javascript" src="../static/underscore.js"></script>
+        <script type="text/javascript" src="../static/doctools.js"></script>
+        <script type="text/javascript" src="../static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Developer Installation Guide" href="backinstall.html" />
+    <link rel="prev" title="Event-driven Microservice Architecture" href="architecture.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cymphony Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Cymphony at a Glance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#basic-terminologies">Basic Terminologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-job">A Cymphony Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-workflow">A Cymphony Workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using Cymphony</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../users/install_back.html">User Installation Guide (Back-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/install_front.html">User Installation Guide (Front-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/runcommand.html">Run from Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/tutorial.html">Tutorial: Creating a Cymphony Project</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Front-end)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#registration">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#login">Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#list">List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#create">Create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#monitor">Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#show">Show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#annotation">Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#used-services">Used Services</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Back-end)</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Event-driven Microservice Architecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Execution Plan</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#execution-plan-of-a-system-workflow">Execution Plan of a Cymphony Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#execution-plan-of-a-system-job">Execution Plan of a Cymphony Job</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#events">Events</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="backinstall.html">Developer Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runide.html">Run from IDE (IntelliJ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codestructure.html">Cymphony Coding Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkservices.html">Checking Service End Points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serviceexample.html">Example: Creating a Lagom Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dbexample.html">Example: Querying Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sessionexample.html">Example: User Session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataflowexample.html">Example: Work/Data Flow (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optexample.html">Example: Customization (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="toolstack.html">Tool Stack</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cymphony Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Execution Plan</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/developers(back)/executionplan.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="execution-plan">
+<span id="developers-back-executionplan"></span><h1>Execution Plan<a class="headerlink" href="#execution-plan" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="execution-plan-of-a-system-workflow">
+<h2>Execution Plan of a Cymphony Workflow<a class="headerlink" href="#execution-plan-of-a-system-workflow" title="Permalink to this headline">¶</a></h2>
+<p>A Cymphony workflow is a collection of Cymphony jobs and some simple functions (such as SQL queries). The connection between two jobs are quite simple, one will take the output of another job as input, either in a batch mode (i.e., taking all results at one shot) or in a streaming mode (i.e., taking a result once it is produced).</p>
+<p>We will focus on discussing the execution plan of a Cymphony job.</p>
+</div>
+<div class="section" id="execution-plan-of-a-system-job">
+<h2>Execution Plan of a Cymphony Job<a class="headerlink" href="#execution-plan-of-a-system-job" title="Permalink to this headline">¶</a></h2>
+<p>Note that, a Cymphony job is initiated by a requester, who will invite a set of workers to manually annotate a collection of tasks.
+Generally speaking, it works as follows （please refer to the figure below).</p>
+<a class="reference internal image-reference" href="../images/job2.png"><img alt="A  |system| Job" src="../images/job2.png" style="width: 700px;" /></a>
+<ul class="simple">
+<li><p><strong>[Initialization.]</strong> A requester will upload the data for each tuple to be annotated, as well as inviting workers through emails. Those workers who both accept the invitation and pass the qualification test are ready to work for this job. Subsequently, multiple Event 1’s (ep1) will be produced, each per a newly qualified worker.</p></li>
+<li><p><strong>[Assignment.]</strong> For each Event 1 for a worker, [system] assigns a hit to this worker, in order to consume this event.</p></li>
+<li><p><strong>[Annotate.]</strong> Each worker who receives a hit will do manual annotation and commit the hit after finishing it. This commit will produce two events, one for Event 1 and the other for Event 2. Event 1 will be consumed by adding this worker back to the worker queue. Event 2 will be consumed by checking whether new annotations can produce final labels.</p></li>
+<li><p><strong>[Aggregate.]</strong> Each Event 2, produced from the above committed annotations, will be consumed by ready to aggregate(). If it is ready, it will produce an Event 3 that will be consumed by aggregate(). The aggregate() function may produce two events, Event 5 for removing a task, and Event 4 for modifying a task.</p></li>
+<li><p><strong>[Termination.]</strong> A job terminates when either the task table T is empty (i.e., each task has obtained a final label in L), or a requester actively terminates the job (e.g., enough labels have been collected). Otherwise, the job will keep running, waiting for new available workers to annotate, such that a final consensus on each task can be reached based on the aggregate() operation.</p></li>
+</ul>
+<div class="section" id="events">
+<h3>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h3>
+<p>Next we turn our attention to introduce the events in a Cymphony job.</p>
+<p>Each event can be produced by multiple producers, and can be consumed by multiple consumers. Each event has one event handler that maintains a queue that receives input from one or more producers, and the consumer(s) will read and remove an item from this queue.</p>
+<p><strong>Event 1</strong>: Ready to work. This event happens when a worker is ready to work, either the worker is new, the worker committed a previous hit, or a qualified worker logged in the system.</p>
+<ul class="simple">
+<li><p>Event producer (ep1): Three operations can produce this event: (i) the get_worker() operation will add a new qualified worker to the worker stream, (ii) the annotate() operation will add an already qualified worker after this worker commits a hit, (iii) a timed-out worker logs in the system again through the operation worker log in().</p></li>
+<li><p>Event consumer (ec1): The assign() operation will consume this event, by assigning tasks to worker wid.</p></li>
+<li><p>Event 1 handler: Maintain a queue QW, where each item in the queue is a worker id.</p></li>
+</ul>
+<p><strong>Event 2</strong>: Ready to aggregate: This event decides whether the current annotations for a task are ready to be aggregated.</p>
+<ul class="simple">
+<li><p>Event producer (ep2): annotate() produces this event.</p></li>
+<li><p>Event consumer (ec2): ready_to_aggregate() consumes this event.</p></li>
+<li><p>Event 2 handler: Maintain a queue QA, where each item in the queue is an annotation in the form (tid, aid, ai).</p></li>
+</ul>
+<p><strong>Event 3</strong>: Try to aggregate: This event tries to aggregate the given annotations for a specific task.</p>
+<ul class="simple">
+<li><p>Event producer (ep2): ready_to_aggregate() produces this event.</p></li>
+<li><p>Event consumer (ec2): aggregate() consumes this event.</p></li>
+<li><p>Event 3 handler: Maintain a queue QAs, where each item in the queue is an annotation in the form (tid, ⟨wj, aj⟩).</p></li>
+</ul>
+<p><strong>Event 4</strong>: Update a task: Update a task tid by modifying its num (tid.num).</p>
+<ul class="simple">
+<li><p>Event producer (ep4): aggregate() produces this event.</p></li>
+<li><p>Event consumer (ec4): update_task() consumes this event.</p></li>
+<li><p>Event 4 handler: Maintain a queue QM, where each item in the queue is of the form (tid, num x).</p></li>
+</ul>
+<p><strong>Event 5</strong>: Remove a task: Remove a task, when its final label is obtained.</p>
+<ul class="simple">
+<li><p>Event producer (ep5): aggregate() produces this event.</p></li>
+<li><p>Event consumer (ec5): remove_task() consumes this event.</p></li>
+<li><p>Event 5 handler: Maintain a queue QT, where each item in the queue is a task id tid.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="backinstall.html" class="btn btn-neutral float-right" title="Developer Installation Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="architecture.html" class="btn btn-neutral float-left" title="Event-driven Microservice Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Qatar Computing Research Institute
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+.. _developers(back)-architecture:
+
+.. |system| replace:: Cymphony
+
+=============================================
+Event-driven Microservice Architecture
+=============================================
+
+As a crowdsourcing platform, |system| needs to wait for requesters to define projects, for workers to be available to annotate, and for workers to commit their annotations.
+To this end, |system| runs a collection of microservices, where each microservice is independently deployable. 
+Hence, |system| is an instance of the `Reactive Manifesto <https://www.reactivemanifesto.org/>`_, and follows an event-driven microservice architecture.
+
+In an event-driven microservice architecture, an important concept is **event**, where a microservice is the **producer** of an event, and another microservice is the **consumer** of that event. An event can have many producers, as well as many consumers. Each produced event is streamed to a **queue**.
+
+
+.. The frameworks below are for understanding all code of Cymphony. Typically this is not needed -- a Cymphony developer only needs to read corresponding documenation on-demand. 
+ 
+.. That is, |system| employs an event-driven microservice architecture. Generally speaking:
+
+.. * Each service performs one piece of work that other services might need. That is, some services will produce events and other services might consume these events. 
+
+.. * The intermediate data that are produced by some services and will be consumed by other services are stored in a queue, using Kafka.
+
+.. For example, when a worker is ready to work, the **user** service will produce a user id and insert it into a user queue, and the **core** service will consume this user by assigning some tasks. 
+
+The main benefits of using an event-driven architecture, compared with REST, are: 
+
+	* *asynchronous*
+
+	* *loose coupling* 
+
+	* *easy scaling* 
+
+	* *recovery support*
+
+Implementing a microservice architecture is relatively challenging, because one needs to use many tools to take care of creating event-driven microservices (e.g., using Actor Systems such as Akka), maintaining the streaming queues (e.g., using Kafka), and selecting container-orchestration tool (e.g., Kubernetes).
+
+We use `Lagom <https://www.lagomframework.com/documentation/1.6.x/java/Home.html>`_, which encapsulates all of the above needed features, to implement |system|. We we will discuss more about it in :ref:`developers(back)-toolstack`.
+

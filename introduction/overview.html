@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cymphony at a Glance &mdash; Cymphony Documentation 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../static/jquery.js"></script>
+        <script type="text/javascript" src="../static/underscore.js"></script>
+        <script type="text/javascript" src="../static/doctools.js"></script>
+        <script type="text/javascript" src="../static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="User Installation Guide (Back-end)" href="../users/install_back.html" />
+    <link rel="prev" title="Documentation for Cymphony Users and Developers" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cymphony Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cymphony at a Glance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#basic-terminologies">Basic Terminologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#a-system-job">A Cymphony Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#a-system-workflow">A Cymphony Workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using Cymphony</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../users/install_back.html">User Installation Guide (Back-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/install_front.html">User Installation Guide (Front-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/runcommand.html">Run from Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/tutorial.html">Tutorial: Creating a Cymphony Project</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Front-end)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#registration">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#login">Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#list">List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#create">Create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#monitor">Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#show">Show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#annotation">Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#used-services">Used Services</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Back-end)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/architecture.html">Event-driven Microservice Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/executionplan.html">Execution Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/backinstall.html">Developer Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/runide.html">Run from IDE (IntelliJ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/codestructure.html">Cymphony Coding Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/checkservices.html">Checking Service End Points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/serviceexample.html">Example: Creating a Lagom Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/dbexample.html">Example: Querying Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/sessionexample.html">Example: User Session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/dataflowexample.html">Example: Work/Data Flow (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/optexample.html">Example: Customization (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/toolstack.html">Tool Stack</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cymphony Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Cymphony at a Glance</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/introduction/overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="system-at-a-glance">
+<span id="introduction-overview"></span><h1>Cymphony at a Glance<a class="headerlink" href="#system-at-a-glance" title="Permalink to this headline">¶</a></h1>
+<p>Cymphony is an open-source crowdsourcing platform. It provides the following features:</p>
+<ul class="simple">
+<li><p>Flexibile definition of workflows consisting of multiple microtasks.</p></li>
+<li><p>Easy invitation of workers through emails.</p></li>
+<li><p>Open-source software (APACHE 2.0 License) with well abstracted APIs such that developers can fully optimize the system for their specific applications, such as how to assign tasks and how to aggregate the annotations from different workers.</p></li>
+</ul>
+<p>Below is a set of motivating samples, mainly for data preparation, that need collaboration and where Cymphony could help:</p>
+<ul class="simple">
+<li><p>[Information extraction]: Given a table where each tuple  describes a product, the goal is to extract the weight from the title of the product, such as “3.5kg” from “Sony radio X67 3.5kg black”. We want to use multiple workers for this task.</p></li>
+<li><p>[Data cleaning]: Given a table with a column  <code class="docutils literal notranslate"><span class="pre">City</span></code>,  we want a bunch of workers to help clean its value, such as “New Yurk” to “New York”; similarly, we may want a bunch of workers to help normalize its values, such as “NY” and “NYC” to “New York City”.  In another task, an algorithm detects multiple synonyms for missing values for a column <code class="docutils literal notranslate"><span class="pre">temperature</span></code>, and we want to have a bunch of workers examine these synonym candidates and select the correct ones.</p></li>
+<li><p>[Data labeling]: We need a set of workers to label tuple pairs Match/Non-Match for entity matching, or to label a set of examples Yes/No for some classification task.</p></li>
+</ul>
+</div>
+<div class="section" id="basic-terminologies">
+<h1>Basic Terminologies<a class="headerlink" href="#basic-terminologies" title="Permalink to this headline">¶</a></h1>
+<p>There are some basic terms that are important to understand Cymphony.</p>
+<ul>
+<li><p>A <strong>worker</strong> is a collaboration/crowd worker.</p></li>
+<li><p>A <strong>requester</strong> is the end user who wants to specify and execute a collaboration application, such as annotating missing values, labeling tuples, and so on.</p></li>
+<li><p>A <strong>task</strong> is an object (e.g., a tuple) with a description about what annotation is needed, where an annotation can be one of the following types:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Boolean</em>: True/False</p></li>
+<li><p><em>Numeric</em>: a numeric value</p></li>
+<li><p><em>String</em>: a set of characters</p></li>
+<li><p><em>Enumeration</em>: a value from a set of predefined values (such as for card suit or color)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Each task can be done by one worker, taking anywhere from a few seconds to a few minutes. Each task will be assigned to one or more workers, and each worker will produce an annotation.</p></li>
+<li><p>A <strong>label</strong> of a task is the “final annotation” that is aggregated (e.g., using majority voting) from the workers who annotate this task.</p></li>
+<li><p>A <strong>hit</strong> is a set of tasks that a worker takes to annotate as a mini-batch.</p></li>
+<li><p>A <strong>job</strong> is a collection of tasks. We assume that all objects in one job follow the same schema (e.g., the same relational schema).</p></li>
+<li><p>A <strong>workflow</strong> consists of a collection of (human) jobs and a set of machine algorithms (e.g., SQL queries, sampling functions, or any other user defined function).</p></li>
+</ul>
+</div>
+<div class="section" id="a-system-job">
+<h1>A Cymphony Job<a class="headerlink" href="#a-system-job" title="Permalink to this headline">¶</a></h1>
+<p>Generally speaking, a Cymphony job includes the following steps:</p>
+<ul class="simple">
+<li><p>[Data preparation]: obtain from a requester tasks and workers who are invited by the requester through emails</p></li>
+<li><p>[Assignment]: assign workers to tasks</p></li>
+<li><p>[Annotate]: allow annotations by workers</p></li>
+<li><p>[Aggregate]: aggregate annotations to produce a label for each task.</p></li>
+</ul>
+<p>In an abstract level, each job consists of three core functions, <code class="docutils literal notranslate"><span class="pre">Assignment()</span></code>, <code class="docutils literal notranslate"><span class="pre">Annotate()</span></code>, and <code class="docutils literal notranslate"><span class="pre">Aggregate()</span></code>, as shown in the figure below.</p>
+<a class="reference internal image-reference" href="../images/job1.png"><img alt="A |system| Job" src="../images/job1.png" style="width: 350px;" /></a>
+</div>
+<div class="section" id="a-system-workflow">
+<h1>A Cymphony Workflow<a class="headerlink" href="#a-system-workflow" title="Permalink to this headline">¶</a></h1>
+<p>A Cymphony workflow is a directed acyclic graph (DAG) where each node is either a (human) job node or a (machine) function node.</p>
+<p>A sample workflow is given below. It has three jobs and one function.</p>
+<p>We provide a graphical user interface (GUI) for a requester to specify a Cymphony workflow (see the tutorial at <a class="reference internal" href="../users/tutorial.html#users-tutorial"><span class="std std-ref">Tutorial: Creating a Cymphony Project</span></a>). For each job in the workflow, the requester will invite a group of workers by providing their email addresses.</p>
+<a class="reference internal image-reference" href="../images/workflow.png"><img alt="A |system| workflow" src="../images/workflow.png" style="width: 450px;" /></a>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../users/install_back.html" class="btn btn-neutral float-right" title="User Installation Guide (Back-end)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Documentation for Cymphony Users and Developers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Qatar Computing Research Institute
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

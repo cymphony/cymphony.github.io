@@ -1,0 +1,74 @@
+.. _developers(back)-runide:
+
+
+Run from IDE (IntelliJ)
+==============================
+
+For developers who want to modify the code of Cymphony, we highly recomment to use `IntelliJ`_. 
+Below is how to import and config Cymphony using IntelliJ. 
+
+
+1. Create a new project from the downloaded :code:`cymphony` folder.
+
+.. image:: ./images/step1.png
+    :alt: Collections tab
+
+
+2. Set up the project name and location.
+
+.. image:: ./images/step2.png
+    :alt: Collections tab
+ 
+
+3. Select **Unmark All**, and then create a cymphony project.
+
+.. image:: ./images/step3.png
+    :alt: Collections tab
+
+
+4. Select **File** -> **Project Structure ...**
+
+.. image:: ./images/step4.png
+    :alt: Collections tab
+
+5. Under **Project SDK:**, select **11(java version "11.0.2")**.
+
+.. image:: ./images/step5.png
+    :alt: Collections tab
+
+
+6. Click **Modules** under **Project Settings**, and then click **Import Module**
+
+.. image:: ./images/step6.png
+    :alt: Collections tab
+
+
+7. Select the folder :code:`back-end/src` from the downloaded cymphony folder
+
+.. image:: ./images/step7.png
+    :alt: Collections tab
+
+8. Select **Maven**, under **Import module from external model**, and then click **Finish**
+
+.. image:: ./images/step8.png
+    :alt: Collections tab
+
+
+9. Click **Add Configuration...** and select **Maven**. Under **Command line:**, put 'clean install lagom:runAll -Ddb_password=${DB_PASSWORD} -Ddb_user=${DB_USER} -Ddb_path=jdbc:mysql://${DB_ADDRESS}:${DB_PORT}/cymphony?useSSL=false&createDatabaseIfNotExist=true -Ddb_path_public=jdbc:mysql://${DB_ADDRESS}:${DB_PORT}/template?useSSL=false&createDatabaseIfNotExist=true', and for **Working directory** put `cymphony/back-end/src`
+
+Please refer to :ref:`developers(back)-runcommand` for setting the above parameters.
+
+
+.. image:: ./images/step9.png
+    :alt: Collections tab
+
+.. image:: ./images/step10.png
+    :alt: Collections tab
+
+
+If you already started **redis** and **mysql**, you should be able to run cymphony from IntelliJ.
+
+
+
+.. _IntelliJ: https://www.jetbrains.com/idea/
+

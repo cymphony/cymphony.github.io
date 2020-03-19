@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>User Installation Guide (Back-end) &mdash; Cymphony Documentation 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../static/jquery.js"></script>
+        <script type="text/javascript" src="../static/underscore.js"></script>
+        <script type="text/javascript" src="../static/doctools.js"></script>
+        <script type="text/javascript" src="../static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="User Installation Guide (Front-end)" href="install_front.html" />
+    <link rel="prev" title="Cymphony at a Glance" href="../introduction/overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cymphony Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Cymphony at a Glance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#basic-terminologies">Basic Terminologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-job">A Cymphony Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-workflow">A Cymphony Workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using Cymphony</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User Installation Guide (Back-end)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-by-cymb-recommended">Install by cymb (recommended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-step-by-step">Install Step by Step</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install_front.html">User Installation Guide (Front-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runcommand.html">Run from Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial: Creating a Cymphony Project</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Front-end)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#registration">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#login">Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#list">List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#create">Create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#monitor">Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#show">Show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#annotation">Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#used-services">Used Services</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Back-end)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/architecture.html">Event-driven Microservice Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/executionplan.html">Execution Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/backinstall.html">Developer Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/runide.html">Run from IDE (IntelliJ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/codestructure.html">Cymphony Coding Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/checkservices.html">Checking Service End Points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/serviceexample.html">Example: Creating a Lagom Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/dbexample.html">Example: Querying Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/sessionexample.html">Example: User Session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/dataflowexample.html">Example: Work/Data Flow (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/optexample.html">Example: Customization (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/toolstack.html">Tool Stack</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cymphony Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>User Installation Guide (Back-end)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/users/install_back.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="user-installation-guide-back-end">
+<span id="users-install-back"></span><h1>User Installation Guide (Back-end)<a class="headerlink" href="#user-installation-guide-back-end" title="Permalink to this headline">¶</a></h1>
+<p>Generally speaking, an admistrator needs to install both the Cymphony back-end (similar to a MySQL server), and the Cymphony front-end (similar to a workbench for easily accessing MySQL). After both have been started, the end user will simply go to the front-end browser for defining and annotating collaborative tasks (<a class="reference internal" href="tutorial.html#users-tutorial"><span class="std std-ref">Tutorial: Creating a Cymphony Project</span></a>).
+So basically, you need to install the back-end - <a class="reference internal" href="#users-install-back"><span class="std std-ref">User Installation Guide (Back-end)</span></a> and the front-end - <a class="reference internal" href="install_front.html#users-install-front"><span class="std std-ref">User Installation Guide (Front-end)</span></a>, and start both - <a class="reference internal" href="runcommand.html#users-runcommand"><span class="std std-ref">Run from Command Line</span></a>.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>Cymphony-Builder (<strong>cymb</strong>) is a script that allows an easy compilation and publishing of the Cymphony Framework.</p>
+<p>Before running cymb, make sure you have the followings ready.</p>
+<p>1 [Obtaining a Github token.] You can obtain it by following the stpes in <a class="reference external" href="https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line">Creating a personal access token for the command line</a>. When you see <cite>${token}</cite> in the documentation bellow, you need to put the value of the generated token.</p>
+<p>2 [Clone Cymphony repository.] Only after validating that your token is correct you can use the command below for cloning the repository.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ git clone https://<span class="si">${</span><span class="nv">token</span><span class="si">}</span>@github.com/qcri/cymphony-builder.git
+</pre></div>
+</td></tr></table></div>
+<p>3 [Install docker] (If not already installed in your machine).</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># Ubuntu</span>
+ $ sudo apt-get install docker.io
+
+ <span class="c1"># MacOs</span>
+ https://docs.docker.com/docker-for-mac/install/
+
+ <span class="c1"># Windows</span>
+ https://docs.docker.com/docker-for-windows/install/
+</pre></div>
+</td></tr></table></div>
+<p>4 [Configure Docker Socket.] Depending on the OS installed in your machine, you need to find the correct path of the docker socket. In the case of Ubuntu and macOS Catalina, it is
+<cite>/var/run/docker.sock</cite> by default.  If your OS is different, you need to edit the file <cite>conf</cite> and update the variable <cite>docker_sock</cite> with the correct path of the docker socket.</p>
+<p>5 [Publish the Image] Be default, the Cymphony back-end will be installed on your local machine.  However, if you want to publish the images in a private repository, such as [Azure Container Registery] (<a class="reference external" href="https://azure.microsoft.com/en-us/services/container-registry/">https://azure.microsoft.com/en-us/services/container-registry/</a>), you’d need to update the file <cite>bin/settings.xml</cite> and provide the configuration of your server:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span> &lt;servers&gt;
+     &lt;server&gt;
+         &lt;!--TODO is needed to <span class="nb">set</span> this variable with the final credential--&gt;
+         &lt;id&gt;HERE_HOST&lt;/id&gt;
+         &lt;username&gt;HERE_USER&lt;/username&gt;
+         &lt;password&gt;HERE_PASSWORD&lt;/password&gt;
+     &lt;/server&gt;
+ &lt;/servers&gt;
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using Azure or a similar enviroment, make sure to be logged in to your environment before executing anything.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The file <cite>./VERSION</cite>  allows the generation of different versions of cymb. However, if the version is not updated and there is an image with that version, the image will not be generated, except in the case you build again using the script <cite>./build</cite>. The script <cite>./build</cite> will overwrite the image, not considering any validation.</p>
+</div>
+</div>
+<div class="section" id="install-by-cymb-recommended">
+<h2>Install by cymb (recommended)<a class="headerlink" href="#install-by-cymb-recommended" title="Permalink to this headline">¶</a></h2>
+<p>Now, you are ready to install Cymphony. To install it in one command line, please do:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ ./cymb full <span class="si">${</span><span class="nv">token</span><span class="si">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step may fail in the publication of the images in the repository server if you did not provide a configuration of the server in the Requirements (1).</p>
+</div>
+</div>
+<div class="section" id="install-step-by-step">
+<h2>Install Step by Step<a class="headerlink" href="#install-step-by-step" title="Permalink to this headline">¶</a></h2>
+<p>Alternatlively, if you don’t want to use cymb and want to execute the script step by step, you need to follow the steps bellow:</p>
+<p>1 [Cloning the repository of code.] For cloning a fresh copy of the repository, you need to execute the following command using the token generated in Requirement (1):</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ ./cymb clone <span class="si">${</span><span class="nv">token</span><span class="si">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>2 [Pulling the code.] Pulling the last version of the Cymphony code, you can use the command bellow</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ ./cymb pull
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The command can fail if the token that was provided in the last compilation is not valid. If that happens, please clone again the project providing a new token.</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>【Compiling the code.】 Compiling the code also generates the images of the containers.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ ./cymb compile
+</pre></div>
+</td></tr></table></div>
+<p>You can validate this using the next command</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ docker images
+</pre></div>
+</td></tr></table></div>
+<p>If everything goes well, you will see something like this</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span> REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+ cymphony-service-util-file   <span class="m">1</span>.0-SNAPSHOT        5cfbb1d23d39        About an minute ago   187MB
+ cymphony-service-util-file   latest              5cfbb1d23d39        About an minute ago   187MB
+ cymphony-service-users       <span class="m">1</span>.0-SNAPSHOT        20eabdbf49f3        About an minute ago   186MB
+ cymphony-service-users       latest              20eabdbf49f3        About an minute ago   186MB
+ cymphony-service-projects    <span class="m">1</span>.0-SNAPSHOT        3cc345d78f2f        About an minute ago   186MB
+ cymphony-service-projects    latest              3cc345d78f2f        About an minute ago   186MB
+ cymphony-service-session     <span class="m">1</span>.0-SNAPSHOT        21790b35609e        About an minute ago   186MB
+ cymphony-service-session     latest              21790b35609e        About an minute ago   186MB
+ .....
+</pre></div>
+</td></tr></table></div>
+<ol class="arabic simple" start="4">
+<li><p>【Publishing the images.】 You can publish your created images using the command bellow:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ ./cymb publish
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="install_front.html" class="btn btn-neutral float-right" title="User Installation Guide (Front-end)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../introduction/overview.html" class="btn btn-neutral float-left" title="Cymphony at a Glance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Qatar Computing Research Institute
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

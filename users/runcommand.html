@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Run from Command Line &mdash; Cymphony Documentation 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../static/jquery.js"></script>
+        <script type="text/javascript" src="../static/underscore.js"></script>
+        <script type="text/javascript" src="../static/doctools.js"></script>
+        <script type="text/javascript" src="../static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorial: Creating a Cymphony Project" href="tutorial.html" />
+    <link rel="prev" title="User Installation Guide (Front-end)" href="install_front.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cymphony Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Cymphony at a Glance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#basic-terminologies">Basic Terminologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-job">A Cymphony Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-workflow">A Cymphony Workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using Cymphony</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install_back.html">User Installation Guide (Back-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_front.html">User Installation Guide (Front-end)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Run from Command Line</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#start-the-back-end">Start the Back-end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#start-the-front-end">Start the Front-end</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial: Creating a Cymphony Project</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Front-end)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#registration">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#login">Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#list">List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#create">Create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#monitor">Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#show">Show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#annotation">Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#used-services">Used Services</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Back-end)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/architecture.html">Event-driven Microservice Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/executionplan.html">Execution Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/backinstall.html">Developer Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/runide.html">Run from IDE (IntelliJ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/codestructure.html">Cymphony Coding Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/checkservices.html">Checking Service End Points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/serviceexample.html">Example: Creating a Lagom Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/dbexample.html">Example: Querying Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/sessionexample.html">Example: User Session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/dataflowexample.html">Example: Work/Data Flow (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/optexample.html">Example: Customization (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/toolstack.html">Tool Stack</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cymphony Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Run from Command Line</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/users/runcommand.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="run-from-command-line">
+<span id="users-runcommand"></span><h1>Run from Command Line<a class="headerlink" href="#run-from-command-line" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="start-the-back-end">
+<h2>Start the Back-end<a class="headerlink" href="#start-the-back-end" title="Permalink to this headline">¶</a></h2>
+<p>1. <strong>Start Redis.</strong> If you have already installed Redis and added the folder “redis-5.0.7/src” to your system path,  the simplest way to start is below.
+For more details about installing Redis, please read start <a class="reference external" href="https://redis.io/topics/quickstart">redis</a>.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ redis-server
+</pre></div>
+</td></tr></table></div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Start MySQL.</strong> On a port of your choice, using this command for example:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ mysql -h <span class="m">127</span>.0.0.1 -P <span class="m">3306</span> -u root -p
+</pre></div>
+</td></tr></table></div>
+<p>Of course, you can also use a GUI to start a MySQL server.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Don’t forget to check whether port 9000 is being used by other apps, because it is needed for MySQL and Redis.</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Start All Cymphony Services.</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="c1"># go to Cymphony back-end folder</span>
+</span><span class="hll">$ <span class="nb">cd</span> Cymphony/back-end/src
+</span><span class="hll">$ <span class="nb">export</span> <span class="nv">DB_ADDRESS</span><span class="o">=</span>localhost
+</span><span class="hll">$ <span class="nb">export</span> <span class="nv">DB_PORT</span><span class="o">=</span><span class="m">3306</span>
+</span>$ <span class="nb">export</span> <span class="nv">DB_USER</span><span class="o">=</span><span class="s1">&#39;your username&#39;</span>
+$ <span class="nb">export</span> <span class="nv">DB_PASSWORD</span><span class="o">=</span><span class="s1">&#39;your password&#39;</span>
+$ mvn clean install lagom:runAll -Ddb_password<span class="o">=</span><span class="si">${</span><span class="nv">DB_PASSWORD</span><span class="si">}</span> -Ddb_user<span class="o">=</span><span class="si">${</span><span class="nv">DB_USER</span><span class="si">}</span> -Ddb_path<span class="o">=</span><span class="s2">&quot;jdbc:mysql://</span><span class="si">${</span><span class="nv">DB_ADDRESS</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">DB_PORT</span><span class="si">}</span><span class="s2">/cymphony?useSSL=false&amp;createDatabaseIfNotExist=true&amp;allowPublicKeyRetrieval=true&quot;</span> -Ddb_path_public<span class="o">=</span><span class="s2">&quot;jdbc:mysql://</span><span class="si">${</span><span class="nv">DB_ADDRESS</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">DB_PORT</span><span class="si">}</span><span class="s2">/template?useSSL=false&amp;createDatabaseIfNotExist=true&amp;allowPublicKeyRetrieval=true&quot;</span>
+</pre></div>
+</td></tr></table></div>
+<p>If everything goes well, all the back-end services will get started and you should see something like:</p>
+<a class="reference internal image-reference" href="../images/output_runall.jpg"><img alt="Output of RunAll" src="../images/output_runall.jpg" style="width: 600px;" /></a>
+</div>
+<div class="section" id="start-the-front-end">
+<h2>Start the Front-end<a class="headerlink" href="#start-the-front-end" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># go to front-end Angular project directory</span>
+ $ <span class="nb">cd</span> cymphony_frontend<span class="se">\f</span>ront-end<span class="se">\s</span>rc
+
+ <span class="c1"># start service</span>
+ $ npm start
+</pre></div>
+</td></tr></table></div>
+<p>By default, both front-end and back-end are running on your local machine. In this case, you can go to <a class="reference external" href="http://localhost:4200/">http://localhost:4200/</a> to use Cymphony.</p>
+<p>However, if you start the back-end on another server, e.g., <a class="reference external" href="http://10.4.4.80">http://10.4.4.80</a>, you need to change the configuration of the front-end at the file: <code class="docutils literal notranslate"><span class="pre">cymphony-frontend/front-end/src/proxiy.conf.json</span></code>, before starting the front-end server, as shown in the figure below.</p>
+<a class="reference internal image-reference" href="../images/conf.png"><img alt="Drag Job Option" src="../images/conf.png" style="width: 500px;" /></a>
+<p>Similarly, if you start your front-end also on another server (e.g., <a class="reference external" href="http://10.4.4.80">http://10.4.4.80</a>), instead of using <a class="reference external" href="http://localhost:4200/">http://localhost:4200/</a>, you should use <a class="reference external" href="http://10.4.4.80:4200/">http://10.4.4.80:4200/</a>.</p>
+<p>Requesters and workers can work using the front-end GUI (see <a class="reference internal" href="tutorial.html#users-tutorial"><span class="std std-ref">Tutorial: Creating a Cymphony Project</span></a>) while developers can test Cymphony services via Postman (see <a class="reference internal" href="../developers(back)/checkservices.html#developers-back-checkservices"><span class="std std-ref">Checking Service End Points</span></a>).</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tutorial.html" class="btn btn-neutral float-right" title="Tutorial: Creating a Cymphony Project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install_front.html" class="btn btn-neutral float-left" title="User Installation Guide (Front-end)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Qatar Computing Research Institute
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

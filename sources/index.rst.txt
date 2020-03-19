@@ -1,0 +1,123 @@
+.. |system| replace:: Cymphony
+
+===============================================
+Documentation for Cymphony Users and Developers
+===============================================
+
+Cymphony is an open-source crowdsourcing platform.
+
+
+Introduction
+============
+
+.. toctree::
+   :caption: Introduction
+   :maxdepth: 2
+   :hidden:
+   
+   introduction/overview
+   
+   
+:doc:`introduction/overview`
+	Understand what is |system|
+
+
+User Guide
+===========
+.. toctree::
+   :caption: Using Cymphony
+   :maxdepth: 2
+   :hidden:
+
+   users/install_back
+   users/install_front
+   users/runcommand      
+   users/tutorial
+
+:doc:`users/install_back`
+   Get |system| back-end installed on your computer
+
+:doc:`users/install_front`
+   Get |system| front-end installed on your computer
+   
+:doc:`users/runcommand`
+   How to run |system| in command line
+
+:doc:`users/tutorial`
+   Create your first |system| project via GUI
+
+
+Extending Cymphony (front-end)
+==============================
+
+.. toctree::
+   :caption: Extending Cymphony (Front-end)
+   :maxdepth: 2
+   :hidden:
+  
+   developers(front)/front
+
+:doc:`developers(front)/front`
+   Documentation for front-end developers
+
+
+Extending Cymphony (back-end)
+=============================
+
+.. toctree::
+   :caption: Extending Cymphony (Back-end)
+   :maxdepth: 2
+   :hidden:
+
+   developers(back)/architecture
+   developers(back)/executionplan
+   developers(back)/backinstall
+
+   developers(back)/runide
+   developers(back)/codestructure
+   developers(back)/checkservices
+   developers(back)/serviceexample
+   developers(back)/dbexample
+   developers(back)/sessionexample
+   developers(back)/dataflowexample
+   developers(back)/optexample
+   developers(back)/toolstack
+
+..   backend/authentication_guide
+.. backend/bundle_definition
+
+:doc:`developers(back)/architecture`
+   Introduce the system architecture of |system|
+
+:doc:`developers(back)/executionplan`
+   Understand the execution plan of |system|
+   
+:doc:`developers(back)/backinstall`
+   Clone |system| code and install auxilary tools
+
+:doc:`developers(back)/runide`
+   How to run |system| in IntelliJ
+
+:doc:`developers(back)/codestructure`
+   Understand the code structure of |system|
+
+:doc:`developers(back)/checkservices`
+   How to check all services using Postman
+
+:doc:`developers(back)/serviceexample`
+   How to create a Lagom service in |system|
+
+:doc:`developers(back)/dbexample`
+   How to query databases in |system|
+
+:doc:`developers(back)/sessionexample`
+   How different services work for a user session
+
+:doc:`developers(back)/dataflowexample`
+   See an end-to-end data flow
+
+:doc:`developers(back)/optexample`
+   How to customize |system| 
+
+:doc:`developers(back)/toolstack`
+   All tools used for building |system|

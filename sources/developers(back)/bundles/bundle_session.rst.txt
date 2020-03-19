@@ -1,0 +1,5 @@
+.. _back-bundle-definition-session:
+
+======================
+Bundle: Session
+======================

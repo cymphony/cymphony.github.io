@@ -1,0 +1,46 @@
+.. _developers(back)-toolstack:
+
+=======================================
+Tool Stack 
+=======================================
+
+.. Cymphony is an instance of `Reactive Manifesto <https://www.reactivemanifesto.org/>`_ this means that needs several components to run because the properties are challenging to follow without the help of these systems. Also at the same time, Cymphony wants to grow on the future and add new functionality, but this means modified many things on the future, for this idea Cymphony is following many protocols and not only using libraries.
+
+
+
+Java 
+---------
+
+Cymphony uses some recent Java features, especially **CompletableFuture** for asynchronous computation. If you need to modify the code relevant to it, please read the guide to `CompletableFuture <https://www.baeldung.com/java-completablefuture>`_.
+
+
+Lagom
+-------------------
+
+If you want to implement a new service in Cymphony, you need to read the following documents, and then follows the example at :ref:`developers(back)-serviceexample`.
+
+	* Introduction to `Lagom concepts <https://www.lagomframework.com/documentation/1.6.x/java/CoreConcepts.html>`_
+	* `Lagom build philosophy <https://www.lagomframework.com/documentation/1.6.x/java/BuildConcepts.html>`_ 
+	* `Splitting a system into multiple builds <https://www.lagomframework.com/documentation/1.6.x/java/MultipleBuilds.html>`_ 
+	* `Registering and discovering services <https://www.lagomframework.com/documentation/1.6.x/java/ServiceDiscovery.html>`_
+	* `Defining a Lagom build <https://www.lagomframework.com/documentation/1.6.x/java/LagomBuild.html>`_ 
+
+
+Other Tools
+----------------------
+
+
+* JPA: `Hibernate <https://hibernate.org/>`_ provides a framework for mapping an object-oriented domain model to a relational database. In Cymphony, it is configured for `MySQL`_ database
+
+* JSON parser: `JsonP <https://javaee.github.io/jsonp/>`_ : Java does not have a native JSON parser. We use Json-P for high efficiency.
+
+* Message-Queue: `Kafka <https://kafka.apache.org/>`_ : In most of the time, Lagom will hide Kafka for workers. But, in some cases, knowing how to operate on Kafka queues is helpful.
+
+* Cache: `Redis <https://redis.io/>`_ 
+
+* Orchestrator: `K8S <https://kubernetes.io/>`_ 
+
+* Project management: `Maven <https://maven.apache.org/>`_ 
+
+
+.. _MySQL: https://www.mysql.com/

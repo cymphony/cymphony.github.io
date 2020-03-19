@@ -1,0 +1,58 @@
+.. _users-install-front:
+
+====================================
+User Installation Guide (Front-end) 
+====================================
+
+Please follow the steps below:
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+    # Configure long paths
+    $ git config --system core.longpaths true
+
+    # clone the project
+    git clone https://user:pass@github.com/qcri/cymphony.git cymphony_frontend
+
+    # go to the project
+    $ cd cymphony_frontend
+
+    # Checkout to master-frontend
+    $ git checkout remotes/origin/master-frontend
+
+
+If you don't have nodejs <https://nodejs.org/en/>, install it.
+
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+    - Windows/Mac (https://nodejs.org/en/)
+    
+    - Linux
+    $ sudo apt-get install curl
+    $ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+    $ sudo apt-get install -y nodejs
+
+
+Afterwards, please restart your console and run the following commands:
+
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+
+    # move to Angular project directory
+    $ cd cymphony_frontend\front-end\src
+
+    # run npm install
+    $ npm install
+
+    # run angular cli install
+    $ npm install -g @angular/cli
+
+

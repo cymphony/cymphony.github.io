@@ -1,0 +1,161 @@
+.. _users-install-back:
+
+.. |system| replace:: Cymphony
+
+====================================
+User Installation Guide (Back-end) 
+====================================
+
+Generally speaking, an admistrator needs to install both the |system| back-end (similar to a MySQL server), and the |system| front-end (similar to a workbench for easily accessing MySQL). After both have been started, the end user will simply go to the front-end browser for defining and annotating collaborative tasks (:ref:`users-tutorial`).
+So basically, you need to install the back-end - :ref:`users-install-back` and the front-end - :ref:`users-install-front`, and start both - :ref:`users-runcommand`.
+
+
+
+Requirements
+============
+
+|system|-Builder (**cymb**) is a script that allows an easy compilation and publishing of the |system| Framework.
+
+
+Before running cymb, make sure you have the followings ready.
+
+
+1 [Obtaining a Github token.] You can obtain it by following the stpes in `Creating a personal access token for the command line <https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line>`_. When you see `${token}` in the documentation bellow, you need to put the value of the generated token.
+
+
+2 [Clone |system| repository.] Only after validating that your token is correct you can use the command below for cloning the repository.
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+    $ git clone https://${token}@github.com/qcri/cymphony-builder.git
+
+
+3 [Install docker] (If not already installed in your machine).
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+    # Ubuntu 
+    $ sudo apt-get install docker.io
+
+    # MacOs
+    https://docs.docker.com/docker-for-mac/install/
+    
+    # Windows
+    https://docs.docker.com/docker-for-windows/install/
+
+
+4 [Configure Docker Socket.] Depending on the OS installed in your machine, you need to find the correct path of the docker socket. In the case of Ubuntu and macOS Catalina, it is  
+`/var/run/docker.sock` by default.  If your OS is different, you need to edit the file `conf` and update the variable `docker_sock` with the correct path of the docker socket. 
+
+
+5 [Publish the Image] Be default, the |system| back-end will be installed on your local machine.  However, if you want to publish the images in a private repository, such as [Azure Container Registery] (https://azure.microsoft.com/en-us/services/container-registry/), you'd need to update the file `bin/settings.xml` and provide the configuration of your server:
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+    <servers>
+        <server>
+            <!--TODO is needed to set this variable with the final credential-->
+            <id>HERE_HOST</id>
+            <username>HERE_USER</username>
+            <password>HERE_PASSWORD</password>
+        </server>
+    </servers>
+    
+
+
+.. note:: If you are using Azure or a similar enviroment, make sure to be logged in to your environment before executing anything.
+
+
+.. note:: The file `./VERSION`  allows the generation of different versions of cymb. However, if the version is not updated and there is an image with that version, the image will not be generated, except in the case you build again using the script `./build`. The script `./build` will overwrite the image, not considering any validation.
+
+Install by cymb (recommended)
+=========================================
+
+Now, you are ready to install |system|. To install it in one command line, please do:
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+	
+    $ ./cymb full ${token}
+
+
+.. note:: This step may fail in the publication of the images in the repository server if you did not provide a configuration of the server in the Requirements (1).
+
+
+Install Step by Step
+==============================
+
+Alternatlively, if you don't want to use cymb and want to execute the script step by step, you need to follow the steps bellow:
+
+
+1 [Cloning the repository of code.] For cloning a fresh copy of the repository, you need to execute the following command using the token generated in Requirement (1):
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+    $ ./cymb clone ${token}
+
+
+2 [Pulling the code.] Pulling the last version of the |system| code, you can use the command bellow
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+    $ ./cymb pull
+
+
+.. note:: The command can fail if the token that was provided in the last compilation is not valid. If that happens, please clone again the project providing a new token.
+
+
+3. 【Compiling the code.】 Compiling the code also generates the images of the containers.
+
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+    $ ./cymb compile
+
+
+You can validate this using the next command 
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+	
+    $ docker images
+
+If everything goes well, you will see something like this
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+	
+    REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+    cymphony-service-util-file   1.0-SNAPSHOT        5cfbb1d23d39        About an minute ago   187MB
+    cymphony-service-util-file   latest              5cfbb1d23d39        About an minute ago   187MB
+    cymphony-service-users       1.0-SNAPSHOT        20eabdbf49f3        About an minute ago   186MB
+    cymphony-service-users       latest              20eabdbf49f3        About an minute ago   186MB
+    cymphony-service-projects    1.0-SNAPSHOT        3cc345d78f2f        About an minute ago   186MB
+    cymphony-service-projects    latest              3cc345d78f2f        About an minute ago   186MB
+    cymphony-service-session     1.0-SNAPSHOT        21790b35609e        About an minute ago   186MB
+    cymphony-service-session     latest              21790b35609e        About an minute ago   186MB
+    .....
+
+4. 【Publishing the images.】 You can publish your created images using the command bellow:
+
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+	
+    $ ./cymb publish

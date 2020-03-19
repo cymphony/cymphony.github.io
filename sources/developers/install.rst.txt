@@ -1,0 +1,45 @@
+.. _developers-install:
+
+==================
+Installation guide
+==================
+
+Back End
+============================
+
+**Option 1**: Use the script: [https://github.com/qcri/cymphony-builder]
+
+**Option 2**: Follow the below steps:
+
+* Install Apache Maven: http://maven.apache.org/install.html 
+* Install Redis 3 or more: https://redis.io/download 
+* Install MySQL 8 or more: https://dev.mysql.com/downloads/
+* Start Redis: https://redis.io/topics/quickstart
+* In MySQL:
+    * Create databases named "test" and "public" in MySQL: 
+        .. image:: images/databases.png
+            :alt: created databases
+    * Start MySQL, on a port of your choice. 
+        Using this command for example: ``mysql -h 127.0.0.1 -P 3306 -u root -p``
+* Go to Cymphony/back-end/src and run:
+    * ``mvn clean install lagom:runAll -Ddb_password=<your_password> -Ddb_user=<your_username> -Ddb_path=jdbc:mysql://localhost:<port_number>/test?useSSL=false -DskipTests``
+    * If everything goes well, all the back-end services will get started and you should see something like:
+        .. image:: images/output_runall.jpg
+            :width: 600
+            :alt: Output of RunAll
+
+Checking the working of service end points
+===========================================
+
+* Download and install Postman: https://www.postman.com/downloads/
+* Download these project configuration files intended for postman. :download:`environment file <_files/cymphony.postman_environment.json>` and :download:`collection file <_files/cymphony.postman_collection.json>`
+* Open Postman, and click Import 
+    .. image:: images/postman_import.jpg
+            :alt: Import button
+* Import both configuration files.
+* Chooose the cymphony environment. 
+    .. image:: images/cymphony_env.jpg
+            :alt: Environment option
+* You can open a service of your choice and send requests.
+    .. image:: images/side_tab.jpg
+            :alt: Collections tab

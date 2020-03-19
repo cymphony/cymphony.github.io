@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Checking Service End Points &mdash; Cymphony Documentation 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../static/jquery.js"></script>
+        <script type="text/javascript" src="../static/underscore.js"></script>
+        <script type="text/javascript" src="../static/doctools.js"></script>
+        <script type="text/javascript" src="../static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example: Creating a Lagom Service" href="serviceexample.html" />
+    <link rel="prev" title="Cymphony Coding Code of Conduct" href="codestructure.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cymphony Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Cymphony at a Glance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#basic-terminologies">Basic Terminologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-job">A Cymphony Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-workflow">A Cymphony Workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using Cymphony</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../users/install_back.html">User Installation Guide (Back-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/install_front.html">User Installation Guide (Front-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/runcommand.html">Run from Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/tutorial.html">Tutorial: Creating a Cymphony Project</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Front-end)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#registration">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#login">Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#list">List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#create">Create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#monitor">Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#show">Show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#annotation">Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#used-services">Used Services</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Back-end)</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Event-driven Microservice Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="executionplan.html">Execution Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backinstall.html">Developer Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runide.html">Run from IDE (IntelliJ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codestructure.html">Cymphony Coding Code of Conduct</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Checking Service End Points</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cymphony-services">Cymphony Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#service-create-user">Service: Create User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#service-algorithm-get">Service: Algorithm Get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#service-login">Service: login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#service-create-project">Service: create project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#service-update-workflow">Service: Update workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#service-project-execute">Service: Project Execute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#service-register-worker">Service: Register Worker</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="serviceexample.html">Example: Creating a Lagom Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dbexample.html">Example: Querying Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sessionexample.html">Example: User Session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataflowexample.html">Example: Work/Data Flow (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optexample.html">Example: Customization (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="toolstack.html">Tool Stack</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cymphony Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Checking Service End Points</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/developers(back)/checkservices.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="checking-service-end-points">
+<span id="developers-back-checkservices"></span><h1>Checking Service End Points<a class="headerlink" href="#checking-service-end-points" title="Permalink to this headline">¶</a></h1>
+<p>When the Cymphony server is running (see <span class="xref std std-ref">developers(back)-runcommand</span> or <a class="reference internal" href="runide.html#developers-back-runide"><span class="std std-ref">Run from IDE (IntelliJ)</span></a>), you can test services by sending them http calls using Postman.</p>
+<ul class="simple">
+<li><p>Download and install <a class="reference external" href="https://www.postman.com/">Postman</a>.</p></li>
+<li><p>Download these project configuration files intended for postman.</p></li>
+</ul>
+<p><a class="reference download internal" download="" href="../downloads/c20320a09c667271af11e5e9a98affc0/cymphony.postman_environment.json"><code class="xref download docutils literal notranslate"><span class="pre">environment</span> <span class="pre">file</span></code></a>
+<a class="reference download internal" download="" href="../downloads/8c4d6dea443244dd5934244bcda3cd01/cymphony.postman_collection.json"><code class="xref download docutils literal notranslate"><span class="pre">collection</span> <span class="pre">file</span></code></a></p>
+<ul class="simple">
+<li><p>Open <strong>Postman</strong> on your computer, and click <strong>Import</strong>:</p></li>
+</ul>
+<img alt="Import button" src="../images/postman_import.jpg" />
+<ul class="simple">
+<li><p>Import both configuration files.</p></li>
+<li><p>Chooose the cymphony environment, as shown in the figure below.</p></li>
+</ul>
+<img alt="Environment option" src="../images/cymphony_env.jpg" />
+<div class="section" id="cymphony-services">
+<h2>Cymphony Services<a class="headerlink" href="#cymphony-services" title="Permalink to this headline">¶</a></h2>
+<p>Cymphony has 11 services: <code class="docutils literal notranslate"><span class="pre">cymphony-bundle-job-constraints</span></code>, <code class="docutils literal notranslate"><span class="pre">cymphony-bundle-job-monitor</span></code>, <code class="docutils literal notranslate"><span class="pre">cymphony-bundle-job-project</span></code>, <code class="docutils literal notranslate"><span class="pre">cymphony-bundle-job-resources</span></code>, <code class="docutils literal notranslate"><span class="pre">cymphony-bundle-session</span></code>, <code class="docutils literal notranslate"><span class="pre">cymphony-bundle-user</span></code>, <code class="docutils literal notranslate"><span class="pre">cymphony-bundle-util-email</span></code>, <code class="docutils literal notranslate"><span class="pre">cymphony-bundle-util-file</span></code>, <code class="docutils literal notranslate"><span class="pre">cymphony-bundle-util-invitation</span></code>, and <code class="docutils literal notranslate"><span class="pre">cymphony-bundle-util-log</span></code>.</p>
+<p>Below we show that how most services can be tested.</p>
+</div>
+<div class="section" id="service-create-user">
+<h2>Service: Create User<a class="headerlink" href="#service-create-user" title="Permalink to this headline">¶</a></h2>
+<p>Under <code class="code docutils literal notranslate"><span class="pre">cymphony/Service/User/Create</span> <span class="pre">User</span></code>, click <strong>Send</strong> button:</p>
+<img alt="Collections tab" src="../images/post1.png" />
+<p>Now, you can see the info in the <code class="code docutils literal notranslate"><span class="pre">user</span></code> table, under mysql <code class="code docutils literal notranslate"><span class="pre">test</span></code> database</p>
+<img alt="Collections tab" src="../images/post1db.png" />
+</div>
+<div class="section" id="service-algorithm-get">
+<h2>Service: Algorithm Get<a class="headerlink" href="#service-algorithm-get" title="Permalink to this headline">¶</a></h2>
+<p>This is to get the seed for the encrypted password.</p>
+<p>Under <code class="code docutils literal notranslate"><span class="pre">cymphony/Service/Session/Algortim</span> <span class="pre">Get</span></code>, click <strong>Send</strong> button; while, there is no database operation for this.</p>
+<img alt="Collections tab" src="../images/post2.png" />
+</div>
+<div class="section" id="service-login">
+<h2>Service: login<a class="headerlink" href="#service-login" title="Permalink to this headline">¶</a></h2>
+<p>This is for a requester to sign in.</p>
+<p>Under <code class="code docutils literal notranslate"><span class="pre">cymphony/Service/Session/login</span></code>, click <strong>Send</strong> button:</p>
+<img alt="Collections tab" src="../images/post3.png" />
+</div>
+<div class="section" id="service-create-project">
+<h2>Service: create project<a class="headerlink" href="#service-create-project" title="Permalink to this headline">¶</a></h2>
+<p>This is for a requester to create a project. The two files, <code class="code docutils literal notranslate"><span class="pre">JobExtractInput.csv</span></code> and <code class="code docutils literal notranslate"><span class="pre">Workers.csv</span></code>, are in folder <code class="code docutils literal notranslate"><span class="pre">cymphony/back-end/resources</span></code>.</p>
+<p>Under <code class="code docutils literal notranslate"><span class="pre">cymphony/Service/Util/File/upload</span> <span class="pre">file</span></code>, click <strong>Send</strong> button:</p>
+<img alt="Collections tab" src="../images/post5.png" />
+<p>Now, you can see the info in the <code class="code docutils literal notranslate"><span class="pre">file_uploaded</span></code> and <code class="code docutils literal notranslate"><span class="pre">file_uploaded_data</span></code> tables.</p>
+<img alt="Collections tab" src="../images/post5db.png" />
+</div>
+<div class="section" id="service-update-workflow">
+<h2>Service: Update workflow<a class="headerlink" href="#service-update-workflow" title="Permalink to this headline">¶</a></h2>
+<p>This is for a requester to upload a cymphony workflow.</p>
+<p>Under <code class="code docutils literal notranslate"><span class="pre">cymphony/Service/Project/Upload</span> <span class="pre">workflow</span></code>, click <strong>Send</strong> button:</p>
+<img alt="Collections tab" src="../images/post6.png" />
+<p>This workflow is now in the <code class="code docutils literal notranslate"><span class="pre">project</span></code> table, the <code class="code docutils literal notranslate"><span class="pre">workflow</span></code> column</p>
+<img alt="Collections tab" src="../images/post6db.png" />
+</div>
+<div class="section" id="service-project-execute">
+<h2>Service: Project Execute<a class="headerlink" href="#service-project-execute" title="Permalink to this headline">¶</a></h2>
+<p>Under <code class="code docutils literal notranslate"><span class="pre">cymphony/Service/Project/Project</span> <span class="pre">Execute</span></code>, click <strong>Send</strong> button:</p>
+<img alt="Collections tab" src="../images/post7.png" />
+<p>For each job node in the workflow, Cymphony will create a database with many tables, such as the <code class="code docutils literal notranslate"><span class="pre">job_cfxxkgs</span></code> on the left top of the figure below.
+The schema of these tables in this database are copied from the <code class="code docutils literal notranslate"><span class="pre">public</span></code> database; that is, <code class="code docutils literal notranslate"><span class="pre">public</span></code> is a template of table schemas and all job databases will copy from.</p>
+<img alt="Collections tab" src="../images/post7db.png" />
+</div>
+<div class="section" id="service-register-worker">
+<h2>Service: Register Worker<a class="headerlink" href="#service-register-worker" title="Permalink to this headline">¶</a></h2>
+<p>Under <code class="code docutils literal notranslate"><span class="pre">cymphony/Service/Job/Project/ProfileWorker/Register</span> <span class="pre">Worker</span></code>, click <strong>Send</strong> button:</p>
+<img alt="Collections tab" src="../images/post8.png" />
+<p>It will insert data into the <code class="code docutils literal notranslate"><span class="pre">profile_worker</span></code> table.</p>
+<img alt="Collections tab" src="../images/post8db.png" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="serviceexample.html" class="btn btn-neutral float-right" title="Example: Creating a Lagom Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="codestructure.html" class="btn btn-neutral float-left" title="Cymphony Coding Code of Conduct" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Qatar Computing Research Institute
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+.. _users-runcommand:
+
+.. |system| replace:: Cymphony
+
+
+===================================
+Run from Command Line
+===================================
+
+Start the Back-end
+===================================
+
+1. **Start Redis.** If you have already installed Redis and added the folder "redis-5.0.7/src" to your system path,  the simplest way to start is below.
+For more details about installing Redis, please read start `redis <https://redis.io/topics/quickstart>`_.
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+    $ redis-server
+
+
+2. **Start MySQL.** On a port of your choice, using this command for example: 
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+   $ mysql -h 127.0.0.1 -P 3306 -u root -p
+
+
+Of course, you can also use a GUI to start a MySQL server.
+
+
+.. note:: Don't forget to check whether port 9000 is being used by other apps, because it is needed for MySQL and Redis.
+
+3. **Start All Cymphony Services.** 
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 1-4
+  
+   # go to Cymphony back-end folder
+   $ cd Cymphony/back-end/src
+   $ export DB_ADDRESS=localhost
+   $ export DB_PORT=3306
+   $ export DB_USER='your username'
+   $ export DB_PASSWORD='your password'
+   $ mvn clean install lagom:runAll -Ddb_password=${DB_PASSWORD} -Ddb_user=${DB_USER} -Ddb_path="jdbc:mysql://${DB_ADDRESS}:${DB_PORT}/cymphony?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true" -Ddb_path_public="jdbc:mysql://${DB_ADDRESS}:${DB_PORT}/template?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true"
+
+If everything goes well, all the back-end services will get started and you should see something like:
+
+.. image:: ./images/output_runall.jpg
+    :width: 600
+    :alt: Output of RunAll
+
+
+Start the Front-end
+===================================
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+
+    # go to front-end Angular project directory
+    $ cd cymphony_frontend\front-end\src
+
+    # start service
+    $ npm start
+
+By default, both front-end and back-end are running on your local machine. In this case, you can go to http://localhost:4200/ to use Cymphony.
+
+However, if you start the back-end on another server, e.g., http://10.4.4.80, you need to change the configuration of the front-end at the file: ``cymphony-frontend/front-end/src/proxiy.conf.json``, before starting the front-end server, as shown in the figure below.
+
+.. image:: images/conf.png
+   :width: 500
+   :alt: Drag Job Option
+
+
+Similarly, if you start your front-end also on another server (e.g., http://10.4.4.80), instead of using http://localhost:4200/, you should use http://10.4.4.80:4200/.
+
+
+Requesters and workers can work using the front-end GUI (see :ref:`users-tutorial`) while developers can test |system| services via Postman (see :ref:`developers(back)-checkservices`).

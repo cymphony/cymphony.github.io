@@ -1,0 +1,9 @@
+.. _developers(back)-dataflowexample:
+
+======================================
+Example: Work/Data Flow (TOADD)
+======================================
+
+We will show the simplest case of a Cymphony workflow. A requester defines a workfow with only one job node. In the job node, the requestor only invites one worker to annoate one tuple as true or false. 
+
+We will print the sequence of all functions invoked, as well as the input/output of each function. The main purpose is to clearly show that how Cymphony works using a running example.

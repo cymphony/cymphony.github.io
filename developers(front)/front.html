@@ -1,0 +1,1104 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview &mdash; Cymphony Documentation 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../static/jquery.js"></script>
+        <script type="text/javascript" src="../static/underscore.js"></script>
+        <script type="text/javascript" src="../static/doctools.js"></script>
+        <script type="text/javascript" src="../static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Event-driven Microservice Architecture" href="../developers(back)/architecture.html" />
+    <link rel="prev" title="Tutorial: Creating a Cymphony Project" href="../users/tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cymphony Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Cymphony at a Glance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#basic-terminologies">Basic Terminologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-job">A Cymphony Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-workflow">A Cymphony Workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using Cymphony</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../users/install_back.html">User Installation Guide (Back-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/install_front.html">User Installation Guide (Front-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/runcommand.html">Run from Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/tutorial.html">Tutorial: Creating a Cymphony Project</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Front-end)</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#registration">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#login">Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#list">List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#create">Create</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-editor">Workflow Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#forms-filling-space">Forms filling space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#default-layout">Default Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#monitor">Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#show">Show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#annotation">Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#used-services">Used Services</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Back-end)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/architecture.html">Event-driven Microservice Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/executionplan.html">Execution Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/backinstall.html">Developer Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/runide.html">Run from IDE (IntelliJ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/codestructure.html">Cymphony Coding Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/checkservices.html">Checking Service End Points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/serviceexample.html">Example: Creating a Lagom Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/dbexample.html">Example: Querying Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/sessionexample.html">Example: User Session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/dataflowexample.html">Example: Work/Data Flow (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/optexample.html">Example: Customization (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(back)/toolstack.html">Tool Stack</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cymphony Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/developers(front)/front.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="overview">
+<span id="developers-front"></span><h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>In this section, we will review the front-end with a focus on the system components and interactions as well as the complete services used to construct this solution. It is strongly recommended to read the <a class="reference internal" href="../users/tutorial.html#users-tutorial"><span class="std std-ref">Tutorial: Creating a Cymphony Project</span></a> to have an understanding of the functionalities Cymphony provides.</p>
+<p>Also, the developers should have experience of using <a class="reference external" href="https://angular.io/">Angular</a> as a basis to extend the Cymphony front-end.</p>
+</div>
+<div class="section" id="registration">
+<h1>Registration<a class="headerlink" href="#registration" title="Permalink to this headline">¶</a></h1>
+<p>The registration process is managed by the component <a class="reference external" href="https://github.com/qcri/cymphony/blob/master/front-end/src/src/app/views/register/register.component.ts">RegisterComponent</a>.</p>
+<p>The view of this component presents a form with the following fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>username, email, first name, last name, password, and confirmpassword.</p></li>
+</ul>
+</div></blockquote>
+<p>Once the user submits the form, the component checks that &lt;password&gt; and &lt;confirmpassword&gt; are the same. Then, using the function createAccount in <a class="reference external" href="https://github.com/qcri/cymphony/blob/master/front-end/src/src/app/services/info-searcher.service.ts">InfoSearcherService</a>, it makes an API call to the backend: <cite>http://SERVER:PORT/api/user/new</cite>.</p>
+<p>This API will respond with the server result about registering the user. Afterwards, the system calls <a class="reference external" href="https://github.com/qcri/cymphony/blob/master/front-end/src/src/app/services/registration-response.service.ts">RegistrationResponseService</a> by filling an entry in the Queue “answerRegistrationProcessQueue$”. The RegisterComponent will consume this Queue, in case it reads a new entry it will redirect to the LoginComponent.
+If it receives an error, it will show an Alert to the user with the detected error.</p>
+</div>
+<div class="section" id="login">
+<h1>Login<a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h1>
+<p>The Login starts with a typical Sign In Form. All the logic relative to the submission process is included in the Angular Component <a class="reference external" href="https://github.com/qcri/cymphony/blob/master/front-end/src/src/app/views/login/login.component.ts">LoginComponent</a>.</p>
+<p>The Structure of the form has the following structure:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="nv">loginForm</span> <span class="o">=</span> new FormGroup<span class="o">({</span>
+     user: new FormControl<span class="o">(</span><span class="s1">&#39;&#39;</span><span class="o">)</span>,
+     password: new FormControl<span class="o">(</span><span class="s1">&#39;&#39;</span><span class="o">)</span>,
+     role: new FormControl<span class="o">(</span><span class="s1">&#39;&#39;</span><span class="o">)</span>,
+  <span class="o">})</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>During Login, the User must fill a form with 3 inputs: user, password and role.
+The two parameters user and password represent the User credetials and are validated by the backend.
+The last parameter, roel,  indicates the profile for the current Session, which has important consequences on the Services the System will provide to the User.</p>
+<p>As soon as the User submits the form, Cymphony validates each provided input and then calls the sessionRequest function in <a class="reference external" href="https://github.com/qcri/cymphony/blob/master/front-end/src/src/app/services/session.service.ts">SessionService</a>.</p>
+<p>SessionService.sessionRequest receives the credentials of the User and does the following actions.
+First, it generates an API call to the backend: <cite>http://SERVER:PORT/api/session/getalgorithm</cite>.</p>
+<p>This GET Request replies with a Cipher Algorithm Name, a seed and a token. The idea is to encrypt the provided Password using the Algorithm that the Server responded with. We can integrate new Cipher Algorithms by just declaring the algorithm in the subscription of this API Call.</p>
+<p>After we encrypt the provided Pass with the Algorithm, the System will generate another API Call: <cite>http://SERVER:PORT/api/session/login</cite>.</p>
+<p>This is a POST Request that sends the processed credentials and the Cipher token used. The Server will reply by generating the Session for the User future requests and the User UUID to generate these Requests.</p>
+<p>Finally, the LoginComponent is observing a Queue declared in the SessionService. When the SessionService generates the Session, it adds in this Queue an entry with the UUID. The Login will get this entry and proceed by filling the CookieService with all the information relative to the Session. Then the System will route the User to the ListComponent described in this document.</p>
+<p>In case the Session is denied, another Queue is used to notify this event to the LoginComponent, and inform the User.</p>
+</div>
+<div class="section" id="list">
+<h1>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h1>
+<p>This view presents the User wiht all the avaialble Projects and options, based on the User Profile and the current state of the Projects the User is involved in. The component in charge of this functionality is  <a class="reference external" href="https://github.com/qcri/cymphony/blob/master/front-end/src/src/app/views/workflow/list/list.component.ts">ListComponent</a>.</p>
+<p>At the beginning, the component gets all the data related to the projects that the user is involved in.
+There are two possible API calls in the Service InfoSearcherService, depending on what the profile was set to, for  “Requester”, <cite>http://SERVER:PORT/api/repository/project/profile/requester/project/list</cite>
+and for “Worker”, <cite>http://SERVER:PORT/api/repository/project/profile/worker/job/list</cite>.</p>
+<p>For front-end purposes, this calls just provide different sets of Projects with different structures.
+The methods in InfoSearcherService called “projectsOfRequester” and “projectsOfWorker” are in charge of this process.
+Whenever this process gets the data, they put it in two different Queues. The ListComponent is observing these Queues, consuming the new entries.</p>
+<p>The projects from Requester and Worker have  different structures.
+So, we have two different consumers that convert these different entries into unified columns:</p>
+<p>“id”: Project ID
+“name”: Project Name
+“created_at”: Date of Creation
+“created_by”: Name of Creator
+“status”: Current Status
+“editable”: Boolean that enables Edition</p>
+<p>In ListComponent, there is a subscription to the Queues listening to new Entries in InfoSearcherService.
+Both of them after processing the entries into the correct format, clear the ng-template #viewProjListRef.
+This Angular directive allows us to insert components inside of the current one in an independent fashion; this contained component will have their own view and behavior. After clearing this directive, the System uses ComponentFactoryResolver to create a new CymphonyTableComponent using #viewProjListRef.</p>
+<ul class="simple">
+<li><p>CymphonyTableComponent:  This Component encapsulates all the operations to draw and manage the List of Projects and show them to the User.  The ListComponent just provides the Data and channels the External Actions requested by the User using the CymphonyTableComponent.</p></li>
+</ul>
+<p>The ListComponent provides the projects information to CymphonyTableComponent using the Service <a class="reference external" href="https://github.com/qcri/cymphony/blob/master/front-end/src/src/app/services/datatable-populate.service.ts">DatatablePopulateService</a>.
+Specifically, the function generateRequestFillTable fills the Queue that has being consumed by CymphonyTableComponent.
+If we look at the CymphonyTableComponent, we will see something like:</p>
+<img alt="Cymphony-Table" src="../images/cymphonytable.PNG" />
+<p>The actions at the end of each Row are redirected to the ListComponent by DatatablePopulateService using the Queue “orderFromFillTable”.</p>
+<p>There are six different actions for each project, which are available based on each Project status:</p>
+<p>Edit:       Takes the Workflow associated with the selected Project and Store it in the SessionStorage cookie as “project”. It then opens the CreateComponent.
+Execute:    Using InfoSearcherService calls the API <cite>http://SERVER:PORT/api/repository/project/project/execute/{Project ID}</cite>. This executes the selected project.
+Monitor:    Takes the Workflow associated with the selected Project and Store it in the SessionStorage cookie as “project”. It then opens the MonitorComponent.
+Delete:     “NOT YET”, Delete the current Project in the Database.
+List:       Stores the information about the Project ID, Name and all Jobs associated with the User  in SessionStorage cookie. It then opens the ShowComponent.
+Quit:       “NOT YET”, Current User left all the Jobs in the current Project.</p>
+<p>The ListComponent screen has the option to create a new Project, this button just calls the function “goto”.
+This one removes the entry “project” in SessionStorageService cookie and opens the CreateComponent.</p>
+</div>
+<div class="section" id="create">
+<h1>Create<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h1>
+<p>This functionality is provided by the component <a class="reference external" href="https://github.com/qcri/cymphony/blob/master/front-end/src/src/app/views/workflow/create/create.component.ts">CreateComponent</a>.  The component View is composed in the Developer perspective of three Sections, namely <a class="reference internal" href="#workflow-editor"><span class="std std-ref">Workflow Editor</span></a>, <a class="reference internal" href="#forms-filling-space"><span class="std std-ref">Forms filling space</span></a>, and <a class="reference internal" href="#default-layout"><span class="std std-ref">Default Layout</span></a></p>
+<div class="section" id="workflow-editor">
+<h2>Workflow Editor<a class="headerlink" href="#workflow-editor" title="Permalink to this headline">¶</a></h2>
+<p>This Section corresponds to the first square at the top of the User Interface and consists ogf an Editor to draw a Workflow of Operations.
+This Section exposes all the necessary elements to prepare a Directed acyclic graph (DAG).</p>
+<p>To start with the process of creating a workflow, Cymphony presents three buttons, one per kind of Operation Cymphony supports.
+The IDs of these buttons correspond to #createjob, #createsql and #createsample. These buttons allow the User to Drag and Drop them generating new Components on the screen. Every component is Draggable using the External Component “AngularDraggableModule”.</p>
+<p>These buttons will produce a new node for our DAG, so we will call them “Node Producer”. If you check the HTML code of one button you will find something like this:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span> &lt;button ngDraggable mat-fab
+     <span class="nv">id</span><span class="o">=</span><span class="s2">&quot;createjob&quot;</span> <span class="c1">#createjob class=&quot;node-printer&quot;</span>
+     <span class="o">[</span>bounds<span class="o">]=</span><span class="s2">&quot;myBounds&quot;</span>
+     <span class="o">[</span>inBounds<span class="o">]=</span><span class="s2">&quot;true&quot;</span>
+     <span class="o">[</span>position<span class="o">]=</span><span class="s2">&quot;position&quot;</span>
+     <span class="o">(</span>endOffset<span class="o">)=</span><span class="s2">&quot;onMoveEnd(</span><span class="nv">$event</span><span class="s2">, &#39;job&#39;)&quot;</span>
+ &gt;JOB&lt;/button&gt;
+</pre></div>
+</td></tr></table></div>
+<p>The (endOffset) declared function is triggered when the User drops this button. Let’s take a look at the function “onMoveEnd”.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52</pre></div></td><td class="code"><div class="highlight"><pre><span></span> /*Drop of a <span class="s2">&quot;Node producer&quot;</span> in the screen*/
+ onMoveEnd<span class="o">(</span><span class="nv">$event</span>: IPosition, type: string<span class="o">)</span> <span class="o">{</span>      //Receive the drop position and the kind of Node we   will generate <span class="o">(</span>Job, SQL or Sample<span class="o">)</span>.
+
+     /*we store the current position and <span class="k">then</span> <span class="k">return</span> it to the original position*/
+     this.endOffset.x <span class="o">=</span> <span class="nv">$event</span>.x<span class="p">;</span>
+     this.endOffset.y <span class="o">=</span> <span class="nv">$event</span>.y<span class="p">;</span>
+     this.position <span class="o">=</span> <span class="o">{</span>x: <span class="m">0</span>, y: <span class="m">0</span><span class="o">}</span><span class="p">;</span>
+
+     /*Regarding the <span class="nb">type</span> of Node, we Set Up the factory*/
+     <span class="nb">let</span> nodesFactory<span class="p">;</span>
+     <span class="nb">let</span> componentRef<span class="p">;</span>
+     <span class="nb">let</span> typeNodeIndex<span class="p">;</span>
+     <span class="nb">let</span> diff: <span class="nv">number</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>     //This is just to correct the position due the height of the Angular Material Button
+     <span class="k">if</span> <span class="o">(</span><span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;job&#39;</span><span class="o">)</span> <span class="o">{</span>
+         <span class="nv">nodesFactory</span> <span class="o">=</span> this.factoryResolver.resolveComponentFactory<span class="o">(</span>JobComponent<span class="o">)</span><span class="p">;</span>
+         <span class="nv">componentRef</span> <span class="o">=</span> this.nodesViewRef.createComponent<span class="o">(</span>nodesFactory<span class="o">)</span><span class="p">;</span>
+         <span class="nv">typeNodeIndex</span> <span class="o">=</span> ++this.jobMaxIndex<span class="p">;</span>
+     <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;sql&#39;</span><span class="o">)</span> <span class="o">{</span>
+         <span class="nv">nodesFactory</span> <span class="o">=</span> this.factoryResolver.resolveComponentFactory<span class="o">(</span>SqlComponent<span class="o">)</span><span class="p">;</span>
+         <span class="nv">componentRef</span> <span class="o">=</span> this.nodesViewRef.createComponent<span class="o">(</span>nodesFactory<span class="o">)</span><span class="p">;</span>
+         <span class="nv">typeNodeIndex</span> <span class="o">=</span> ++this.sqlMaxIndex<span class="p">;</span>
+         <span class="nv">diff</span> <span class="o">=</span> <span class="m">56</span><span class="p">;</span>              // Hardcode adjustment of the position
+     <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;sample&#39;</span><span class="o">)</span> <span class="o">{</span>
+         <span class="nv">nodesFactory</span> <span class="o">=</span> this.factoryResolver.resolveComponentFactory<span class="o">(</span>SampleComponent<span class="o">)</span><span class="p">;</span>
+         <span class="nv">componentRef</span> <span class="o">=</span> this.nodesViewRef.createComponent<span class="o">(</span>nodesFactory<span class="o">)</span><span class="p">;</span>
+         <span class="nv">typeNodeIndex</span> <span class="o">=</span> ++this.sampleMaxIndex<span class="p">;</span>
+         <span class="nv">diff</span> <span class="o">=</span> <span class="m">112</span><span class="p">;</span>             // Hardcode adjustment of the position
+     <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+         console.error<span class="o">(</span><span class="s2">&quot;Unknown kind of node!&quot;</span><span class="o">)</span><span class="p">;</span>
+     <span class="o">}</span>
+     /* Creating a new Node with the factory*/
+     const <span class="nv">currentNodeComponent</span> <span class="o">=</span> componentRef.instance<span class="p">;</span>
+     currentNodeComponent.selfRef <span class="o">=</span> currentNodeComponent<span class="p">;</span>
+
+     // ID index and nodesViewRef position to delete
+     currentNodeComponent.index <span class="o">=</span> this.nodeMaxIndex++<span class="p">;</span>
+     currentNodeComponent.drawArea <span class="o">=</span> this<span class="p">;</span>
+     currentNodeComponent.preTittle <span class="o">=</span> <span class="nb">type</span> + <span class="s2">&quot; &quot;</span> + typeNodeIndex + <span class="s2">&quot;: Untitled&quot;</span><span class="p">;</span>
+     this.nodeListReferences.push<span class="o">(</span>componentRef<span class="o">)</span><span class="p">;</span>
+
+     /*Move to the last position of the NodeCreate Button*/
+     currentNodeComponent.moveTo<span class="o">(</span>this.endOffset.x, this.endOffset.y + diff<span class="o">)</span><span class="p">;</span>
+
+     /*Create the FormLabel, the NodeForm and store the configuration*/
+     this.askLabelsForNewNode<span class="o">(</span>
+         <span class="s1">&#39;node_&#39;</span> + currentNodeComponent.index,
+         this.getFormsByNodeType<span class="o">(</span><span class="nb">type</span><span class="o">)</span>,
+         currentNodeComponent.preTittle,
+         type,
+         <span class="o">{</span>x: this.endOffset.x, y:this.endOffset.y + diff<span class="o">}</span>
+     <span class="o">)</span><span class="p">;</span>
+ <span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The code works as follows:</p>
+<ol class="arabic simple">
+<li><p>Save the positions to assign later to our Node to generate.</p></li>
+</ol>
+<p>2. With a factory, we generate a Component based on the type of the component that was dropped,
+namely JobComponent, SqlComponent and SampleComponent. All of them represent a Node in the Editor.</p>
+<ol class="arabic simple" start="3">
+<li><p>The System  assignes an Index, Context and a predefined title to the new Node. Also, the Node is moved to the Drop position.</p></li>
+<li><p>Finally, the function askLabelsForNewNode is called. This one proceeds with two main objectives:</p></li>
+</ol>
+<ul>
+<li><p>Generation of a NodeForm: A NodeForm is a Logical structure associated with a Node and contains all of its information such as forms filled by User and references to Preceeding Nodes. After the NodeForm is created, this structure will be Used to Execute, ReDraw and Monitor the Node. The NodeForms are stored in a Map called “nodesSettingMap” where the key of each node is its  ID. The structure of the FormNodes is the next:</p>
+<blockquote>
+<div><p>_node_id: string;                       : Node ID.
+_form_list: string[];                   : List of all the forms the User needs to fill. The forms are provided by FormsNodeModule.
+_node_tittle: string;                   : Node Title Defined by the User.
+_forms_fill: Map&lt;string, any&gt;;          : All the Forms in “_form_list” with the associated Form type of Component.
+_forms_current_conf: Map&lt;string, {}&gt;;   : All the Forms in “_form_list” with Form filled by the User as a JSON.
+_node_kind: string;                     : Kind of Node
+_position: {x: number, y: number};      : Position in the screen to Redraw the DAG.
+_predecessors: string[];                : Nodes which preceed  this Node.</p>
+<ul class="simple">
+<li><p>Check the FAQ Section to see in details how to add new forms to a Node Type, or customize one form with new inputs. (FormMap &amp; CreateComponent.getFormsByNodeType(type: string))</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>..Rodrigo, where is the FAQ Section?</p>
+<ul>
+<li><p>Generation of a FormLabel: A FormLabel is a component associated with a specific Node to inform the User in the Editor scene about all forms that need to be filled. The <a class="reference external" href="https://github.com/qcri/cymphony/blob/master/front-end/src/src/app/containers/form-label/form-label.component.ts">Form label component</a> has the following appearance:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../images/FormLabels.PNG"><img alt="Form Label" src="../images/FormLabels.PNG" style="width: 250px;" /></a>
+<p>The purple header correspond to the “holder” ElementRef in the FormLabelComponent. Its basic purpose is to inform the associated Node and show the Status of the Node; if the Node is Purple there are still some Forms to fill, if the Node becomes Green the node is ready to be Executed.</p>
+<p>The next white blocks surrounded by the red square represent the forms, each entry corresponds to a specific Form. This part is managed by the FormLabelComponent as the “label” ElementRef. Every entry shows the Name of the Form it is representing. When the User clicks on  this forms,  the service CallFormService is called adding a new entry in the Queue “requestFormPush”. The CreateComponent is consuming this Queue, drawing on the lower part of the screen the Form that was clicked.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span></span> /*CreateComponent consuming the requestFormPush Queue*/
+ this.callForm.requestFormPushQueue$.subscribe<span class="o">(</span>
+     <span class="o">(</span>t : <span class="o">[</span>string, string<span class="o">])</span> <span class="o">=</span>&gt; <span class="o">{</span>
+
+         <span class="nb">let</span> <span class="nv">currentNode</span> <span class="o">=</span> t<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="p">;</span>
+         <span class="nb">let</span> <span class="nv">currentForm</span> <span class="o">=</span> t<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="p">;</span>
+
+         /*We need to recover the current configuration*/
+         <span class="nb">let</span> forms: <span class="nv">NodeForm</span> <span class="o">=</span> this.nodesSettingMap.get<span class="o">(</span>currentNode<span class="o">)</span><span class="p">;</span>
+
+         <span class="nb">let</span> oldConf: <span class="o">{}</span> <span class="o">=</span> forms.getFormConfiguration<span class="o">(</span>currentForm<span class="o">)</span><span class="p">;</span>
+
+         /* Clear the current form, <span class="k">then</span> display the new one*/
+         this.formViewRef.clear<span class="o">()</span><span class="p">;</span>
+
+         <span class="nb">let</span> <span class="nv">formComponent</span> <span class="o">=</span> this.nodesSettingMap.get<span class="o">(</span>currentNode<span class="o">)</span>.getForm<span class="o">(</span>currentForm<span class="o">)</span><span class="p">;</span>
+
+         <span class="nb">let</span> <span class="nv">formFactory</span> <span class="o">=</span> this.factoryResolver.resolveComponentFactory<span class="o">(</span>formComponent<span class="o">)</span><span class="p">;</span>
+
+         <span class="nb">let</span> <span class="nv">componentRef</span><span class="o">=</span> this.formViewRef.createComponent<span class="o">(</span>formFactory<span class="o">)</span><span class="p">;</span>
+         <span class="nb">let</span> <span class="nv">currentFormComponent</span> <span class="o">=</span> componentRef.instance as typeof formComponent<span class="p">;</span>
+
+         currentFormComponent.node <span class="o">=</span> t<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="p">;</span>
+         currentFormComponent.form_id <span class="o">=</span> t<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="p">;</span>
+
+         <span class="k">if</span> <span class="o">(</span>oldConf !<span class="o">=</span> null<span class="o">){</span>
+             currentFormComponent.setPreConfiguration<span class="o">(</span>oldConf<span class="o">)</span><span class="p">;</span>
+         <span class="o">}</span>
+     <span class="o">}</span>
+ <span class="o">)</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>As we mentioned before, the nodesSettingMap contains all the information of the Forms already submitted. So, the algorithm works as follows:</p>
+<blockquote>
+<div><blockquote>
+<div><ol class="arabic simple">
+<li><p>Recover the configuration of the Node in nodesSettingMap. Then, check if there exists a previous state for the Form.</p></li>
+<li><p>Clear the ng-template #viewFormRef, located in the lower part of the screen in the CreateComponent. This Angular directive allows us to insert components inside the current one in an independent fashion, this contained component will have its own view and behaviour.</p></li>
+<li><p>After clearing this directive, the System uses #viewFormRef and ComponentFactoryResolver to create a new component of the Type given by the Form. We have the component related to the form using NodeForm._forms_fill.</p></li>
+<li><p>Finally, if there is a previous configuration, the System updates the values directly in the component of the Form.</p></li>
+</ol>
+</div></blockquote>
+<ul class="simple">
+<li><p>Each type of Forms has a different input, some of the input when saved in the configuration affect the CreateComponent scene. This special inputs will be described next in the “Forms filling space” Section of this document.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="forms-filling-space">
+<h2>Forms filling space<a class="headerlink" href="#forms-filling-space" title="Permalink to this headline">¶</a></h2>
+<p>The Forms are being managed by FormsNodeModule, every kind of Form consists of a different Component to be inserted into CreateComponent in #viewFormRef. Currently we have five different Forms:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>NodeDefinitionFormComponent</p></li>
+<li><p>UploadDataFormComponent</p></li>
+<li><p>WorkerEmailsFormComponent</p></li>
+<li><p>AnnotationFormComponent</p></li>
+<li><p>AggregationFormComponent</p></li>
+</ul>
+</div></blockquote>
+<p>Node Definition Form (NodeDefinitionFormComponent): User provides general information about the task.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>node_tittle</p></li>
+<li><p>description</p></li>
+</ul>
+<ul class="simple">
+<li><p>When is submitted, the node_title  updates the Node Component title in the DAG and the FormLabel reference to the Node.</p></li>
+</ul>
+</div></blockquote>
+<p>Upload Data Form (UploadDataFormComponent): User specifies the origin of the Data this Node will process, could be a file with tuples or the output of another Node.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>predecessors</p></li>
+<li><p>files_source</p></li>
+</ul>
+<ul class="simple">
+<li><p>In case the User sets predecessors, the CreateComponent will request to draw an arrow from each predecessor to the Node.</p></li>
+</ul>
+</div></blockquote>
+<p>Worker Emails Form (WorkerEmailsFormComponent): Allows to send invitations to people to work as a Worker in this Job.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>emails</p></li>
+<li><p>files</p></li>
+</ul>
+</div></blockquote>
+<p>Annotation Form (AnnotationFormComponent): Specify the Data type the workers must Annotate for this Job.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>annotation_type</p></li>
+</ul>
+</div></blockquote>
+<p>Aggregation Form (AggregationFormComponent): Specify the rule of Aggregation that will be used to select the correct answer from the different Workers Annotations</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>aggregation_id</p></li>
+<li><p>aggregation_rule</p></li>
+<li><p>aggregation_desc</p></li>
+</ul>
+</div></blockquote>
+<p>When the user Saves any Form type, a JSON with the Requester inputs is generated. This object is stored in its correspondent NodeForm in the CreateComponent. The JSON is sent there using FormResponseService, every Form Component pushes its final configuration to the Queue “requestFormResponse”; then, the CreateComponent consumes this Queue as follows:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span></span> /*Consuming the Form generated Responses*/
+ this.formResponseReceiver.requestFormResponseQueue$.subscribe<span class="o">(</span>
+     <span class="o">(</span> t : <span class="o">{})</span> <span class="o">=</span>&gt; <span class="o">{</span>
+         <span class="nb">let</span> keys: string<span class="o">[]</span> <span class="o">=</span> Object.keys<span class="o">(</span>t<span class="o">)</span><span class="p">;</span>
+
+         /*Get the NodeForm object and <span class="nb">set</span> the configuration <span class="k">for</span> the Node in the Form <span class="s2">&quot;form_id&quot;</span>*/
+         <span class="nb">let</span> <span class="nv">nodeFormofT</span> <span class="o">=</span> this.nodesSettingMap.get<span class="o">(</span>t<span class="o">[</span><span class="s2">&quot;node_id&quot;</span><span class="o">])</span><span class="p">;</span>
+         nodeFormofT.setFormConfiguration<span class="o">(</span>t<span class="o">[</span><span class="s2">&quot;form_id&quot;</span><span class="o">]</span>, t<span class="o">)</span><span class="p">;</span>
+
+         /*Ask to the FormLabel of the node to update the state*/
+         this.formLabeler.generateRequestUpdFormLabel<span class="o">(</span>t<span class="o">[</span><span class="s2">&quot;node_id&quot;</span><span class="o">]</span>, t<span class="o">[</span><span class="s2">&quot;form_id&quot;</span><span class="o">])</span><span class="p">;</span>
+
+         /*Whenever we receive a new definition to tittle we need to update*/
+         <span class="k">if</span><span class="o">(</span>keys.indexOf<span class="o">(</span><span class="s1">&#39;node_tittle&#39;</span><span class="o">)</span> !<span class="o">=</span> -1<span class="o">){</span>
+             this.changeNodeComponentTittle<span class="o">(</span>t<span class="o">[</span><span class="s2">&quot;node_id&quot;</span><span class="o">]</span>, t<span class="o">[</span><span class="s2">&quot;node_tittle&quot;</span><span class="o">])</span><span class="p">;</span>   /* Change the NODE Component Info*/
+             this.formLabeler.generateRequestUpdLabelName<span class="o">(</span>t<span class="o">[</span><span class="s2">&quot;node_id&quot;</span><span class="o">]</span>, t<span class="o">[</span><span class="s2">&quot;form_id&quot;</span><span class="o">]</span>, t<span class="o">[</span><span class="s2">&quot;node_tittle&quot;</span><span class="o">])</span><span class="p">;</span>   /*Change the node label at the sidebar*/
+             nodeFormofT.setNodeTittle<span class="o">(</span>t<span class="o">[</span><span class="s2">&quot;node_tittle&quot;</span><span class="o">])</span><span class="p">;</span>    /*Change the Nodes configuration that will be stored in the back end*/
+         <span class="o">}</span>
+
+         /* Whenever the form provide predecessors info we need to update the DAG Creation of Edges between Nodes of the DAG*/
+         <span class="k">if</span><span class="o">(</span>keys.indexOf<span class="o">(</span><span class="s1">&#39;predecessors&#39;</span><span class="o">)</span> !<span class="o">=</span> -1 <span class="o">&amp;&amp;</span> t<span class="o">[</span><span class="s1">&#39;predecessors&#39;</span><span class="o">]</span> !<span class="o">=</span> null <span class="o">&amp;&amp;</span> t<span class="o">[</span><span class="s1">&#39;predecessors&#39;</span><span class="o">]</span>.length &gt; <span class="m">0</span><span class="o">){</span>
+
+             <span class="nb">let</span> nf : <span class="nv">NodeForm</span> <span class="o">=</span> this.nodesSettingMap.get<span class="o">(</span>t<span class="o">[</span><span class="s2">&quot;node_id&quot;</span><span class="o">])</span><span class="p">;</span>
+             nf.setPredecessors<span class="o">(</span>t<span class="o">[</span><span class="s1">&#39;predecessors&#39;</span><span class="o">])</span><span class="p">;</span>
+
+             this.edgesCreationManager<span class="o">(</span>t<span class="o">[</span><span class="s2">&quot;node_id&quot;</span><span class="o">]</span>, t<span class="o">[</span><span class="s1">&#39;predecessors&#39;</span><span class="o">])</span><span class="p">;</span>
+         <span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span>keys.indexOf<span class="o">(</span><span class="s1">&#39;predecessors&#39;</span><span class="o">)</span> !<span class="o">=</span> -1 <span class="o">&amp;&amp;</span> <span class="o">(</span>t<span class="o">[</span><span class="s1">&#39;predecessors&#39;</span><span class="o">]</span> <span class="o">==</span> null <span class="o">||</span> t<span class="o">[</span><span class="s1">&#39;predecessors&#39;</span><span class="o">]</span>.length <span class="o">==</span> <span class="m">0</span><span class="o">)){</span>
+             <span class="nb">let</span> nf : <span class="nv">NodeForm</span> <span class="o">=</span> this.nodesSettingMap.get<span class="o">(</span>t<span class="o">[</span><span class="s2">&quot;node_id&quot;</span><span class="o">])</span><span class="p">;</span>
+             nf.setPredecessors<span class="o">(</span>null<span class="o">)</span><span class="p">;</span>
+         <span class="o">}</span>
+     <span class="o">}</span>
+ <span class="o">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>The code works as follows:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Recover the configuration object of the Node (NodeForm) from nodesSettingMap. Then, ask  the NodeForm object to store the received configuration for the Form.</p></li>
+<li><p>Using the FormLabelingService, fill the requestUpdFormLabelQueue$. This Queue is consumed by the DefaultLayoutComponent that manages the Sidebar container of the FormLabels. This component consumes the Queue and changes the status of the forms putting a gray color instead of white to the label.</p></li>
+<li><p>If the form has a definition for “node_tittle”; the Component orders the NodeComponent in the DAG Editor, The FormLabel and the NodeForm to change the Title they are informing.</p></li>
+<li><p>If the form has a definition for “predecessors”; the component stores the relation in the NodeForm and calls the edgesCreationManager function to proceed creating the relations between the nodes in the DAG. Each link between nodes is represented using an EdgeComponent. First, this Component sets the relation between the nodes and the positions. When User plays with the objects in the editor, the positions are updated with the associated events. Then, the function EdgeComponent.drawLine creates the line you can see in the Editor.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For changing and improving the way how the lines are being drawn, the Developer only needs to update the function EdgeComponent.drawLine and EdgeComponent.removeLine. That logic is totally isolated.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Finally, the nodesSettingMap stores the input given by the User for the Form with the step (1). As you may notice, this process does not send this information to the backend, the results are only stored in CreateComponent.nodesSettingMap. To save the configuration, the User needs to use the final Component of this solution.</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="default-layout">
+<h2>Default Layout<a class="headerlink" href="#default-layout" title="Permalink to this headline">¶</a></h2>
+<p>This Section is managed by the DefaultLayoutComponent that is the permanent visible portion of Cymphony layout. This component allows the Developer to handle the Header and the Sidebar of the System. The Create Project functionality uses thes two Sections.</p>
+<p>The DefaultLayoutComponent has major changes when the User enters into the CreateComponent.
+One  is the apparition of the “Sidebar” that contains the FormLabels described earlier and the other is the “Save Project” functionality which appears on the header.</p>
+<p>The Sidebar contains one directive ng-template #viewLabelsRef. We described in the Section <a class="reference internal" href="#workflow-editor"><span class="std std-ref">Workflow Editor</span></a>,  how the System asks for a FormLabel when a “Node Producer” button is dropped in the editor. Going more deeply, when that action occurs the createComponent uses the FormLabelingService, adding an entry in requestFormLabelsQueue$. This Queue is consumed by DefaultLayoutComponent as follows:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></div></td><td class="code"><div class="highlight"><pre><span></span> /*DefaultLayoutComponent consuming the Node Producer request <span class="k">for</span> a Form Label*/
+ this.formLabeling.requestFormLabelsQueue$.subscribe<span class="o">(</span>
+     <span class="o">(</span>info: NodeForm<span class="o">)</span> <span class="o">=</span>&gt; <span class="o">{</span>
+
+         /*This variable is a trick, it starts to exist when the lifecycle of the component arrives to ngAfterViewInit*/
+         <span class="k">if</span><span class="o">(</span>this.searchLabelRef <span class="o">==</span> null<span class="o">)</span> <span class="o">{</span>
+
+             /*To add the pre-existent nodes labels, waiting <span class="k">for</span> the moment the template <span class="s1">&#39;searchLabelRef&#39;</span> has been drew in the component*/
+             this.formsToLabel.push<span class="o">(</span>info<span class="o">)</span><span class="p">;</span>
+
+         <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+
+             /*To process the new nodes Forms Labeling after the component is ready*/
+             const <span class="nv">labelsFactory</span> <span class="o">=</span> this.factoryResolver.resolveComponentFactory<span class="o">(</span>FormLabelComponent<span class="o">)</span><span class="p">;</span>
+
+             /*Creating the FormLabelComponent*/
+             <span class="nb">let</span> <span class="nv">componentRef</span> <span class="o">=</span> this.searchLabelRef.createComponent<span class="o">(</span>labelsFactory<span class="o">)</span><span class="p">;</span>
+             <span class="nb">let</span> <span class="nv">currentComponent</span> <span class="o">=</span> componentRef.instance<span class="p">;</span>
+             this.labelListReferences.push<span class="o">(</span>componentRef<span class="o">)</span><span class="p">;</span>
+
+             /*Assigning relevant values*/
+             currentComponent.node_id <span class="o">=</span> info.node_id<span class="p">;</span>
+             currentComponent.forms <span class="o">=</span> info.form_list<span class="p">;</span>
+             currentComponent.description <span class="o">=</span> info.node_tittle<span class="p">;</span>
+         <span class="o">}</span>
+     <span class="o">}</span>
+ <span class="o">)</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>The DefaultLayoutComponent contains a variable “labelsViewRef” to manage the ViewContainerRef #viewLabelsRef. Sometimes this Object is defined but does not have a value; however, to make the process safer the component defines a “searchLabelRef” that will only be different than NULL when the Lifecycle of the component is completed. This has been developed in this way for reasons that will be described later.</p>
+<p>..Rodrigo, what do you mean by “enter”?</p>
+<p>The DefaultLayoutComponent consumes a NodeForm to draw it as a FormLabel, the code will enter if the “searchLabelRef” exists. Then, using the ComponentFactoryResolver a new FormLabelComponent will be crearted in the ng-template #viewLabelsRef, belonging to the sidebar.</p>
+<p>For saving the current project in the Database, the DefaultLayoutComponent when the router-outlet targets CreateComponent, adds a new button in the header.</p>
+<a class="reference internal image-reference" href="../images/Save.PNG"><img alt="Save button in green" src="../images/Save.PNG" style="width: 350px;" /></a>
+<p>When clicked, this button triggers a function that uses the FormLabelingService to fill an entry in the Queue requestSaveProjectQueue$. CreateComponent is consuming this Queue, the code is exposed below:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre></div></td><td class="code"><div class="highlight"><pre><span></span> /*DefaultLayoutComponent consuming an entry*/
+ this.formLabeler.requestSaveProjectQueue$.subscribe<span class="o">(</span>
+     <span class="o">(</span>t: null<span class="o">)</span> <span class="o">=</span>&gt; <span class="o">{</span>
+
+         /*If the project still does not have an ID, it does not exist in the database yet*/
+         <span class="k">if</span><span class="o">(</span>this.projectID <span class="o">==</span> null<span class="o">){</span>
+
+             /*Opens a pop up asking the User a name <span class="k">for</span> the project*/
+             this.openDialog<span class="o">()</span><span class="p">;</span>
+         <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+
+             /*This step stringifies the current <span class="s2">&quot;nodesSettingMap&quot;</span>, this makes possible to store in DB the Nodes configuration*/
+             <span class="nb">let</span> <span class="nv">text</span> <span class="o">=</span> this.configToText<span class="o">()</span><span class="p">;</span>
+
+             this.backEndRequester.saveProject<span class="o">(</span>text, this.projectTittle, this.projectID, this.cookieService.get<span class="o">(</span><span class="s1">&#39;token_session&#39;</span><span class="o">)</span>, this.cookieService.get<span class="o">(</span><span class="s1">&#39;user_uuid&#39;</span><span class="o">))</span><span class="p">;</span>
+
+         <span class="o">}</span>
+     <span class="o">}</span>
+ <span class="o">)</span>
+
+ /*Pop up context*/
+ openDialog<span class="o">()</span> <span class="o">{</span>
+ const <span class="nv">dialogRef</span> <span class="o">=</span> this.dialog.open<span class="o">(</span>DialogContentComponent, <span class="o">{</span>height: <span class="s1">&#39;230px&#39;</span>, width: <span class="s1">&#39;600px&#39;</span><span class="o">})</span><span class="p">;</span>
+
+     dialogRef.afterClosed<span class="o">()</span>.subscribe<span class="o">(</span><span class="nv">result</span> <span class="o">=</span>&gt; <span class="o">{</span>
+         <span class="k">if</span><span class="o">(</span><span class="nv">result</span> <span class="o">==</span> <span class="s2">&quot;close|by@system&quot;</span><span class="o">){</span>
+             <span class="k">return</span><span class="p">;</span>
+         <span class="o">}</span>
+
+         /*If the User provides some valid name*/
+         <span class="k">else</span> <span class="k">if</span> <span class="o">(</span>result !<span class="o">=</span> null <span class="o">&amp;&amp;</span> result !<span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">)</span> <span class="o">{</span>
+
+             this.projectTittle <span class="o">=</span> result<span class="p">;</span>
+             this.backEndRequester.createProject<span class="o">(</span>this.projectTittle, this.cookieService.get<span class="o">(</span><span class="s1">&#39;token_session&#39;</span><span class="o">)</span>, this.cookieService.get<span class="o">(</span><span class="s1">&#39;user_uuid&#39;</span><span class="o">)</span>, this<span class="o">)</span><span class="p">;</span>
+         <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+
+             alert<span class="o">(</span><span class="s2">&quot;Not a valid Name&quot;</span><span class="o">)</span><span class="p">;</span>
+         <span class="o">}</span>
+     <span class="o">})</span>
+ <span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The operation can resume using one of the bellow options:</p>
+<ol class="arabic simple">
+<li><p>If the Project has an ID, i.e., it is already stored in the Database, the component uses InfoSearcherService function “saveProject” to store the current Workflow as String calling the  API ` <a class="reference external" href="http://SERVER:PORT/api/repository/project/project/workflow/update">http://SERVER:PORT/api/repository/project/project/workflow/update</a>/{Project ID}`.</p></li>
+<li><p>If the Project does not have an ID, the System will try to Store it in the Database. A pop-up wil appear to assign a name. As the User submits using InfoSearcherService function “createProject”, it will call the API <cite>http://SERVER:PORT/api/repository/project/project/new</cite>.</p></li>
+</ol>
+<p>If the project is correctly created, the Server will replay with the ID of the project. Then, the CreateComponent will assign the ID and using InfoSearcherService function “saveProject” will store the current Workflow as String.</p>
+</div>
+</div>
+<div class="section" id="editor">
+<h1>Editor<a class="headerlink" href="#editor" title="Permalink to this headline">¶</a></h1>
+<p>The Edit option presented in the ListComponent corresponds to the CreateComponent. The main difference is that when the environment is being settled, entering in edition mode will get the current configuration of the selected Project and will redraw the plan as a starting point.</p>
+<p>The code works as follows:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span></span> /*This piece of code is executed before the View inits, but after the component content starts to work*/
+ ngAfterContentInit(): void {
+
+     /*Checking if the ListComponent has been stored a project to redraw*/
+     let text_dag = this.sessionStorage.get(&#39;project&#39;);
+
+     /*If there is a project*/
+     if(text_dag != null){
+
+         /*Parses the project to a JSON*/
+         let generalProj = JSON.parse(this.sessionStorage.get(&#39;project&#39;));
+         let dec = generalProj[&#39;test&#39;];
+
+         /*Declares the project to the CreateComponent*/
+         this.projectTittle = dec[&#39;name&#39;];
+         this.projectID = dec[&#39;id&#39;];
+
+         /*Informs to the User the current project in Edition*/
+         this.headerService.generateRequestUpdateHeader(&#39;Editing&#39;,this.projectTittle, &#39;Requester&#39;, true);
+
+             /*This function redraws everything from the NodeForm&#39;s objects saved in the Workflow*/
+             if(dec[&#39;workflow&#39;]){
+                 this.drawDAGFromConfig(dec[&#39;workflow&#39;]);
+             }
+         } else {
+
+         /*If there is not a project, we open the normal Project Creation empty scene*/
+         this.headerService.generateRequestUpdateHeader(&#39;Project&#39;, &#39;Create&#39;, &#39;Requester&#39;, true);
+     }
+ }
+</pre></div>
+</td></tr></table></div>
+<p>This part of the code is very straightforward, The System recovers the configuration of the stored nodes and sends to redraw the DAG. The rest of the System behaviour does not change.</p>
+</div>
+<div class="section" id="monitor">
+<h1>Monitor<a class="headerlink" href="#monitor" title="Permalink to this headline">¶</a></h1>
+<p>The Edit option presented in the ListComponent corresponds to  <a class="reference external" href="https://github.com/qcri/cymphony/blob/master/front-end/src/src/app/views/workflow/monitor/monitor.component.ts">MonitorComponent</a> This component starts by getting the current configuration of the selected Project. Then, it will redraw the plan as a DAG similar to the CreateComponent, but with limited functionalities.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72</pre></div></td><td class="code"><div class="highlight"><pre><span></span> ngOnInit<span class="o">()</span> <span class="o">{</span>
+
+     /*Getting workflow and updating header*/
+     <span class="nb">let</span> <span class="nv">role</span> <span class="o">=</span> this.cookieService.get<span class="o">(</span><span class="s1">&#39;role&#39;</span><span class="o">)</span><span class="p">;</span>
+     <span class="nb">let</span> <span class="nv">dec</span> <span class="o">=</span> JSON.parse<span class="o">(</span>this.sessionStorage.get<span class="o">(</span><span class="s1">&#39;project&#39;</span><span class="o">))[</span><span class="s1">&#39;test&#39;</span><span class="o">]</span><span class="p">;</span>
+     this.headerService.generateRequestUpdateHeader<span class="o">(</span><span class="s1">&#39;Monitoring&#39;</span>,dec<span class="o">[</span><span class="s1">&#39;name&#39;</span><span class="o">]</span>, role, <span class="nb">false</span><span class="o">)</span><span class="p">;</span>
+
+     /*Restoring NodeForm objects <span class="k">for</span> every Node to plot in the DAG*/
+     <span class="nb">let</span> firstObj: <span class="o">{}</span> <span class="o">=</span> JSON.parse<span class="o">(</span>dec<span class="o">[</span><span class="s1">&#39;workflow&#39;</span><span class="o">])</span><span class="p">;</span>
+     <span class="nb">let</span> <span class="nv">dag</span> <span class="o">=</span> firstObj<span class="o">[</span><span class="s1">&#39;nodes&#39;</span><span class="o">]</span><span class="p">;</span>
+     <span class="nb">let</span> conf: Map&lt;string ,NodeForm&gt; <span class="o">=</span> this.restoreConfiguration<span class="o">(</span>dag<span class="o">)</span><span class="p">;</span>
+
+     /*This will contains the relation <span class="k">while</span> the opposite Node has not been drew*/
+     <span class="nb">let</span> pendantRelations : relation<span class="o">[]</span> <span class="o">=</span> <span class="o">[]</span><span class="p">;</span>
+
+     /*Iterates the NodeForms*/
+     conf.forEach<span class="o">((</span>value: NodeForm, key: string<span class="o">)</span> <span class="o">=</span>&gt; <span class="o">{</span>
+
+       /*Regarding the <span class="nb">type</span> of Node, we Set Up the factory*/
+       <span class="nb">let</span> nodesFactory<span class="p">;</span>
+       <span class="nb">let</span> componentRef<span class="p">;</span>
+       <span class="nb">let</span> typeNodeIndex<span class="p">;</span>
+
+       /*Creating the component regarding the Node type*/
+       <span class="k">if</span> <span class="o">(</span>value.node_kind <span class="o">==</span> <span class="s1">&#39;job&#39;</span><span class="o">)</span> <span class="o">{</span>
+         <span class="nv">nodesFactory</span> <span class="o">=</span> this.factoryResolver.resolveComponentFactory<span class="o">(</span>JobMonitorComponent<span class="o">)</span><span class="p">;</span>
+         <span class="nv">componentRef</span> <span class="o">=</span> this.nodesViewRef.createComponent<span class="o">(</span>nodesFactory<span class="o">)</span><span class="p">;</span>
+         <span class="nv">typeNodeIndex</span> <span class="o">=</span> ++this.jobMaxIndex<span class="p">;</span>
+
+       <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span>value.node_kind <span class="o">==</span> <span class="s1">&#39;sql&#39;</span><span class="o">)</span> <span class="o">{</span>
+         <span class="nv">nodesFactory</span> <span class="o">=</span> this.factoryResolver.resolveComponentFactory<span class="o">(</span>SqlMonitorComponent<span class="o">)</span><span class="p">;</span>
+         <span class="nv">componentRef</span> <span class="o">=</span> this.nodesViewRef.createComponent<span class="o">(</span>nodesFactory<span class="o">)</span><span class="p">;</span>
+         <span class="nv">typeNodeIndex</span> <span class="o">=</span> ++this.sqlMaxIndex<span class="p">;</span>
+
+       <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span>value.node_kind <span class="o">==</span> <span class="s1">&#39;sample&#39;</span><span class="o">)</span> <span class="o">{</span>
+         <span class="nv">nodesFactory</span> <span class="o">=</span> this.factoryResolver.resolveComponentFactory<span class="o">(</span>SampleMonitorComponent<span class="o">)</span><span class="p">;</span>
+         <span class="nv">componentRef</span> <span class="o">=</span> this.nodesViewRef.createComponent<span class="o">(</span>nodesFactory<span class="o">)</span><span class="p">;</span>
+         <span class="nv">typeNodeIndex</span> <span class="o">=</span> ++this.sampleMaxIndex<span class="p">;</span>
+
+       <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+         console.error<span class="o">(</span><span class="s2">&quot;Unknown kind of node!&quot;</span><span class="o">)</span><span class="p">;</span>
+       <span class="o">}</span>
+
+       const <span class="nv">currentNodeComponent</span> <span class="o">=</span> componentRef.instance<span class="p">;</span>
+       currentNodeComponent.selfRef <span class="o">=</span> currentNodeComponent<span class="p">;</span>
+
+       /*ID index and nodesViewRef position to delete with its reference*/
+       this.nodeMaxIndex++<span class="p">;</span>
+       currentNodeComponent.index <span class="o">=</span> value.node_id.split<span class="o">(</span><span class="s2">&quot;_&quot;</span><span class="o">)[</span><span class="m">1</span><span class="o">]</span><span class="p">;</span>
+       currentNodeComponent.drawArea <span class="o">=</span> this<span class="p">;</span>
+       currentNodeComponent.preTittle <span class="o">=</span> <span class="o">(</span>value.node_tittle !<span class="o">=</span> null <span class="o">&amp;&amp;</span> value.node_tittle !<span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">)</span> ? value.node_tittle : value.node_kind + <span class="s2">&quot; &quot;</span> + typeNodeIndex + <span class="s2">&quot;: Untitled&quot;</span><span class="p">;</span>
+       this.nodeListReferences.push<span class="o">(</span>componentRef<span class="o">)</span><span class="p">;</span>
+
+       /*Move to the last position of the NodeCreate Button*/
+       currentNodeComponent.moveTo<span class="o">(</span> value.position<span class="o">[</span><span class="s1">&#39;x&#39;</span><span class="o">]</span>, value.position<span class="o">[</span><span class="s1">&#39;y&#39;</span><span class="o">])</span><span class="p">;</span>
+
+       /*Not necessary in the Monitor*/
+       this.nodesSettingMap.set<span class="o">(</span><span class="s1">&#39;node_&#39;</span> + currentNodeComponent.index, value<span class="o">)</span><span class="p">;</span>
+
+       /*Fills the predecessors to Fill after*/
+       <span class="o">(</span>value.predecessors<span class="o">)</span> ? pendantRelations.push<span class="o">({</span>origin: key, targets: value.predecessors<span class="o">})</span> : null<span class="p">;</span>
+
+     <span class="o">})</span><span class="p">;</span>
+
+     /*Manage the creation of Edges, Equals to CreateComponent behaviour*/
+     pendantRelations.forEach<span class="o">((</span>t: relation<span class="o">)</span> <span class="o">=</span>&gt; <span class="o">{</span>
+       this.edgesCreationManager<span class="o">(</span>t.origin<span class="o">[</span><span class="s1">&#39;name&#39;</span><span class="o">]</span>, t.targets<span class="o">)</span><span class="p">;</span>
+     <span class="o">})</span>
+
+     /*This just sets values <span class="k">for</span> testing*/
+     this.defineTestChart<span class="o">()</span><span class="p">;</span>
+   <span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The code works as follows:</p>
+<ol class="arabic simple">
+<li><p>Get the project Workflow from the SessionStorageCookie. Then, resolve the previous configuration of every Node constructing each FormNode.</p></li>
+<li><p>Iterate every NodeForm, constructing a representation in the Monitor scene for each of them. The representations correspond to the components: JobMonitorComponent, SqlMonitorComponent and SampleMonitorComponent.</p></li>
+<li><p>Allocate the Nodes representation in the correct spots and draw the relations.</p></li>
+</ol>
+<p>This Node representation has different behaviors than their CreateComponent counterparts . If the User clicks them the charts below will be updated with the next information:</p>
+<ul class="simple">
+<li><p>Work Progress: Shows percentage of finished tasks in the selected job. Calls the API <cite>http://SERVER:PORT/api/job/monitor/tuple/finished</cite>.</p></li>
+<li><p>Workers Quality: Calls the API   <cite>http://SERVER:PORT/api/job/monitor/worker/quality</cite>.</p></li>
+<li><p>Work Quality: Calls the API   <cite>http://SERVER:PORT/api/job/monitor/worker/annotations</cite>.</p></li>
+<li><p>Active Workers: Show the percentage of Workers that are already annotating tasks. Calls the API   <cite>http://SERVER:PORT/api/job/monitor/worker/actives</cite>.</p></li>
+</ul>
+</div>
+<div class="section" id="show">
+<h1>Show<a class="headerlink" href="#show" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="annotation">
+<h1>Annotation<a class="headerlink" href="#annotation" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="used-services">
+<h1>Used Services<a class="headerlink" href="#used-services" title="Permalink to this headline">¶</a></h1>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../developers(back)/architecture.html" class="btn btn-neutral float-right" title="Event-driven Microservice Architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../users/tutorial.html" class="btn btn-neutral float-left" title="Tutorial: Creating a Cymphony Project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Qatar Computing Research Institute
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

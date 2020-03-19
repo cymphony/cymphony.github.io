@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Run from IDE (IntelliJ) &mdash; Cymphony Documentation 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../static/jquery.js"></script>
+        <script type="text/javascript" src="../static/underscore.js"></script>
+        <script type="text/javascript" src="../static/doctools.js"></script>
+        <script type="text/javascript" src="../static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Cymphony Coding Code of Conduct" href="codestructure.html" />
+    <link rel="prev" title="Developer Installation Guide" href="backinstall.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cymphony Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Cymphony at a Glance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#basic-terminologies">Basic Terminologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-job">A Cymphony Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-workflow">A Cymphony Workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using Cymphony</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../users/install_back.html">User Installation Guide (Back-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/install_front.html">User Installation Guide (Front-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/runcommand.html">Run from Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/tutorial.html">Tutorial: Creating a Cymphony Project</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Front-end)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#registration">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#login">Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#list">List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#create">Create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#monitor">Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#show">Show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#annotation">Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#used-services">Used Services</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Back-end)</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Event-driven Microservice Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="executionplan.html">Execution Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backinstall.html">Developer Installation Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Run from IDE (IntelliJ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codestructure.html">Cymphony Coding Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkservices.html">Checking Service End Points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serviceexample.html">Example: Creating a Lagom Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dbexample.html">Example: Querying Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sessionexample.html">Example: User Session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataflowexample.html">Example: Work/Data Flow (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optexample.html">Example: Customization (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="toolstack.html">Tool Stack</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cymphony Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Run from IDE (IntelliJ)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/developers(back)/runide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="run-from-ide-intellij">
+<span id="developers-back-runide"></span><h1>Run from IDE (IntelliJ)<a class="headerlink" href="#run-from-ide-intellij" title="Permalink to this headline">¶</a></h1>
+<p>For developers who want to modify the code of Cymphony, we highly recomment to use <a class="reference external" href="https://www.jetbrains.com/idea/">IntelliJ</a>.
+Below is how to import and config Cymphony using IntelliJ.</p>
+<ol class="arabic simple">
+<li><p>Create a new project from the downloaded <code class="code docutils literal notranslate"><span class="pre">cymphony</span></code> folder.</p></li>
+</ol>
+<img alt="Collections tab" src="../images/step1.png" />
+<ol class="arabic simple" start="2">
+<li><p>Set up the project name and location.</p></li>
+</ol>
+<img alt="Collections tab" src="../images/step2.png" />
+<ol class="arabic simple" start="3">
+<li><p>Select <strong>Unmark All</strong>, and then create a cymphony project.</p></li>
+</ol>
+<img alt="Collections tab" src="../images/step3.png" />
+<ol class="arabic simple" start="4">
+<li><p>Select <strong>File</strong> -&gt; <strong>Project Structure …</strong></p></li>
+</ol>
+<img alt="Collections tab" src="../images/step4.png" />
+<ol class="arabic simple" start="5">
+<li><p>Under <strong>Project SDK:</strong>, select <strong>11(java version “11.0.2”)</strong>.</p></li>
+</ol>
+<img alt="Collections tab" src="../images/step5.png" />
+<ol class="arabic simple" start="6">
+<li><p>Click <strong>Modules</strong> under <strong>Project Settings</strong>, and then click <strong>Import Module</strong></p></li>
+</ol>
+<img alt="Collections tab" src="../images/step6.png" />
+<ol class="arabic simple" start="7">
+<li><p>Select the folder <code class="code docutils literal notranslate"><span class="pre">back-end/src</span></code> from the downloaded cymphony folder</p></li>
+</ol>
+<img alt="Collections tab" src="../images/step7.png" />
+<ol class="arabic simple" start="8">
+<li><p>Select <strong>Maven</strong>, under <strong>Import module from external model</strong>, and then click <strong>Finish</strong></p></li>
+</ol>
+<img alt="Collections tab" src="../images/step8.png" />
+<ol class="arabic simple" start="9">
+<li><p>Click <strong>Add Configuration…</strong> and select <strong>Maven</strong>. Under <strong>Command line:</strong>, put ‘clean install lagom:runAll -Ddb_password=${DB_PASSWORD} -Ddb_user=${DB_USER} -Ddb_path=jdbc:mysql://${DB_ADDRESS}:${DB_PORT}/cymphony?useSSL=false&amp;createDatabaseIfNotExist=true -Ddb_path_public=jdbc:mysql://${DB_ADDRESS}:${DB_PORT}/template?useSSL=false&amp;createDatabaseIfNotExist=true’, and for <strong>Working directory</strong> put <cite>cymphony/back-end/src</cite></p></li>
+</ol>
+<p>Please refer to <span class="xref std std-ref">developers(back)-runcommand</span> for setting the above parameters.</p>
+<img alt="Collections tab" src="../images/step9.png" />
+<img alt="Collections tab" src="../images/step10.png" />
+<p>If you already started <strong>redis</strong> and <strong>mysql</strong>, you should be able to run cymphony from IntelliJ.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="codestructure.html" class="btn btn-neutral float-right" title="Cymphony Coding Code of Conduct" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="backinstall.html" class="btn btn-neutral float-left" title="Developer Installation Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Qatar Computing Research Institute
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,673 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cymphony Coding Code of Conduct &mdash; Cymphony Documentation 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../static/jquery.js"></script>
+        <script type="text/javascript" src="../static/underscore.js"></script>
+        <script type="text/javascript" src="../static/doctools.js"></script>
+        <script type="text/javascript" src="../static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Checking Service End Points" href="checkservices.html" />
+    <link rel="prev" title="Run from IDE (IntelliJ)" href="runide.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cymphony Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html">Cymphony at a Glance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#basic-terminologies">Basic Terminologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-job">A Cymphony Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/overview.html#a-system-workflow">A Cymphony Workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using Cymphony</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../users/install_back.html">User Installation Guide (Back-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/install_front.html">User Installation Guide (Front-end)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/runcommand.html">Run from Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../users/tutorial.html">Tutorial: Creating a Cymphony Project</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Front-end)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#registration">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#login">Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#list">List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#create">Create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#monitor">Monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#show">Show</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#annotation">Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers(front)/front.html#used-services">Used Services</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Extending Cymphony (Back-end)</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Event-driven Microservice Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="executionplan.html">Execution Plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backinstall.html">Developer Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runide.html">Run from IDE (IntelliJ)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cymphony Coding Code of Conduct</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#code-structure-of-cymphony">Code Structure of Cymphony</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#general-folder-structure">General Folder Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conceptual-structure">Conceptual Structure</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cymphony-core">Cymphony Core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cymphony-util">Cymphony Util</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cymphony-bundle">Cymphony Bundle</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#commonly-used-notations-to-be-added">Commonly used Notations (TO BE ADDED)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bundles-definition-to-be-added">Bundles Definition (TO BE ADDED)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="checkservices.html">Checking Service End Points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serviceexample.html">Example: Creating a Lagom Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dbexample.html">Example: Querying Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sessionexample.html">Example: User Session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataflowexample.html">Example: Work/Data Flow (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optexample.html">Example: Customization (TOADD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="toolstack.html">Tool Stack</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cymphony Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Cymphony Coding Code of Conduct</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/developers(back)/codestructure.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cymphony-coding-code-of-conduct">
+<span id="developers-back-codestructure"></span><h1>Cymphony Coding Code of Conduct<a class="headerlink" href="#cymphony-coding-code-of-conduct" title="Permalink to this headline">¶</a></h1>
+<p>The developers of Cymphony need to follow the <strong>Code of Conduct</strong> described in this section, such that every one can read and contribute:</p>
+<ul class="simple">
+<li><p>All the code of Cymphony that is written in java is following the <a class="reference external" href="https://google.github.io/styleguide/javaguide.html">Google Java Style Guide</a>.</p></li>
+<li><p>The Code of Cymphony is geared towards evolution. For this reason, it follows the Java Specification Requests. One example is <a class="reference external" href="https://jcp.org/en/jsr/detail?id=338">JPA</a> that uses <a class="reference external" href="https://hibernate.org/">Hibernate</a> for datbase communications.</p></li>
+<li><p>If the code needs to be extended to other functionalities, please create an interface and use the interface instead of the class.</p></li>
+<li><p>The Java-Doc can be found <a class="reference external" href="http://qcri.github.io/cymphony/java-doc">here</a>. <strong>(TODO Upload to Page)</strong></p></li>
+</ul>
+<div class="section" id="code-structure-of-cymphony">
+<h2>Code Structure of Cymphony<a class="headerlink" href="#code-structure-of-cymphony" title="Permalink to this headline">¶</a></h2>
+<p>We will describe the structure of the code along two directions:
+<a class="reference internal" href="#general-folder-structure">General Folder Structure</a> describes <em>what</em> is the code structure.
+<a class="reference internal" href="#conceptual-structure">Conceptual Structure</a> discusses <em>why</em> the code is there.</p>
+<div class="section" id="general-folder-structure">
+<h3>General Folder Structure<a class="headerlink" href="#general-folder-structure" title="Permalink to this headline">¶</a></h3>
+<p>The module structure follows the pattern <code class="code docutils literal notranslate"><span class="pre">cymphony-({{name-module-parents}})*-{{name-module}}</span></code>.
+That is, we add the name of the parent modules on the left, until the root modules.
+The idea of this distribution is to keep the hierarchy using the names.</p>
+<p>The folder structure in terms of a package needs to start with <code class="code docutils literal notranslate"><span class="pre">org.qcri.cymphony</span></code>. After that, we need to create a package with the name of the component. Inside of that package, we create a Java class with the name <code class="code docutils literal notranslate"><span class="pre">Cymphony{name-component}.java</span></code>.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="si">${</span><span class="nv">CYMPHONY_HOME</span><span class="si">}</span>/back-end/src
+  ├── cymphony-<span class="o">{{</span>name-root<span class="o">}}</span>
+  │   ├── cymphony-<span class="o">{{</span>name-root<span class="o">}}</span>-<span class="o">{{</span>name-child-1<span class="o">}}</span>
+  │   │   └── cymphony-<span class="o">{{</span>name-root<span class="o">}}</span>-<span class="o">{{</span>name-child-1<span class="o">}}</span>-..-<span class="o">{{</span>name-child-n<span class="o">}}</span>
+  │   │      ├── src
+  │   │      │   ├── main
+  │   │      │   │   ├── java
+  │   │      │   │   │   └── org
+  │   │      │   │   │       └── qcri
+  │   │      │   │   │           └── cymphony
+  │   │      │   │   │               └── <span class="o">{{</span>name-root<span class="o">}}</span>
+  │   │      │   │   │                   └── <span class="o">{{</span>name-child-1<span class="o">}}</span>
+ ... ...    ... ... ...                     ...
+  │   │      │   │   │                       └── <span class="o">{{</span>name-child-n<span class="o">}}</span>
+  │   │      │   │   │                           └── Cymphony<span class="o">{{</span>name-child-n<span class="o">}}</span>.java
+  │   │      │   │   └── resources
+  │   │      │   │       └── cymphony.<span class="o">{{</span>name-child-n<span class="o">}}</span>.properties
+  │   │      │   └── <span class="nb">test</span>
+  │   │      │       └── java
+  │   │      └─ pom.xml
+  <span class="p">|</span>   └─ pom.xml
+  └─ pom.xml <span class="o">(</span>Root Maven file<span class="o">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>In this file (<code class="code docutils literal notranslate"><span class="pre">Cymphony{name-component}.java</span></code>), you will insert the code to read the configuration and the logger elements. This class will look like:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">//TODO replace {{name-module}} with the component name</span>
+<span class="hll"> <span class="kn">package</span> <span class="nn">org.qcri.cymphony.</span><span class="o">{{</span><span class="n">name</span><span class="o">-</span><span class="n">module</span><span class="o">}};</span>
+</span>
+ <span class="kn">import</span> <span class="nn">org.apache.commons.logging.Log</span><span class="o">;</span>
+ <span class="kn">import</span> <span class="nn">org.apache.commons.logging.LogFactory</span><span class="o">;</span>
+ <span class="kn">import</span> <span class="nn">org.qcri.cymphony.util.configuration.CymphonyConfiguration</span><span class="o">;</span>
+
+<span class="hll"> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cymphony</span><span class="o">{{</span><span class="n">name</span><span class="o">-</span><span class="n">module</span><span class="o">}}</span> <span class="o">{</span>
+</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">CymphonyConfiguration</span> <span class="n">CONFIGURATION</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Log</span> <span class="n">LOGGER</span><span class="o">;</span>
+
+    <span class="kd">static</span> <span class="o">{</span>
+<span class="hll">      <span class="n">LOGGER</span> <span class="o">=</span> <span class="n">LogFactory</span><span class="o">.</span><span class="na">getLog</span><span class="o">(</span><span class="n">Cymphony</span><span class="o">{{</span><span class="n">name</span><span class="o">-</span><span class="n">module</span><span class="o">}}.</span><span class="na">class</span><span class="o">);</span>
+</span>    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">CymphonyConfiguration</span> <span class="nf">getConfiguration</span><span class="o">(){</span>
+       <span class="k">if</span><span class="o">(</span><span class="n">CONFIGURATION</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
+          <span class="n">CONFIGURATION</span> <span class="o">=</span> <span class="n">CymphonyConfiguration</span>
+                                  <span class="o">.</span><span class="na">fromResources</span><span class="o">(</span>
+<span class="hll">                                     <span class="s">&quot;Cymphony{{name-module}}&quot;</span><span class="o">,</span>
+</span><span class="hll">                                     <span class="s">&quot;cymphony.{{name-module}}&quot;</span><span class="o">,</span>
+</span><span class="hll">                                      <span class="n">Cymphony</span><span class="o">{{</span><span class="n">name</span><span class="o">-</span><span class="n">module</span><span class="o">}}.</span><span class="na">class</span>
+</span>           <span class="o">);</span>
+       <span class="o">}</span>
+       <span class="k">return</span> <span class="n">CONFIGURATION</span><span class="o">;</span>
+    <span class="o">}</span>
+ <span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="conceptual-structure">
+<h3>Conceptual Structure<a class="headerlink" href="#conceptual-structure" title="Permalink to this headline">¶</a></h3>
+<p>The Cymphony structure is divided into three main conceptual components.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>cymphony-core</p></li>
+<li><p>cymphony-util</p></li>
+<li><p>cymphony-bundle</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="cymphony-core">
+<h4>Cymphony Core<a class="headerlink" href="#cymphony-core" title="Permalink to this headline">¶</a></h4>
+<p>The code of <code class="docutils literal notranslate"><span class="pre">cymphony-core</span></code> in most of the cases is a part of the business logic (i.e., the Cymphony workflow, or the execution plan <a class="reference internal" href="executionplan.html#developers-back-executionplan"><span class="std std-ref">Execution Plan</span></a>) or helping to execute the business logic, such as task assignment, annotation aggregation, and so on.</p>
+<p>This is a component which has the shared code inside of bundles,  but this code is part of the identity of Cymphony itself.</p>
+<div class="section" id="core-folder-structure">
+<h5>Core Folder Structure<a class="headerlink" href="#core-folder-structure" title="Permalink to this headline">¶</a></h5>
+<p>The folder structure of a <code class="docutils literal notranslate"><span class="pre">cymphony-core</span></code> is as bellow.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="si">${</span><span class="nv">CYMPHONY_HOME</span><span class="si">}</span>/back-end/src/cymphony-core
+  ├── pom.xml
+  └── src
+      ├── main
+      │   ├── java
+      │   │   └── org
+      │   │       └── qcri
+      │   │           └── cymphony
+      │   │               └── core
+      │   │                   ├── CymphonyCore.java
+      │   │                   ├── factory
+      │   │                   ├── security
+      │   │                   │   └── algorithm
+      │   │                   │       ├── encryption
+      │   │                   │       └── <span class="nb">hash</span>
+      │   │                   ├── serializer
+      │   │                   └── service
+      │   └── resources
+      │       └── cymphony.core.properties
+      └── <span class="nb">test</span>
+          └── java
+              └── org
+                  └── qcri
+                      └── cymphony
+                          └── core
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="cymphony-util">
+<h4>Cymphony Util<a class="headerlink" href="#cymphony-util" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">cymphony-unit</span></code> has shared code for many bundles, but the functionalities are generic. In other words, this component acts like a store of libraries.</p>
+<div class="section" id="util-folder-structure">
+<h5>Util Folder Structure<a class="headerlink" href="#util-folder-structure" title="Permalink to this headline">¶</a></h5>
+<p>The folder structure of <code class="docutils literal notranslate"><span class="pre">cymphony-unit</span></code> is as bellow.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="si">${</span><span class="nv">CYMPHONY_HOME</span><span class="si">}</span>/back-end/src/cymphony-util
+   ├── pom.xml
+   └── src
+       ├── main
+       │   ├── java
+       │   │   └── org
+       │   │       └── qcri
+       │   │           └── cymphony
+       │   │               └── util
+       │   │                   ├── CymphonyUtil.java
+       │   │                   ├── configuration
+       │   │                   │   ├── CymphonyConfiguration.java
+       │   │                   ├── exception
+       │   │                   │   └── CymphonyException.java
+       │   │                   ├── factory
+       │   │                   │   ├── CymphonyFactory.java
+       │   │                   ├── reflexion
+       │   │                   │   ├── CymphonyReflexion.java
+       │   │                   └── stream
+       │   │                       └── CymphonyStream.java
+       │   └── resources
+       │       └── cymphony.util.properties
+       └── <span class="nb">test</span>
+           └── java
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="cymphony-bundle">
+<h4>Cymphony Bundle<a class="headerlink" href="#cymphony-bundle" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">cymphony-bundle</span></code> is the main structure of Cymphony. This component is divided into three internals components:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cymphony-bundle-entities</span></code>: this is the model of data and objects. This bundle will use them to either communicate with other bundles, or is sharable with other bundles.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cymphony-bundle-api</span></code>: These APIs are how the bundle publishes its entry points to others bundles or the world.</p></li>
+</ul>
+<p>..That is, it contains the group of interfaces that allow that.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cymphony-bundle-implementation</span></code>: The component implementation is the APIs materialization, and also have the instruction and configuration of how to manipulate the entities to proceed with their persistence.</p></li>
+</ul>
+<div class="section" id="bundle-folder-structure">
+<h5>Bundle Folder Structure<a class="headerlink" href="#bundle-folder-structure" title="Permalink to this headline">¶</a></h5>
+<p>The folder structure of <code class="docutils literal notranslate"><span class="pre">cymphony-bundle</span></code> instance is as bellow.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="si">${</span><span class="nv">CYMPHONY_HOME</span><span class="si">}</span>/back-end/src/cymphony-bundle
+  ├── cymphony-bundle-<span class="o">{{</span>instance<span class="o">}}</span>
+  │   ├── cymphony-bundle-<span class="o">{{</span>instance<span class="o">}}</span>-api
+  │   │   ├── src
+  │   │   │   ├── main
+  │   │   │   │   ├── java
+  │   │   │   │   │   └── org
+  │   │   │   │   │       └── qcri
+  │   │   │   │   │           └── cymphony
+  │   │   │   │   │               └── bundle
+  │   │   │   │   │                  └── <span class="o">{{</span>instance<span class="o">}}</span>
+  │   │   │   │   │                      └── api
+  │   │   │   │   │                         ├── entrypoint
+  │   │   │   │   │                         <span class="p">|</span>   └── <span class="o">{{</span>something<span class="o">}}</span>API.java
+  │   │   │   │   │                         └── Cymphony<span class="o">{{</span>instance<span class="o">}}</span>API.java
+  │   │   │   │   └── resources
+  │   │   │   └── <span class="nb">test</span>
+  │   │   │       └── java
+  │   <span class="p">|</span>   └── pom.xml
+  │   ├── cymphony-bundle-<span class="o">{{</span>instance<span class="o">}}</span>-entities
+  │   │   ├── src
+  │   │   │   ├── main
+  │   │   │   │   ├── java
+  │   │   │   │   │   └── org
+  │   │   │   │   │       └── qcri
+  │   │   │   │   │           └── cymphony
+  │   │   │   │   │               └── bundle
+  │   │   │   │   │                   └── <span class="o">{{</span>instance<span class="o">}}</span>
+  │   │   │   │   │                       └── entities
+  │   │   │   │   │                         ├── model
+  │   │   │   │   │                         <span class="p">|</span>   ├── <span class="o">{{</span>some_entity<span class="o">}}</span>.java
+  │   │   │   │   │                         <span class="p">|</span>   ├── ...
+  │   │   │   │   │                         <span class="p">|</span>   └── <span class="o">{{</span>other_entity<span class="o">}}</span>.java
+  │   │   │   │   │                         └── Cymphony<span class="o">{{</span>instance<span class="o">}}</span>Entities.java
+  │   │   │   │   └── resources
+  │   │   │   └── <span class="nb">test</span>
+  │   │   │       └── java
+  │   <span class="p">|</span>   └── pom.xml
+  │   ├── cymphony-bundle-<span class="o">{{</span>instance<span class="o">}}</span>-implementation
+  │   <span class="p">|</span>   ├── src
+  │   <span class="p">|</span>   │   ├── main
+  │   <span class="p">|</span>   │   │   ├── java
+  │   <span class="p">|</span>   │   │   │   └── org
+  │   <span class="p">|</span>   │   │   │       └── qcri
+  │   <span class="p">|</span>   │   │   │           └── cymphony
+  │   <span class="p">|</span>   │   │   │               └── bundle
+  │   <span class="p">|</span>   │   │   │                   └── <span class="o">{{</span>instance<span class="o">}}</span>
+  │   <span class="p">|</span>   │   │   │                       └── implementation
+  │   <span class="p">|</span>   │   │   │                         ├── entity
+  │   <span class="p">|</span>   │   │   │                         <span class="p">|</span>   ├── <span class="o">{{</span>some_entity<span class="o">}}</span>EntityManager.java
+  │   <span class="p">|</span>   │   │   │                         <span class="p">|</span>   ├── ...
+  │   <span class="p">|</span>   │   │   │                         <span class="p">|</span>   └── <span class="o">{{</span>other_entity<span class="o">}}</span>EntityManager.java
+  │   <span class="p">|</span>   │   │   │                         ├── module
+  │   <span class="p">|</span>   │   │   │                         <span class="p">|</span>   └── <span class="o">{{</span>instance<span class="o">}}</span>Module.java
+  │   <span class="p">|</span>   │   │   │                         ├── impl
+  │   <span class="p">|</span>   │   │   │                         <span class="p">|</span>   └── <span class="o">{{</span>instance<span class="o">}}</span>AImpl.java
+  │   <span class="p">|</span>   │   │   │                         └── Cymphony<span class="o">{{</span>instance<span class="o">}}</span>Entities.java
+  │   <span class="p">|</span>   │   │   └── resources
+  │   <span class="p">|</span>   │   └── <span class="nb">test</span>
+  │   <span class="p">|</span>   │       └── java
+  │   <span class="p">|</span>   └── pom.xml
+  │   └── pom.xml
+  ...
+</pre></div>
+</td></tr></table></div>
+<p>Please refer to <a class="reference internal" href="dbexample.html#developers-back-dbexample"><span class="std std-ref">Example: Querying Databases</span></a> about how the <code class="docutils literal notranslate"><span class="pre">session</span></code> bundle instance is implemented, by following the above structure.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="commonly-used-notations-to-be-added">
+<h2>Commonly used Notations (TO BE ADDED)<a class="headerlink" href="#commonly-used-notations-to-be-added" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Project:</strong></p></li>
+<li><p><strong>Task:</strong></p></li>
+<li><p><strong>Service:</strong></p></li>
+<li><p><strong>Bundle:</strong> Please read <a class="reference external" href="https://symfony.com/doc/2.7/bundles.html">The Bundle System</a> to understand what is a bundle</p></li>
+<li><p><strong>Multi-Tenant:</strong></p></li>
+<li><p><strong>TODO ADD MORE:</strong></p></li>
+</ul>
+</div>
+<div class="section" id="bundles-definition-to-be-added">
+<h2>Bundles Definition (TO BE ADDED)<a class="headerlink" href="#bundles-definition-to-be-added" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Bundle: Session</p></li>
+<li><p>Bundle: User</p></li>
+<li><p>Bundle: Job</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="checkservices.html" class="btn btn-neutral float-right" title="Checking Service End Points" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="runide.html" class="btn btn-neutral float-left" title="Run from IDE (IntelliJ)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Qatar Computing Research Institute
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

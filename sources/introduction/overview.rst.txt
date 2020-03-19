@@ -1,0 +1,119 @@
+.. _introduction-overview:
+
+.. |system| replace:: Cymphony
+
+====================
+|system| at a Glance
+====================
+ 
+|system| is an open-source crowdsourcing platform. It provides the following features:
+
+* Flexibile definition of workflows consisting of multiple microtasks.
+
+* Easy invitation of workers through emails.
+
+* Open-source software (APACHE 2.0 License) with well abstracted APIs such that developers can fully optimize the system for their specific applications, such as how to assign tasks and how to aggregate the annotations from different workers.
+
+Below is a set of motivating samples, mainly for data preparation, that need collaboration and where |system| could help:
+
+* [Information extraction]: Given a table where each tuple  describes a product, the goal is to extract the weight from the title of the product, such as "3.5kg" from "Sony radio X67 3.5kg black". We want to use multiple workers for this task. 
+
+* [Data cleaning]: Given a table with a column  ``City``,  we want a bunch of workers to help clean its value, such as "New Yurk" to "New York"; similarly, we may want a bunch of workers to help normalize its values, such as "NY" and "NYC" to "New York City".  In another task, an algorithm detects multiple synonyms for missing values for a column ``temperature``, and we want to have a bunch of workers examine these synonym candidates and select the correct ones. 
+
+* [Data labeling]: We need a set of workers to label tuple pairs Match/Non-Match for entity matching, or to label a set of examples Yes/No for some classification task. 
+
+
+===================
+Basic Terminologies
+===================
+
+There are some basic terms that are important to understand |system|.
+
+* A **worker** is a collaboration/crowd worker.
+
+* A **requester** is the end user who wants to specify and execute a collaboration application, such as annotating missing values, labeling tuples, and so on.
+
+* A **task** is an object (e.g., a tuple) with a description about what annotation is needed, where an annotation can be one of the following types:
+
+	* *Boolean*: True/False
+
+	* *Numeric*: a numeric value
+
+	* *String*: a set of characters
+
+	* *Enumeration*: a value from a set of predefined values (such as for card suit or color)
+
+
+* Each task can be done by one worker, taking anywhere from a few seconds to a few minutes. Each task will be assigned to one or more workers, and each worker will produce an annotation.
+
+* A **label** of a task is the “final annotation” that is aggregated (e.g., using majority voting) from the workers who annotate this task.
+
+* A **hit** is a set of tasks that a worker takes to annotate as a mini-batch.
+
+* A **job** is a collection of tasks. We assume that all objects in one job follow the same schema (e.g., the same relational schema).
+
+* A **workflow** consists of a collection of (human) jobs and a set of machine algorithms (e.g., SQL queries, sampling functions, or any other user defined function).
+
+
+============================
+A |system| Job
+============================
+
+Generally speaking, a |system| job includes the following steps: 
+
+* [Data preparation]: obtain from a requester tasks and workers who are invited by the requester through emails 
+
+* [Assignment]: assign workers to tasks 
+
+* [Annotate]: allow annotations by workers
+
+* [Aggregate]: aggregate annotations to produce a label for each task. 
+
+In an abstract level, each job consists of three core functions, ``Assignment()``, ``Annotate()``, and ``Aggregate()``, as shown in the figure below. 
+
+.. image:: images/job1.png
+   :width: 350
+   :alt: A |system| Job
+
+
+.. At a logical level, a job consists of three main functions:
+
+
+.. ``Assign(w,T,P) : (w,h)`` Takes a worker w, a list of unassigned tasks T, and a list of previously assigned tasks P as input, and outputs a hit h for the worker w.
+
+
+.. Assignment(): It has two modes, push mode and pull model. Push mode is to publish a collection of hits to a platform such as Amazon Mechanic Turk. Pull mode is to assign a HIT to a given worker, which is by default in |system| for in-house workers.
+
+
+.. ``Annotate(w, h) : (ti, w, ai)`` 
+
+
+.. Annotate(): This is an invocation of a GUI for a worker to manually annotate a HIT, where the GUI may use either pre-defined templates, or ad-hoc interface customized for an application. 
+
+.. Takes a worker w and a hit h assigned to this worker as input, and outputs for each tuple ti in the hit an annotation ai. All annotations will be stored in an annotation table.
+
+
+.. ``Aggregate(t) : (t,a)`` Checks  all annotations for tuple t in the annotation table. If there are enough annotations (as defined in the job specification), then this operation will aggregate those (e.g., by taking a majority voting), to produce a final output label a for tuple t. If not enough annotations have been produced for tuple t, then this operation does not return anything.
+
+
+.. Aggregate(): this is to aggregate a set of annotations from multiple workers for one task and compute a final label for this task. The default method is majority  voting.
+
+.. A user can customize a job through writing code that implements predefined functions. We will postpone the discussion of a more detailed execution plan of a job in Section 3.1.
+
+
+===================
+A |system| Workflow
+===================
+
+A |system| workflow is a directed acyclic graph (DAG) where each node is either a (human) job node or a (machine) function node.
+
+A sample workflow is given below. It has three jobs and one function.
+
+We provide a graphical user interface (GUI) for a requester to specify a |system| workflow (see the tutorial at :ref:`users-tutorial`). For each job in the workflow, the requester will invite a group of workers by providing their email addresses. 
+
+.. Later on, we will allow workers from crowdsourcing platforms such as Amazon MTurk. 
+
+
+.. image:: images/workflow.png
+   :width: 450
+   :alt: A |system| workflow

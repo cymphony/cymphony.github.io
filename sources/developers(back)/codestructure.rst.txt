@@ -1,0 +1,336 @@
+.. _developers(back)-codestructure:
+
+
+==========================================
+Cymphony Coding Code of Conduct 
+==========================================
+
+The developers of Cymphony need to follow the **Code of Conduct** described in this section, such that every one can read and contribute:
+
+* All the code of Cymphony that is written in java is following the `Google Java Style Guide <https://google.github.io/styleguide/javaguide.html>`_.
+
+* The Code of Cymphony is geared towards evolution. For this reason, it follows the Java Specification Requests. One example is `JPA <https://jcp.org/en/jsr/detail?id=338>`_ that uses `Hibernate <https://hibernate.org/>`_ for datbase communications.
+
+* If the code needs to be extended to other functionalities, please create an interface and use the interface instead of the class.
+
+* The Java-Doc can be found `here <http://qcri.github.io/cymphony/java-doc>`_. **(TODO Upload to Page)**
+
+
+Code Structure of Cymphony
+====================================
+
+.. The composition of the structure of the code section has two main parts.
+
+We will describe the structure of the code along two directions:
+`General Folder Structure`_ describes *what* is the code structure.
+`Conceptual Structure`_ discusses *why* the code is there.
+
+
+General Folder Structure
+---------------------------
+
+The module structure follows the pattern :code:`cymphony-({{name-module-parents}})*-{{name-module}}`.
+That is, we add the name of the parent modules on the left, until the root modules. 
+The idea of this distribution is to keep the hierarchy using the names.
+
+
+The folder structure in terms of a package needs to start with :code:`org.qcri.cymphony`. After that, we need to create a package with the name of the component. Inside of that package, we create a Java class with the name :code:`Cymphony{name-component}.java`.
+
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+     ${CYMPHONY_HOME}/back-end/src
+     ├── cymphony-{{name-root}}
+     │   ├── cymphony-{{name-root}}-{{name-child-1}}
+     │   │   └── cymphony-{{name-root}}-{{name-child-1}}-..-{{name-child-n}}
+     │   │      ├── src
+     │   │      │   ├── main
+     │   │      │   │   ├── java
+     │   │      │   │   │   └── org
+     │   │      │   │   │       └── qcri
+     │   │      │   │   │           └── cymphony
+     │   │      │   │   │               └── {{name-root}}
+     │   │      │   │   │                   └── {{name-child-1}}
+    ... ...    ... ... ...                     ...
+     │   │      │   │   │                       └── {{name-child-n}}
+     │   │      │   │   │                           └── Cymphony{{name-child-n}}.java
+     │   │      │   │   └── resources
+     │   │      │   │       └── cymphony.{{name-child-n}}.properties
+     │   │      │   └── test
+     │   │      │       └── java
+     │   │      └─ pom.xml
+     |   └─ pom.xml
+     └─ pom.xml (Root Maven file)
+
+
+In this file (:code:`Cymphony{name-component}.java`), you will insert the code to read the configuration and the logger elements. This class will look like:
+
+
+.. code-block:: java
+   :linenos:
+   :emphasize-lines: 2,8,14,21,22,23
+
+    //TODO replace {{name-module}} with the component name
+    package org.qcri.cymphony.{{name-module}};
+
+    import org.apache.commons.logging.Log;
+    import org.apache.commons.logging.LogFactory;
+    import org.qcri.cymphony.util.configuration.CymphonyConfiguration;
+
+    public class Cymphony{{name-module}} {
+
+       private static CymphonyConfiguration CONFIGURATION = null;
+       public static Log LOGGER;
+
+       static {
+         LOGGER = LogFactory.getLog(Cymphony{{name-module}}.class);
+       }
+
+       public static CymphonyConfiguration getConfiguration(){
+          if(CONFIGURATION == null){
+             CONFIGURATION = CymphonyConfiguration
+                                     .fromResources(
+                                        "Cymphony{{name-module}}",
+                                        "cymphony.{{name-module}}",
+                                         Cymphony{{name-module}}.class
+              );
+          }
+          return CONFIGURATION;
+       }
+    }
+
+Conceptual Structure
+---------------------------
+
+The Cymphony structure is divided into three main conceptual components.
+
+  * cymphony-core
+  * cymphony-util
+  * cymphony-bundle
+
+
+Cymphony Core
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The code of ``cymphony-core`` in most of the cases is a part of the business logic (i.e., the Cymphony workflow, or the execution plan :ref:`developers(back)-executionplan`) or helping to execute the business logic, such as task assignment, annotation aggregation, and so on.
+
+This is a component which has the shared code inside of bundles,  but this code is part of the identity of Cymphony itself. 
+
+Core Folder Structure
+"""""""""""""""""""""""""""
+
+The folder structure of a ``cymphony-core`` is as bellow.
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+     ${CYMPHONY_HOME}/back-end/src/cymphony-core
+     ├── pom.xml
+     └── src
+         ├── main
+         │   ├── java
+         │   │   └── org
+         │   │       └── qcri
+         │   │           └── cymphony
+         │   │               └── core
+         │   │                   ├── CymphonyCore.java
+         │   │                   ├── factory
+         │   │                   ├── security
+         │   │                   │   └── algorithm
+         │   │                   │       ├── encryption
+         │   │                   │       └── hash
+         │   │                   ├── serializer
+         │   │                   └── service
+         │   └── resources
+         │       └── cymphony.core.properties
+         └── test
+             └── java
+                 └── org
+                     └── qcri
+                         └── cymphony
+                             └── core
+
+Cymphony Util
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The ``cymphony-unit`` has shared code for many bundles, but the functionalities are generic. In other words, this component acts like a store of libraries.
+
+
+Util Folder Structure
+"""""""""""""""""""""""""""
+The folder structure of ``cymphony-unit`` is as bellow.
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+      ${CYMPHONY_HOME}/back-end/src/cymphony-util
+      ├── pom.xml
+      └── src
+          ├── main
+          │   ├── java
+          │   │   └── org
+          │   │       └── qcri
+          │   │           └── cymphony
+          │   │               └── util
+          │   │                   ├── CymphonyUtil.java
+          │   │                   ├── configuration
+          │   │                   │   ├── CymphonyConfiguration.java
+          │   │                   ├── exception
+          │   │                   │   └── CymphonyException.java
+          │   │                   ├── factory
+          │   │                   │   ├── CymphonyFactory.java
+          │   │                   ├── reflexion
+          │   │                   │   ├── CymphonyReflexion.java
+          │   │                   └── stream
+          │   │                       └── CymphonyStream.java
+          │   └── resources
+          │       └── cymphony.util.properties
+          └── test
+              └── java
+
+
+Cymphony Bundle
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+``cymphony-bundle`` is the main structure of Cymphony. This component is divided into three internals components:
+
+* ``cymphony-bundle-entities``: this is the model of data and objects. This bundle will use them to either communicate with other bundles, or is sharable with other bundles.
+
+* ``cymphony-bundle-api``: These APIs are how the bundle publishes its entry points to others bundles or the world. 
+
+..That is, it contains the group of interfaces that allow that.
+
+* ``cymphony-bundle-implementation``: The component implementation is the APIs materialization, and also have the instruction and configuration of how to manipulate the entities to proceed with their persistence.
+
+
+Bundle Folder Structure
+"""""""""""""""""""""""""""
+The folder structure of ``cymphony-bundle`` instance is as bellow.
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 0
+
+     ${CYMPHONY_HOME}/back-end/src/cymphony-bundle
+     ├── cymphony-bundle-{{instance}}
+     │   ├── cymphony-bundle-{{instance}}-api
+     │   │   ├── src
+     │   │   │   ├── main
+     │   │   │   │   ├── java
+     │   │   │   │   │   └── org
+     │   │   │   │   │       └── qcri
+     │   │   │   │   │           └── cymphony
+     │   │   │   │   │               └── bundle
+     │   │   │   │   │                  └── {{instance}}
+     │   │   │   │   │                      └── api
+     │   │   │   │   │                         ├── entrypoint
+     │   │   │   │   │                         |   └── {{something}}API.java
+     │   │   │   │   │                         └── Cymphony{{instance}}API.java
+     │   │   │   │   └── resources
+     │   │   │   └── test
+     │   │   │       └── java
+     │   |   └── pom.xml
+     │   ├── cymphony-bundle-{{instance}}-entities
+     │   │   ├── src
+     │   │   │   ├── main
+     │   │   │   │   ├── java
+     │   │   │   │   │   └── org
+     │   │   │   │   │       └── qcri
+     │   │   │   │   │           └── cymphony
+     │   │   │   │   │               └── bundle
+     │   │   │   │   │                   └── {{instance}}
+     │   │   │   │   │                       └── entities
+     │   │   │   │   │                         ├── model
+     │   │   │   │   │                         |   ├── {{some_entity}}.java
+     │   │   │   │   │                         |   ├── ...
+     │   │   │   │   │                         |   └── {{other_entity}}.java
+     │   │   │   │   │                         └── Cymphony{{instance}}Entities.java
+     │   │   │   │   └── resources
+     │   │   │   └── test
+     │   │   │       └── java
+     │   |   └── pom.xml
+     │   ├── cymphony-bundle-{{instance}}-implementation
+     │   |   ├── src
+     │   |   │   ├── main
+     │   |   │   │   ├── java
+     │   |   │   │   │   └── org
+     │   |   │   │   │       └── qcri
+     │   |   │   │   │           └── cymphony
+     │   |   │   │   │               └── bundle
+     │   |   │   │   │                   └── {{instance}}
+     │   |   │   │   │                       └── implementation
+     │   |   │   │   │                         ├── entity
+     │   |   │   │   │                         |   ├── {{some_entity}}EntityManager.java
+     │   |   │   │   │                         |   ├── ...
+     │   |   │   │   │                         |   └── {{other_entity}}EntityManager.java
+     │   |   │   │   │                         ├── module
+     │   |   │   │   │                         |   └── {{instance}}Module.java
+     │   |   │   │   │                         ├── impl
+     │   |   │   │   │                         |   └── {{instance}}AImpl.java
+     │   |   │   │   │                         └── Cymphony{{instance}}Entities.java
+     │   |   │   │   └── resources
+     │   |   │   └── test
+     │   |   │       └── java
+     │   |   └── pom.xml
+     │   └── pom.xml
+     ...
+
+
+
+Please refer to :ref:`developers(back)-dbexample` about how the ``session`` bundle instance is implemented, by following the above structure.
+
+
+Commonly used Notations (TO BE ADDED)
+=============================================
+
+* **Project:**
+* **Task:**
+* **Service:**
+* **Bundle:** Please read `The Bundle System`_ to understand what is a bundle
+* **Multi-Tenant:**
+* **TODO ADD MORE:**
+
+
+
+Bundles Definition (TO BE ADDED)
+==================================
+
+
+* Bundle: Session
+* Bundle: User
+* Bundle: Job
+
+
+
+.. Usually, all the question that you can find on the code of Cymphony can be answered using the `Lagom documentation <https://www.lagomframework.com/documentation/1.6.x/java/Home.html>`_ most of the code try to pointer the documentation of lagom when is using some of the components.
+ 
+ The dependencies definition is composed of two parts, the first one is `Essential dependencies`_, which the developer will be visiting the official documentation frequently. The `Helper dependencies`_ is the second part, and these dependencies are not relevant on the code, however, exist the possibility that the developers will need to visit the documentation on some moments.
+
+
+  Essential dependencies
+  =====================================
+
+  Cymphony uses as a base the microservice framework `Lagom <https://www.lagomframework.com/>`; this is an open source framework for building systems of Reactive microservice.
+
+  Usually, all the question that you can find on the code of Cymphony can be answered using the `Lagom documentation <https://www.lagomframework.com/documentation/1.6.x/java/Home.html>`_ most of the code try to pointer the documentation of lagom when is using some of the components.
+
+
+  Helper dependencies
+  =====================================
+
+  For make the backend more flexible Cymphony use couples of framework on the process.
+
+      * JPA: (Hibernate)[https://hibernate.org/]
+      * JSON Implementation: (Json-P)[https://javaee.github.io/jsonp/]
+      * Message-Queue: (Kafka)[https://kafka.apache.org/]
+      * DataBase: (Mysql)[https://www.mysql.com/]
+      * Cache: (Redis)[https://redis.io/]
+      * Orchetator: (K8S)[https://kubernetes.io/]
+      * project management: (Maven)[https://maven.apache.org/]
+
+
+.. _The Bundle System: https://symfony.com/doc/2.7/bundles.html
+

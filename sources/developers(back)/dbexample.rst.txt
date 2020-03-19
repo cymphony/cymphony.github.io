@@ -1,0 +1,67 @@
+.. _developers(back)-dbexample:
+
+===========================
+Example: Querying Databases 
+===========================
+
+Many services need to read/write database tables. All the services that need to access the database are under ``cymphony-bindle``. 
+We will explain how the database is used using the service ``cymphony-bundle-session`` as an example.
+
+Defining a Table Schema
+===========================
+
+We first need to define the **schema** and the **methods** of the table. For every table in the database, we have one class under ``model`` below ``cymphony-bundle-session-entities``, as shown in the figure below, where we have many columns for ``UserSession``; that is ``(id, user_name, email, password, salt, time_registered)``.
+
+.. image:: ./images/db1.png
+    :alt: Collections tab
+
+
+Database Path to Store the Table
+===================================
+
+After a table is defined, the next step is to specify where to store it. This is under ``cymphony-bundle-session-implementation`` and then ``resources-META-INF``, file ``persistence.xml``
+
+.. image:: ./images/db2.png
+    :alt: Collections tab
+
+
+Querying the Database
+===================================
+
+Note that instead of using SQL queries, we use Hibernate to communciate with the databases. Because most operations are shared, so they are under ``cymphony-bundle-shared-entities`` and file ``EntityRepository.java`` under ``repository``.
+
+
+.. image:: ./images/db3.png
+    :alt: Collections tab
+
+
+Ad-hoc Functions for Each Table
+===================================
+
+Besides the above shared (common) functions, there might be specific functions for different tables, which are in ``cymphony-bundle-session-implementation``, and then in ``entity/UserSessionEntityManager.java``.
+For example, for the ``UserSession`` table, we have a function called ``findForLogin``, as shown below.
+
+
+.. image:: ./images/db4.png
+    :alt: Collections tab
+
+
+Similarly, you can find these ad-hoc functions under ``cymphony-bundle-job-project-implementation``, in ``entity/InvitationEntityManager.java`` you can find the function ``getInvitation()`` for table ``project_invitation`` and in ``entity/JobEntityManager.java`` you can find the function ``getFromProject()`` for table ``Job``, and so on.
+
+
+Create Entity Manager in Lagom
+===================================
+
+Next, we need to use the code below ``bind(UserSessionEntityManager.class)`` so it can be created by Lagom, where the code is at ``cymphony-bundle-session-implementation``, and then find ``module-SessionModule.java``.
+
+.. image:: ./images/db5.png
+    :alt: Collections tab
+
+
+Inject these functions to the Service
+========================================
+
+The last thing to do is to inject these functions in the service. In this case, it is at ``cymphony-bundle-session-implementation``, and then find ``impl-SessionService.java``.
+
+.. image:: ./images/db6.png
+    :alt: Collections tab

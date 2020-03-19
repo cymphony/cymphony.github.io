@@ -1,0 +1,64 @@
+.. _developers(back)-serviceexample:
+
+==================================
+Example: Creating a Lagom Service
+==================================
+
+Below, we will illustrate how to create a service using examples, to guide developers in adding new services to Cymphony. 
+
+..In most cases, this is not needed, because existing services can already support very general cases.
+
+
+We will use the service ``cymphony-session`` as a running example.
+
+
+Define the APIs for a Service
+==================================
+
+A service might have one API or multiple APIs. In this case, it has only one API, under ``cymphony-bundle-session-api``, the ``entrypoint/SessionServiceAPI`` is an interface function that extends the Lagom Service function ``import com.lightbend.lagom.javadsl.api.Service``.
+
+.. image:: ./images/service1.png
+    :alt: Collections tab
+
+Note that ``import com.lightbend.lagom.javadsl.api.Service`` is important to define the ``descriptor`` that maps from the URL to the actual code, in the same file.
+
+.. image:: ./images/service2.png
+    :alt: Collections tab
+
+
+Implement the above APIs
+==================================
+
+Go under ``cymphony-bundle-session-implementation``, and then locate ``impl/SessionServiceAPI``
+
+.. image:: ./images/service3.png
+    :alt: Collections tab
+
+
+Map Abstract APIs to their Implementations
+============================================
+
+
+Got under ``cymphony-bundle-session-implementation``, and then locate ``module/SessionModule``, which binds the service from ``SessionServiceAPI.class`` to ``SessionServiceImpl.class``.
+
+.. image:: ./images/service4.png
+    :alt: Collections tab
+
+
+Specify a Module for a Service
+==================================
+
+Note that Lagom allows only one module for each service. This is done in ``cymphony-bundle-session-implementation``, and then locate ``resources/application.conf``, the first line that enables a module for the session.
+
+.. image:: ./images/service5.png
+    :alt: Collections tab
+
+
+
+Register as a Logom Service
+==================================
+
+The last step is to register as a Logom Service. Go to ``cymphony-bundle-session-implementation``, and locate  ``src/pom.xml``. It sets ``<lagomService>`` as true.
+
+.. image:: ./images/service6.png
+    :alt: Collections tab
