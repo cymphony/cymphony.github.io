@@ -249,21 +249,21 @@ Next, we will explain the APIs related to the above process.</p>
 16
 17</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="cm">/* a normal function */</span>
  <span class="nd">@Override</span>
- <span class="kd">public</span> <span class="n">ServiceCall</span><span class="o">&lt;</span><span class="n">NotUsed</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">projectEmpty</span><span class="o">()</span> <span class="o">{</span>
-     <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">isLogged</span><span class="o">(</span>
-         <span class="k">new</span> <span class="n">ServerServiceCall</span><span class="o">&lt;</span><span class="n">NotUsed</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;()</span> <span class="o">{</span>
+ <span class="kd">public</span> <span class="n">ServiceCall</span><span class="o">&lt;</span><span class="n">NotUsed</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">projectEmpty</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">isLogged</span><span class="p">(</span>
+         <span class="k">new</span> <span class="n">ServerServiceCall</span><span class="o">&lt;</span><span class="n">NotUsed</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">{</span>
              <span class="nd">@Override</span>
-                 <span class="kd">public</span> <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">invoke</span><span class="o">(</span><span class="n">NotUsed</span> <span class="n">notUsed</span><span class="o">)</span> <span class="o">{</span>
-                 <span class="k">return</span> <span class="n">completedFuture</span><span class="o">(</span><span class="s">&quot;Project Repository Service&quot;</span><span class="o">);</span>
-             <span class="o">}</span>
-         <span class="o">}</span>
-     <span class="o">);</span>
- <span class="o">}</span>
+                 <span class="kd">public</span> <span class="n">CompletionStage</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">invoke</span><span class="p">(</span><span class="n">NotUsed</span> <span class="n">notUsed</span><span class="p">)</span> <span class="p">{</span>
+                 <span class="k">return</span> <span class="n">completedFuture</span><span class="p">(</span><span class="s">&quot;Project Repository Service&quot;</span><span class="p">);</span>
+             <span class="p">}</span>
+         <span class="p">}</span>
+     <span class="p">);</span>
+ <span class="p">}</span>
 
  <span class="cm">/* a lambda function */</span>
- <span class="n">request</span> <span class="o">-&gt;</span> <span class="o">{</span>
-     <span class="k">return</span> <span class="n">completedFuture</span><span class="o">(</span><span class="s">&quot;Project Repository Service&quot;</span><span class="o">);</span>
- <span class="o">}</span>
+ <span class="n">request</span> <span class="o">-&gt;</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="n">completedFuture</span><span class="p">(</span><span class="s">&quot;Project Repository Service&quot;</span><span class="p">);</span>
+ <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 </div>
