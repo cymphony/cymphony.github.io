@@ -20,17 +20,10 @@ For more details about installing Redis, please read start `redis <https://redis
     $ redis-server
 
 
-2. **Start MySQL.** On a port of your choice, using this command for example: 
-
-.. code-block:: bash
-   :linenos:
-   :emphasize-lines: 0
-
-   $ mysql -h 127.0.0.1 -P 3306 -u root -p
+2. **Start MySQL** on your machine. 
 
 
-Of course, you can also use a GUI to start a MySQL server.
-
+..    $ mysql -h 127.0.0.1 -P 3306 -u root -p
 
 .. note:: Don't forget to check whether port 9000 is being used by other apps, because it is needed for MySQL and Redis.
 
@@ -38,10 +31,10 @@ Of course, you can also use a GUI to start a MySQL server.
 
 .. code-block:: bash
    :linenos:
-   :emphasize-lines: 1-4
-  
+   :emphasize-lines: 0
+
    # go to Cymphony back-end folder
-   $ cd Cymphony/back-end/src
+   $ cd cymphony-repos/cymphony-backend/src
    $ export DB_ADDRESS=localhost
    $ export DB_PORT=3306
    $ export DB_USER='your username'
@@ -64,14 +57,23 @@ Start the Front-end
 
 
     # go to front-end Angular project directory
-    $ cd cymphony_frontend\front-end\src
+    $ cd cymphony-repos/cymphony-frontend/src
 
     # start service
     $ npm start
 
+    # The current framework was written in Angular version 8
+    # If you have the latest Angular version 9
+    # You might see the error: "Job name "..getProjectMetadata" does not exist."
+    # In such case, please downgrade your Angular (sorry for this inconvenience).
+    $ npm i @angular-devkit/build-angular@0.803.24
+    $ npm audit
+    $ npm audit fix
+    $ npm start
+
 By default, both front-end and back-end are running on your local machine. In this case, you can go to http://localhost:4200/ to use Cymphony.
 
-However, if you start the back-end on another server, e.g., http://10.4.4.80, you need to change the configuration of the front-end at the file: ``cymphony-frontend/front-end/src/proxiy.conf.json``, before starting the front-end server, as shown in the figure below.
+However, if you start the back-end on another server, e.g., http://10.4.4.80, you need to change the configuration of the front-end at the file: ``cymphony-frontend/src/proxiy.conf.json``, before starting the front-end server, as shown in the figure below.
 
 .. image:: images/conf.png
    :width: 500

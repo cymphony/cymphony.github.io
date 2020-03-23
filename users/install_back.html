@@ -204,7 +204,13 @@ So basically, you need to install the back-end - <a class="reference internal" h
 <p>Before running cymb, make sure you have the followings ready.</p>
 <p>1 [Obtaining a Github token.] You can obtain it by following the stpes in <a class="reference external" href="https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line">Creating a personal access token for the command line</a>. When you see <cite>${token}</cite> in the documentation bellow, you need to put the value of the generated token.</p>
 <p>2 [Clone Cymphony repository.] Only after validating that your token is correct you can use the command below for cloning the repository.</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ git clone https://<span class="si">${</span><span class="nv">token</span><span class="si">}</span>@github.com/qcri/cymphony-builder.git
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ mkdir cymphony-repos
+ $ <span class="nb">cd</span> cymphony-repos
+ $ git clone https://<span class="si">${</span><span class="nv">token</span><span class="si">}</span>@github.com/cymphony/cymphony-builder.git
+ $ git clone https://<span class="si">${</span><span class="nv">token</span><span class="si">}</span>@github.com/cymphony/cymphony-backend.git
 </pre></div>
 </td></tr></table></div>
 <p>3 [Install docker] (If not already installed in your machine).</p>
@@ -257,7 +263,9 @@ So basically, you need to install the back-end - <a class="reference internal" h
 <div class="section" id="install-by-cymb-recommended">
 <h2>Install by cymb (recommended)<a class="headerlink" href="#install-by-cymb-recommended" title="Permalink to this headline">¶</a></h2>
 <p>Now, you are ready to install Cymphony. To install it in one command line, please do:</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ ./cymb full <span class="si">${</span><span class="nv">token</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span> $ <span class="nb">cd</span> cymphony-repos/cymphony-builder
+ $ ./cymb full <span class="si">${</span><span class="nv">token</span><span class="si">}</span>
 </pre></div>
 </td></tr></table></div>
 <div class="admonition note">

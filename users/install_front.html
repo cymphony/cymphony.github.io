@@ -192,27 +192,23 @@
   <div class="section" id="user-installation-guide-front-end">
 <span id="users-install-front"></span><h1>User Installation Guide (Front-end)<a class="headerlink" href="#user-installation-guide-front-end" title="Permalink to this headline">¶</a></h1>
 <p>Please follow the steps below:</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># Configure long paths</span>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># Configure long paths</span>
  $ git config --system core.longpaths <span class="nb">true</span>
 
  <span class="c1"># clone the project</span>
- git clone https://user:pass@github.com/qcri/cymphony.git cymphony_frontend
+ $ <span class="nb">cd</span> cymphony-repos
+ $ git clone https://<span class="si">${</span><span class="nv">token</span><span class="si">}</span>@github.com/cymphony/cymphony-frontend.git
 
  <span class="c1"># go to the project</span>
- $ <span class="nb">cd</span> cymphony_frontend
-
- <span class="c1"># Checkout to master-frontend</span>
- $ git checkout remotes/origin/master-frontend
+ $ <span class="nb">cd</span> cymphony-frontend
 </pre></div>
 </td></tr></table></div>
 <p>If you don’t have nodejs &lt;<a class="reference external" href="https://nodejs.org/en/">https://nodejs.org/en/</a>&gt;, install it.</p>
@@ -238,7 +234,7 @@
 6
 7
 8</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># move to Angular project directory</span>
- $ <span class="nb">cd</span> cymphony_frontend<span class="se">\f</span>ront-end<span class="se">\s</span>rc
+ $ <span class="nb">cd</span> cymphony-repos/cymphony-frontend/src
 
  <span class="c1"># run npm install</span>
  $ npm install

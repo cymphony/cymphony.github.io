@@ -14,17 +14,13 @@ Please follow the steps below:
     $ git config --system core.longpaths true
 
     # clone the project
-    git clone https://user:pass@github.com/qcri/cymphony.git cymphony_frontend
+    $ cd cymphony-repos
+    $ git clone https://${token}@github.com/cymphony/cymphony-frontend.git
 
     # go to the project
-    $ cd cymphony_frontend
-
-    # Checkout to master-frontend
-    $ git checkout remotes/origin/master-frontend
-
+    $ cd cymphony-frontend
 
 If you don't have nodejs <https://nodejs.org/en/>, install it.
-
 
 .. code-block:: bash
    :linenos:
@@ -45,14 +41,12 @@ Afterwards, please restart your console and run the following commands:
    :linenos:
    :emphasize-lines: 0
 
-
     # move to Angular project directory
-    $ cd cymphony_frontend\front-end\src
+    $ cd cymphony-repos/cymphony-frontend/src
 
     # run npm install
     $ npm install
 
     # run angular cli install
     $ npm install -g @angular/cli
-
 

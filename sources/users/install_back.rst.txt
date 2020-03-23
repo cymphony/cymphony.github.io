@@ -29,8 +29,10 @@ Before running cymb, make sure you have the followings ready.
    :linenos:
    :emphasize-lines: 0
 
-    $ git clone https://${token}@github.com/qcri/cymphony-builder.git
-
+    $ mkdir cymphony-repos
+    $ cd cymphony-repos
+    $ git clone https://${token}@github.com/cymphony/cymphony-builder.git
+    $ git clone https://${token}@github.com/cymphony/cymphony-backend.git
 
 3 [Install docker] (If not already installed in your machine).
 
@@ -83,6 +85,7 @@ Now, you are ready to install |system|. To install it in one command line, pleas
    :linenos:
    :emphasize-lines: 0
 	
+    $ cd cymphony-repos/cymphony-builder
     $ ./cymb full ${token}
 
 

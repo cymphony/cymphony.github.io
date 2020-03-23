@@ -203,12 +203,8 @@ For more details about installing Redis, please read start <a class="reference e
 </pre></div>
 </td></tr></table></div>
 <ol class="arabic simple" start="2">
-<li><p><strong>Start MySQL.</strong> On a port of your choice, using this command for example:</p></li>
+<li><p><strong>Start MySQL</strong> on your machine.</p></li>
 </ol>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ mysql -h <span class="m">127</span>.0.0.1 -P <span class="m">3306</span> -u root -p
-</pre></div>
-</td></tr></table></div>
-<p>Of course, you can also use a GUI to start a MySQL server.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Don’t forget to check whether port 9000 is being used by other apps, because it is needed for MySQL and Redis.</p>
@@ -222,11 +218,11 @@ For more details about installing Redis, please read start <a class="reference e
 4
 5
 6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="c1"># go to Cymphony back-end folder</span>
-</span><span class="hll">$ <span class="nb">cd</span> Cymphony/back-end/src
-</span><span class="hll">$ <span class="nb">export</span> <span class="nv">DB_ADDRESS</span><span class="o">=</span>localhost
-</span><span class="hll">$ <span class="nb">export</span> <span class="nv">DB_PORT</span><span class="o">=</span><span class="m">3306</span>
-</span>$ <span class="nb">export</span> <span class="nv">DB_USER</span><span class="o">=</span><span class="s1">&#39;your username&#39;</span>
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># go to Cymphony back-end folder</span>
+$ <span class="nb">cd</span> cymphony-repos/cymphony-backend/src
+$ <span class="nb">export</span> <span class="nv">DB_ADDRESS</span><span class="o">=</span>localhost
+$ <span class="nb">export</span> <span class="nv">DB_PORT</span><span class="o">=</span><span class="m">3306</span>
+$ <span class="nb">export</span> <span class="nv">DB_USER</span><span class="o">=</span><span class="s1">&#39;your username&#39;</span>
 $ <span class="nb">export</span> <span class="nv">DB_PASSWORD</span><span class="o">=</span><span class="s1">&#39;your password&#39;</span>
 $ mvn clean install lagom:runAll -Ddb_password<span class="o">=</span><span class="si">${</span><span class="nv">DB_PASSWORD</span><span class="si">}</span> -Ddb_user<span class="o">=</span><span class="si">${</span><span class="nv">DB_USER</span><span class="si">}</span> -Ddb_path<span class="o">=</span><span class="s2">&quot;jdbc:mysql://</span><span class="si">${</span><span class="nv">DB_ADDRESS</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">DB_PORT</span><span class="si">}</span><span class="s2">/cymphony?useSSL=false&amp;createDatabaseIfNotExist=true&amp;allowPublicKeyRetrieval=true&quot;</span> -Ddb_path_public<span class="o">=</span><span class="s2">&quot;jdbc:mysql://</span><span class="si">${</span><span class="nv">DB_ADDRESS</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">DB_PORT</span><span class="si">}</span><span class="s2">/template?useSSL=false&amp;createDatabaseIfNotExist=true&amp;allowPublicKeyRetrieval=true&quot;</span>
 </pre></div>
@@ -236,19 +232,37 @@ $ mvn clean install lagom:runAll -Ddb_password<span class="o">=</span><span clas
 </div>
 <div class="section" id="start-the-front-end">
 <h2>Start the Front-end<a class="headerlink" href="#start-the-front-end" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># go to front-end Angular project directory</span>
- $ <span class="nb">cd</span> cymphony_frontend<span class="se">\f</span>ront-end<span class="se">\s</span>rc
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1"># go to front-end Angular project directory</span>
+ $ <span class="nb">cd</span> cymphony-repos/cymphony-frontend/src
 
  <span class="c1"># start service</span>
+ $ npm start
+
+ <span class="c1"># The current framework was written in Angular version 8</span>
+ <span class="c1"># If you have the latest Angular version 9</span>
+ <span class="c1"># You might see the error: &quot;Job name &quot;..getProjectMetadata&quot; does not exist.&quot;</span>
+ <span class="c1"># In such case, please downgrade your Angular (sorry for this inconvenience).</span>
+ $ npm i @angular-devkit/build-angular@0.803.24
+ $ npm audit
+ $ npm audit fix
  $ npm start
 </pre></div>
 </td></tr></table></div>
 <p>By default, both front-end and back-end are running on your local machine. In this case, you can go to <a class="reference external" href="http://localhost:4200/">http://localhost:4200/</a> to use Cymphony.</p>
-<p>However, if you start the back-end on another server, e.g., <a class="reference external" href="http://10.4.4.80">http://10.4.4.80</a>, you need to change the configuration of the front-end at the file: <code class="docutils literal notranslate"><span class="pre">cymphony-frontend/front-end/src/proxiy.conf.json</span></code>, before starting the front-end server, as shown in the figure below.</p>
+<p>However, if you start the back-end on another server, e.g., <a class="reference external" href="http://10.4.4.80">http://10.4.4.80</a>, you need to change the configuration of the front-end at the file: <code class="docutils literal notranslate"><span class="pre">cymphony-frontend/src/proxiy.conf.json</span></code>, before starting the front-end server, as shown in the figure below.</p>
 <a class="reference internal image-reference" href="../images/conf.png"><img alt="Drag Job Option" src="../images/conf.png" style="width: 500px;" /></a>
 <p>Similarly, if you start your front-end also on another server (e.g., <a class="reference external" href="http://10.4.4.80">http://10.4.4.80</a>), instead of using <a class="reference external" href="http://localhost:4200/">http://localhost:4200/</a>, you should use <a class="reference external" href="http://10.4.4.80:4200/">http://10.4.4.80:4200/</a>.</p>
 <p>Requesters and workers can work using the front-end GUI (see <a class="reference internal" href="tutorial.html#users-tutorial"><span class="std std-ref">Tutorial: Creating a Cymphony Project</span></a>) while developers can test Cymphony services via Postman (see <a class="reference internal" href="../developers(back)/checkservices.html#developers-back-checkservices"><span class="std std-ref">Checking Service End Points</span></a>).</p>
