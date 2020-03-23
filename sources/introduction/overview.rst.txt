@@ -10,7 +10,7 @@
 
 * Flexibile definition of workflows consisting of multiple microtasks.
 
-* Easy invitation of workers through emails.
+* Easy invitation of workers using their emails.
 
 * Open-source software (APACHE 2.0 License) with well abstracted APIs such that developers can fully optimize the system for their specific applications, such as how to assign tasks and how to aggregate the annotations from different workers.
 
